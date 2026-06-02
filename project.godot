@@ -11,13 +11,29 @@ config_version=5
 [application]
 
 config/name="Untitled_Learning_Game"
+run/main_scene="uid://dbo5mv3nae0as"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
+
+[autoload]
+
+AssetCache="*res://scripts/asset_cache.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+Defender=""
+Virus=""
 
 [physics]
 
@@ -26,3 +42,4 @@ version_control/autoload_on_startup=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
