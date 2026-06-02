@@ -1,9 +1,13 @@
 #include "database.h"
 #include <iostream>
+#include <filesystem>
 
 bool Database::open() {
 
-    int rc = sqlite3_open("game.db", &db);
+    int rc = sqlite3_open("/root/AntonioBarandao.github.io/My-Website/Defend-The-Data-Virus-Tower-Defense-/Acc_Src/game.db", &db);
+    std::cout << "Current directory: "
+          << std::filesystem::current_path()
+          << std::endl;
 
     if (rc) {
         std::cout << "Cannot open database\n";
