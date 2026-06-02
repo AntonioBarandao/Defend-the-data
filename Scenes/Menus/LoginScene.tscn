@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dgv71rsjbysiq"]
+
+[node name="LoginScene" type="Control" unique_id=1924834631]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="." unique_id=1840403312]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 80.0
+offset_right = 650.0
+offset_bottom = 130.0
+text = "SYSTEM ACCESS"
+
+[node name="UsernameInput" type="LineEdit" parent="." unique_id=1906429967]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 180.0
+offset_right = 650.0
+offset_bottom = 220.0
+placeholder_text = "Username"
+
+[node name="PasswordInput" type="LineEdit" parent="." unique_id=1155126185]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 240.0
+offset_right = 650.0
+offset_bottom = 280.0
+placeholder_text = "Password"
+secret = true
+
+[node name="LoginButton" type="Button" parent="." unique_id=1453603878]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 310.0
+offset_right = 650.0
+offset_bottom = 360.0
+text = "LOGIN"
+
+[node name="RegisterButton" type="Button" parent="." unique_id=1452823026]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 370.0
+offset_right = 650.0
+offset_bottom = 420.0
+text = "CREATE ACCOUNT"
+
+[node name="BackButton" type="Button" parent="." unique_id=1760640431]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 430.0
+offset_right = 650.0
+offset_bottom = 480.0
+text = "BACK TO MENU"

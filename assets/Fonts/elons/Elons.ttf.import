@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://2thgkpvb80fx"
-path="res://.godot/imported/Elons.ttf-1047317b89e9cd56577b305c5737005f.fontdata"
+path="res://.godot/imported/Elons.ttf-ef9b575d707968a5ab1ca2139f751b59.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/elons/Elons.ttf"
-dest_files=["res://.godot/imported/Elons.ttf-1047317b89e9cd56577b305c5737005f.fontdata"]
+source_file="res://Assets/Fonts/elons/Elons.ttf"
+dest_files=["res://.godot/imported/Elons.ttf-ef9b575d707968a5ab1ca2139f751b59.fontdata"]
 
 [params]
 
