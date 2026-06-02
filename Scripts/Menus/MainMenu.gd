@@ -23,14 +23,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_passed += delta
 
-	# Subtle breathing/zoom effect
-	var zoom = 1.0 + sin(time_passed * 0.7) * background_zoom_amount
-	background.scale = Vector2(zoom, zoom)
-
-	# Moving scanline
-	scanline.position.y += scan_speed * delta
-	if scanline.position.y > get_viewport_rect().size.y + 40:
-		scanline.position.y = -40
 
 func _on_start_pressed() -> void:
 	status_label.text = "Starting game..."

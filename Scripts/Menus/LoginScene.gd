@@ -1,9 +1,9 @@
 extends Control
 
 func _ready():
-	$LoginButton.pressed.connect(_on_login_pressed)
-	$BackButton.pressed.connect(_on_back_pressed)
-	$RegisterButton.pressed.connect(_on_register_pressed)
+	$FormPanel/VBox/LoginButton.pressed.connect(_on_login_pressed)
+	$FormPanel/VBox/BackButton.pressed.connect(_on_back_pressed)
+	$FormPanel/VBox/RegisterButton.pressed.connect(_on_register_pressed)
 
 func _on_login_pressed():
 	get_tree().change_scene_to_file(

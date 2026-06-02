@@ -1084,8 +1084,8 @@ point_count = 30
 script = ExtResource("1_ao6wq")
 
 [node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
-position = Vector2(961.00006, 540.00006)
-scale = Vector2(0.536, 0.536)
+position = Vector2(1280.2441, 540.00006)
+scale = Vector2(0.7141496, 0.536)
 texture = ExtResource("2_nf5wp")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
