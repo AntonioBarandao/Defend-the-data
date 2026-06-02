@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://day3pew2qansw"]
+
+[node name="MainMenu" type="Control" unique_id=1563887743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1668301269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1849763763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="Scanline" type="ColorRect" parent="." unique_id=1352613665]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 1920.0
+offset_bottom = -18.0
+color = Color(0, 0.9, 1, 0.22)
+
+[node name="MenuPanel" type="Panel" parent="." unique_id=1606240950]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -210.0
+offset_right = 260.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MenuPanel" unique_id=1926208297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="MenuPanel/VBox" unique_id=1950426886]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "CYBER DEFENSE TD"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MenuPanel/VBox" unique_id=524199861]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "DEFEND. LEARN. SECURE."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MenuPanel/VBox" unique_id=1994598975]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MenuPanel/VBox" unique_id=841296870]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "START GAME"
+
+[node name="LoginButton" type="Button" parent="MenuPanel/VBox" unique_id=36390648]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "LOGIN"
+
+[node name="OptionsButton" type="Button" parent="MenuPanel/VBox" unique_id=36246659]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="MenuPanel/VBox" unique_id=187916600]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
+
+[node name="Sign Out" type="Button" parent="MenuPanel/VBox" unique_id=321318244]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Sign Out"
+
+[node name="StatusLabel" type="Label" parent="." unique_id=247969256]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -55.0
+offset_right = 350.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Secure your knowledge. Protect the system."
+horizontal_alignment = 1

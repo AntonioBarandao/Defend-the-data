@@ -1,0 +1,49 @@
+extends Control
+
+@onready var background: TextureRect = $Background
+@onready var scanline: ColorRect = $Scanline
+@onready var start_button: Button = $MenuPanel/VBox/StartButton
+@onready var login_button: Button = $MenuPanel/VBox/LoginButton
+@onready var options_button: Button = $MenuPanel/VBox/OptionsButton
+@onready var quit_button: Button = $MenuPanel/VBox/QuitButton
+@onready var status_label: Label = $StatusLabel
+@onready var sign_out_button = $MenuPanel/VBox/SignOutButton
+
+var scan_speed := 120.0
+var background_zoom_amount := 0.015
+var time_passed := 0.0
+
+func _ready() -> void:
+	start_button.pressed.connect(_on_start_pressed)
+	login_button.pressed.connect(_on_login_pressed)
+	options_button.pressed.connect(_on_options_pressed)
+	quit_button.pressed.connect(_on_quit_pressed)
+	sign_out_button.pressed.connect(_on_sign_out_pressed)
+
+func _process(delta: float) -> void:
+	time_passed += delta
+
+	# Subtle breathing/zoom effect
+	var zoom = 1.0 + sin(time_passed * 0.7) * background_zoom_amount
+	background.scale = Vector2(zoom, zoom)
+
+	# Moving scanline
+	scanline.position.y += scan_speed * delta
+	if scanline.position.y > get_viewport_rect().size.y + 40:
+		scanline.position.y = -40
+
+func _on_start_pressed() -> void:
+	status_label.text = "Starting game..."
+	# Later: get_tree().change_scene_to_file("res://scenes/Game.tscn")
+
+func _on_login_pressed() -> void:
+	status_label.text = "Login screen not connected yet."
+
+func _on_options_pressed() -> void:
+	status_label.text = "Options menu not connected yet."
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+func _on_sign_out_pressed():
+	status_label.text = "Sign out functionality coming soon."
