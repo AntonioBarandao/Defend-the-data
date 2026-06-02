@@ -22,4 +22,4 @@ func _on_create_pressed():
     $StatusLabel.text = "Account created! (Database hookup later)"
 
 func _on_back_pressed():
-    get_tree().change_scene_to_file("res://scenes/LoginScene.tscn")
+    get_tree().change_scene_to_file("res://Scenes/Menus/LoginScene.tscn")

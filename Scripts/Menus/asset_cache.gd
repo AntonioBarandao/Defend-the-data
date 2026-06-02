@@ -3,7 +3,7 @@ extends Node
 signal resource_loaded(path: String, resource: Resource)
 signal cyber_guardian_idle_ready(sprite_frames: SpriteFrames)
 
-const CYBER_GUARDIAN_IDLE_ATLAS_PATH := "res://assets/Cyber-Guardian_Idle1_atlas_30fps.png"
+const CYBER_GUARDIAN_IDLE_ATLAS_PATH := "res://Assets/Towers/Cyber-Guardian_Idle1_atlas_30fps.png"
 const CYBER_GUARDIAN_IDLE_ANIMATION := &"idle"
 const CYBER_GUARDIAN_IDLE_FPS := 30.0
 const CYBER_GUARDIAN_IDLE_FRAME_COUNT := 151
