@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_ao6wq"]
 [ext_resource type="Texture2D" uid="uid://b52grujxy1rr2" path="res://assets/Maps/CPU_Arena.jpg" id="2_nf5wp"]
-[ext_resource type="Texture2D" uid="uid://c6ifvwt0mpo2g" path="res://assets/Towers/Cyber-Guardian_Idle1_atlas_30fps.png" id="3_d1qr5"]
 [ext_resource type="Texture2D" uid="uid://cv5q51h4aevav" path="res://assets/Enemies/BasicVirus.png" id="4_oeqvu"]
 [ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
+[ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
+[ext_resource type="SpriteFrames" uid="uid://cu2foxvhwm5nx" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.tres" id="7_cgfrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
