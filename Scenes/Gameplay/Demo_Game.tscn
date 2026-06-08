@@ -1095,30 +1095,31 @@ texture = ExtResource("2_ao6wq")
 position = Vector2(502.29962, 275.29962)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
+position = Vector2(23, -47)
 shape = SubResource("RectangleShape2D_tower_placement")
 
 [node name="PlacementAreaVisual" type="ColorRect" parent="TowerPlacementArea" unique_id=332269797]
-offset_left = -46.299614
-offset_top = -46.299614
-offset_right = 46.299614
-offset_bottom = 46.299614
-mouse_filter = 2
-color = Color(0.1, 0.9, 0.25, 0.22)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=48627030]
-position = Vector2(846.7004, 20.700378)
-shape = SubResource("RectangleShape2D_tower_placement")
-
-[node name="PlacementAreaVisual2" type="ColorRect" parent="TowerPlacementArea" unique_id=11276318]
-offset_left = 800.4008
-offset_top = -25.599243
-offset_right = 893.00006
-offset_bottom = 66.999985
+offset_left = -23.299614
+offset_top = -93.299614
+offset_right = 69.299614
+offset_bottom = -0.70038605
 mouse_filter = 2
 color = Color(0.1, 0.9, 0.25, 0.22)
 
 [node name="TowerPlacementArea2" type="Area2D" parent="." unique_id=1425842512]
-position = Vector2(1349, 296)
+position = Vector2(1453, 216)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerPlacementArea2" unique_id=48627030]
+shape = SubResource("RectangleShape2D_tower_placement")
+
+[node name="PlacementAreaVisual2" type="ColorRect" parent="TowerPlacementArea2" unique_id=11276318]
+offset_left = -46.29956
+offset_top = -46.29962
+offset_right = 46.299683
+offset_bottom = 46.299606
+mouse_filter = 2
+color = Color(0.1, 0.9, 0.25, 0.22)
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=394633943]
 visible = false

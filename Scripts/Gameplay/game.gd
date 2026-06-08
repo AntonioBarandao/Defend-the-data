@@ -13,11 +13,15 @@ const MASCOT_TEXTURE_PATH := "res://assets/CybersecurityMascot.png"
 const MASCOT_PORTRAIT_SIZE := Vector2(132, 132)
 const HUD_MARGIN := 24.0
 const RESET_BUTTON_SIZE := Vector2(132, 48)
+const WAVE_BUTTON_SIZE := Vector2(188, 52)
 const MENU_BUTTON_SIZE := Vector2(56, 48)
 const MENU_PANEL_SIZE := Vector2(220, 190)
 const MENU_SLIDE_TIME := 0.2
 const VIRUS_SPEED := 70.0
 const VIRUS_GRAB_SIZE := Vector2(128, 128)
+const WAVE_BASE_VIRUS_COUNT := 5
+const WAVE_VIRUS_COUNT_STEP := 2
+const WAVE_SPAWN_INTERVAL := 0.6
 const TOWER_RANGE_LEVEL := 5
 const TOWER_RANGE_PIXELS_PER_LEVEL := 100.0
 const TOWER_SHOT_COOLDOWN := 0.25
@@ -55,6 +59,7 @@ var _upgrade_panel_tween: Tween
 var _upgrade_panel_visible := false
 var _upgrade_panel_side := &""
 var _reset_button: Button
+var _wave_button: Button
 var _menu_button: Button
 var _menu_panel: PanelContainer
 var _menu_tween: Tween
@@ -67,6 +72,10 @@ var _drag_start_position := Vector2.ZERO
 var _drag_is_valid := false
 var _tower_shot_cooldown_remaining := 0.0
 var _active_viruses: Array[PathFollow2D] = []
+var _current_wave := 0
+var _wave_in_progress := false
+var _wave_spawns_remaining := 0
+var _wave_spawn_cooldown_remaining := 0.0
 
 func _ready() -> void:
 	Engine.max_fps = TARGET_FPS
@@ -154,6 +163,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
+	_update_wave_spawner(delta)
 	_update_active_viruses(delta)
 	_update_tower_attack(delta)
 
@@ -206,6 +216,15 @@ func _create_hud() -> void:
 	_reset_button.pressed.connect(Callable(self, "_reset_tower"))
 	overlay.add_child(_reset_button)
 
+	_wave_button = Button.new()
+	_wave_button.name = "StartWaveButton"
+	_wave_button.text = "Start Wave 1"
+	_wave_button.focus_mode = Control.FOCUS_NONE
+	_wave_button.custom_minimum_size = WAVE_BUTTON_SIZE
+	_wave_button.size = WAVE_BUTTON_SIZE
+	_wave_button.pressed.connect(Callable(self, "_start_next_wave"))
+	overlay.add_child(_wave_button)
+
 	_menu_button = Button.new()
 	_menu_button.name = "MainMenuButton"
 	_menu_button.focus_mode = Control.FOCUS_NONE
@@ -229,6 +248,7 @@ func _create_hud() -> void:
 	_virus_count_label.add_theme_constant_override("shadow_offset_y", 2)
 	overlay.add_child(_virus_count_label)
 	_update_virus_count_label()
+	_update_wave_button()
 
 	_layout_hud_controls()
 
@@ -296,11 +316,12 @@ func _add_menu_option(parent: VBoxContainer, text: String, callback: Callable) -
 
 
 func _layout_hud_controls() -> void:
-	if _reset_button == null or _menu_button == null or _menu_panel == null:
+	if _reset_button == null or _wave_button == null or _menu_button == null or _menu_panel == null:
 		return
 
 	var viewport_size := get_viewport_rect().size
 	_reset_button.position = Vector2(viewport_size.x - RESET_BUTTON_SIZE.x - HUD_MARGIN, HUD_MARGIN)
+	_wave_button.position = Vector2(_reset_button.position.x - WAVE_BUTTON_SIZE.x - 16.0, HUD_MARGIN)
 	_menu_button.position = Vector2((viewport_size.x - MENU_BUTTON_SIZE.x) * 0.5, HUD_MARGIN)
 	_menu_panel.position = _get_menu_panel_position(not _menu_visible)
 	if _virus_count_label != null:
@@ -441,6 +462,46 @@ func _reset_tower() -> void:
 	if _platform_highlight != null:
 		_platform_highlight.hide()
 	_hide_upgrade_panel()
+
+
+func _start_next_wave() -> void:
+	if _wave_in_progress:
+		return
+
+	_current_wave += 1
+	_wave_in_progress = true
+	_wave_spawns_remaining = WAVE_BASE_VIRUS_COUNT + ((_current_wave - 1) * WAVE_VIRUS_COUNT_STEP)
+	_wave_spawn_cooldown_remaining = 0.0
+	_update_wave_button()
+
+
+func _update_wave_spawner(delta: float) -> void:
+	if not _wave_in_progress:
+		return
+
+	if _wave_spawns_remaining > 0:
+		_wave_spawn_cooldown_remaining -= delta
+		if _wave_spawn_cooldown_remaining <= 0.0:
+			_spawn_virus()
+			_wave_spawns_remaining -= 1
+			_wave_spawn_cooldown_remaining = WAVE_SPAWN_INTERVAL
+
+	if _wave_spawns_remaining <= 0 and _active_viruses.is_empty():
+		_wave_in_progress = false
+		_update_wave_button()
+
+
+func _update_wave_button() -> void:
+	if _wave_button == null:
+		return
+
+	if _wave_in_progress:
+		_wave_button.disabled = true
+		_wave_button.text = "Wave %d Running" % _current_wave
+		return
+
+	_wave_button.disabled = false
+	_wave_button.text = "Start Wave %d" % (_current_wave + 1)
 
 
 func _toggle_game_menu() -> void:
