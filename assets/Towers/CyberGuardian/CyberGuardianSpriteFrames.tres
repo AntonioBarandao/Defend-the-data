@@ -1,8 +1,8 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cu2foxvhwm5nx"]
 
-[ext_resource type="Texture2D" uid="uid://c6ifvwt0mpo2g" path="res://assets/Towers/CyberGuardian/Idle/Cyber-Guardian_Idle1_atlas_30fps.png" id="1_idle"]
-[ext_resource type="Texture2D" uid="uid://c8tdj31rbtouk" path="res://assets/Towers/CyberGuardian/SummonAnim/CyberGuardian_Summon1_atlas_30fps.png" id="2_summon"]
-[ext_resource type="Texture2D" uid="uid://xtcl57y8s8xg" path="res://assets/Towers/CyberGuardian/ShootAnim/CyberGuardian_Attack1_atlas_30fps.png" id="3_shoot"]
+[ext_resource type="Texture2D" uid="uid://c6ifvwt0mpo2g" path="res://Assets/Towers/CyberGuardian/Idle/Cyber-Guardian_Idle1_atlas_30fps.png" id="1_idle"]
+[ext_resource type="Texture2D" uid="uid://c8tdj31rbtouk" path="res://Assets/Towers/CyberGuardian/SummonAnim/CyberGuardian_Summon1_atlas_30fps.png" id="2_summon"]
+[ext_resource type="Texture2D" uid="uid://xtcl57y8s8xg" path="res://Assets/Towers/CyberGuardian/ShootAnim/CyberGuardian_Attack1_atlas_30fps.png" id="3_shoot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shoot_000"]
 atlas = ExtResource("3_shoot")

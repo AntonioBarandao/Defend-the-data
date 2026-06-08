@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dbo5mv3nae0as"]
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_ao6wq"]
-[ext_resource type="Texture2D" uid="uid://b52grujxy1rr2" path="res://assets/Maps/CPU_Arena.jpg" id="2_nf5wp"]
-[ext_resource type="Texture2D" uid="uid://cv5q51h4aevav" path="res://assets/Enemies/BasicVirus.png" id="4_oeqvu"]
-[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="2_ao6wq"]
+[ext_resource type="Texture2D" uid="uid://cv5q51h4aevav" path="res://Assets/Enemies/BasicVirus.png" id="4_oeqvu"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
 [ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
-[ext_resource type="SpriteFrames" uid="uid://cu2foxvhwm5nx" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.tres" id="7_cgfrm"]
+[ext_resource type="SpriteFrames" uid="uid://cu2foxvhwm5nx" path="res://Assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.tres" id="7_cgfrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
@@ -23,9 +23,9 @@ script = ExtResource("1_ao6wq")
 virus_spawn_path = NodePath("VirusElements/SpawnVirus")
 
 [node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
-position = Vector2(1280.2441, 540.00006)
-scale = Vector2(0.7141496, 0.536)
-texture = ExtResource("2_nf5wp")
+position = Vector2(1282.6113, 541)
+scale = Vector2(1.5320117, 1.1498407)
+texture = ExtResource("2_ao6wq")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
 position = Vector2(502.29962, 275.29962)
@@ -90,8 +90,6 @@ scale = Vector2(0.22, 0.22)
 sprite_frames = ExtResource("7_cgfrm")
 animation = &"idle"
 autoplay = "idle"
-frame = 0
-frame_progress = 0.0
 script = ExtResource("6_cgspn")
 
 [node name="BasicVirus" type="Sprite2D" parent="Sprites" unique_id=1150048990]
