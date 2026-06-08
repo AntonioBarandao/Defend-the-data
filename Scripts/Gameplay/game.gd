@@ -8,26 +8,44 @@ const UPGRADE_PANEL_WIDTH_RATIO := 0.28
 const UPGRADE_PANEL_MIN_WIDTH := 360.0
 const UPGRADE_PANEL_MAX_WIDTH := 480.0
 const UPGRADE_PANEL_SLIDE_TIME := 0.22
-const TOWER_NAME := "Cybersec Guardian"
-const MASCOT_TEXTURE_PATH := "res://assets/CybersecurityMascot.png"
+const TOWER_NAME := "Cyber Guardian"
+const MASCOT_TEXTURE_PATH := "res://assets/Towers/CyberGuardian/CybersecurityMascot.png"
 const MASCOT_PORTRAIT_SIZE := Vector2(132, 132)
+const GUARDIAN_MIN_SCALE := 0.12
+const GUARDIAN_MAX_SCALE := 0.36
+const GUARDIAN_SCALE_STEP := 0.01
 const HUD_MARGIN := 24.0
 const RESET_BUTTON_SIZE := Vector2(132, 48)
+const PATH_DOT_SPACING := 42.0
+const PATH_DOT_RADIUS := 7.0
+const PATH_DOT_SEGMENTS := 16
+const PATH_DOT_COLOR := Color(0.2, 0.75, 1.0, 0.95)
 const WAVE_BUTTON_SIZE := Vector2(188, 52)
 const MENU_BUTTON_SIZE := Vector2(56, 48)
 const MENU_PANEL_SIZE := Vector2(220, 190)
 const MENU_SLIDE_TIME := 0.2
-const VIRUS_SPEED := 70.0
+const VIRUS_BATCH_BUTTON_SIZE := Vector2(96, 36)
+const VIRUS_BATCH_BUTTON_GAP := 10.0
+const VIRUS_BATCH_TEN_COUNT := 10
+const VIRUS_BATCH_HUNDRED_COUNT := 100
+const VIRUS_BATCH_SPACING := 10.0
+const VIRUS_SPEED := 200.0
 const VIRUS_GRAB_SIZE := Vector2(128, 128)
+const PATH_DOT_SPACING := 42.0
+const PATH_DOT_RADIUS := 7.0
+const PATH_DOT_SEGMENTS := 16
+const PATH_DOT_COLOR := Color(0.2, 0.75, 1.0, 0.95)
 const WAVE_BASE_VIRUS_COUNT := 5
 const WAVE_VIRUS_COUNT_STEP := 2
 const WAVE_SPAWN_INTERVAL := 0.6
 const TOWER_RANGE_LEVEL := 5
-const TOWER_RANGE_PIXELS_PER_LEVEL := 100.0
-const TOWER_SHOT_COOLDOWN := 0.25
-const LASER_DURATION := 0.28
-const LASER_WIDTH := 14.0
+const TOWER_RANGE_PIXELS_PER_LEVEL := 50.0
+const TOWER_SHOT_COOLDOWN := 0.5
+const LASER_DURATION := 0.24
+const LASER_WIDTH := 10.0
 const GUARDIAN_FORWARD_ROTATION := PI * 0.5
+const GUARDIAN_SUMMON_ANIMATION := &"SummonAnim"
+const GUARDIAN_SHOOT_ANIMATION := &"ShootAnim"
 const AVAILABLE_UPGRADES := [
 	"Firewall Burst",
 	"Signal Range",
@@ -42,6 +60,7 @@ const PLATFORM_INVALID_COLOR := Color(1.0, 0.1, 0.08, 0.45)
 @export var virus_template_path: NodePath = ^"Sprites/BasicVirus"
 @export var virus_path_path: NodePath = ^"VirusElements/Path2D"
 @export var virus_spawn_path: NodePath = ^"VirusElements/Marker2D"
+@export_range(GUARDIAN_MIN_SCALE, GUARDIAN_MAX_SCALE, GUARDIAN_SCALE_STEP) var guardian_default_scale := 0.22
 
 var _fps_label: Label
 var _fps_update_elapsed := 0.0
@@ -54,11 +73,17 @@ var _virus_template: Sprite2D
 var _virus_path: Path2D
 var _virus_spawn: Node2D
 var _virus_count_label: Label
+var _path_dot_container: Node2D
 var _upgrade_panel: PanelContainer
 var _upgrade_panel_tween: Tween
 var _upgrade_panel_visible := false
 var _upgrade_panel_side := &""
+var _guardian_scale := 0.22
+var _guardian_scale_slider: HSlider
+var _guardian_scale_value_label: Label
 var _reset_button: Button
+var _add_ten_button: Button
+var _add_hundred_button: Button
 var _wave_button: Button
 var _menu_button: Button
 var _menu_panel: PanelContainer
@@ -93,6 +118,7 @@ func _ready() -> void:
 	if _guardian == null:
 		push_warning("Cybersec Guardian drag target was not found.")
 	else:
+		_set_guardian_scale(guardian_default_scale)
 		_guardian_home_position = _guardian.global_position
 	if _placement_areas.is_empty():
 		push_warning("No tower placement areas were found.")
@@ -102,6 +128,7 @@ func _ready() -> void:
 		push_warning("Virus Path2D was not found.")
 	if _virus_spawn == null:
 		push_warning("Virus spawn marker was not found.")
+	_create_path_dots()
 
 	_upgrade_panel = _create_upgrade_panel()
 	_create_hud()
@@ -216,6 +243,24 @@ func _create_hud() -> void:
 	_reset_button.pressed.connect(Callable(self, "_reset_tower"))
 	overlay.add_child(_reset_button)
 
+	_add_ten_button = Button.new()
+	_add_ten_button.name = "AddTenVirusesButton"
+	_add_ten_button.text = "Add 10"
+	_add_ten_button.focus_mode = Control.FOCUS_NONE
+	_add_ten_button.custom_minimum_size = VIRUS_BATCH_BUTTON_SIZE
+	_add_ten_button.size = VIRUS_BATCH_BUTTON_SIZE
+	_add_ten_button.pressed.connect(Callable(self, "_spawn_virus_batch").bind(VIRUS_BATCH_TEN_COUNT))
+	overlay.add_child(_add_ten_button)
+
+	_add_hundred_button = Button.new()
+	_add_hundred_button.name = "AddHundredVirusesButton"
+	_add_hundred_button.text = "Add 100"
+	_add_hundred_button.focus_mode = Control.FOCUS_NONE
+	_add_hundred_button.custom_minimum_size = VIRUS_BATCH_BUTTON_SIZE
+	_add_hundred_button.size = VIRUS_BATCH_BUTTON_SIZE
+	_add_hundred_button.pressed.connect(Callable(self, "_spawn_virus_batch").bind(VIRUS_BATCH_HUNDRED_COUNT))
+	overlay.add_child(_add_hundred_button)
+
 	_wave_button = Button.new()
 	_wave_button.name = "StartWaveButton"
 	_wave_button.text = "Start Wave 1"
@@ -321,6 +366,16 @@ func _layout_hud_controls() -> void:
 
 	var viewport_size := get_viewport_rect().size
 	_reset_button.position = Vector2(viewport_size.x - RESET_BUTTON_SIZE.x - HUD_MARGIN, HUD_MARGIN)
+	if _add_ten_button != null and _add_hundred_button != null and _virus_template != null:
+		var virus_rect := _get_sprite_rect(_virus_template, VIRUS_GRAB_SIZE)
+		var button_anchor := get_canvas_transform() * Vector2(virus_rect.get_center().x, virus_rect.end.y + 10.0)
+		var button_group_width := VIRUS_BATCH_BUTTON_SIZE.x * 2.0 + VIRUS_BATCH_BUTTON_GAP
+		var button_group_left := button_anchor.x - button_group_width * 0.5
+		_add_ten_button.position = Vector2(button_group_left, button_anchor.y)
+		_add_hundred_button.position = Vector2(
+			button_group_left + VIRUS_BATCH_BUTTON_SIZE.x + VIRUS_BATCH_BUTTON_GAP,
+			button_anchor.y
+		)
 	_wave_button.position = Vector2(_reset_button.position.x - WAVE_BUTTON_SIZE.x - 16.0, HUD_MARGIN)
 	_menu_button.position = Vector2((viewport_size.x - MENU_BUTTON_SIZE.x) * 0.5, HUD_MARGIN)
 	_menu_panel.position = _get_menu_panel_position(not _menu_visible)
@@ -387,6 +442,35 @@ func _create_upgrade_panel() -> PanelContainer:
 	if portrait.texture == null:
 		push_warning("Cybersecurity mascot popup image was not found: %s" % MASCOT_TEXTURE_PATH)
 
+	var scale_row := HBoxContainer.new()
+	scale_row.add_theme_constant_override("separation", 10)
+	content.add_child(scale_row)
+
+	var scale_label := Label.new()
+	scale_label.text = "Size"
+	scale_label.custom_minimum_size = Vector2(52, 0)
+	scale_label.add_theme_font_size_override("font_size", 18)
+	scale_label.add_theme_color_override("font_color", Color(0.72, 0.84, 0.92, 1.0))
+	scale_row.add_child(scale_label)
+
+	_guardian_scale_slider = HSlider.new()
+	_guardian_scale_slider.min_value = GUARDIAN_MIN_SCALE
+	_guardian_scale_slider.max_value = GUARDIAN_MAX_SCALE
+	_guardian_scale_slider.step = GUARDIAN_SCALE_STEP
+	_guardian_scale_slider.value = _guardian_scale
+	_guardian_scale_slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_guardian_scale_slider.focus_mode = Control.FOCUS_NONE
+	_guardian_scale_slider.value_changed.connect(Callable(self, "_on_guardian_scale_changed"))
+	scale_row.add_child(_guardian_scale_slider)
+
+	_guardian_scale_value_label = Label.new()
+	_guardian_scale_value_label.custom_minimum_size = Vector2(62, 0)
+	_guardian_scale_value_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_guardian_scale_value_label.add_theme_font_size_override("font_size", 18)
+	_guardian_scale_value_label.add_theme_color_override("font_color", Color.WHITE)
+	scale_row.add_child(_guardian_scale_value_label)
+	_sync_guardian_scale_controls()
+
 	var section_label := Label.new()
 	section_label.text = "Available Upgrades"
 	section_label.add_theme_font_size_override("font_size", 18)
@@ -425,6 +509,7 @@ func _finish_guardian_drag() -> void:
 	if _drag_is_valid:
 		_guardian.global_position = _get_placement_area_center()
 		_tower_is_placed = true
+		_play_guardian_animation(GUARDIAN_SUMMON_ANIMATION)
 	else:
 		_guardian.global_position = _drag_start_position
 
@@ -462,6 +547,28 @@ func _reset_tower() -> void:
 	if _platform_highlight != null:
 		_platform_highlight.hide()
 	_hide_upgrade_panel()
+
+
+func _on_guardian_scale_changed(value: float) -> void:
+	_set_guardian_scale(value)
+
+
+func _set_guardian_scale(value: float) -> void:
+	_guardian_scale = snappedf(clampf(value, GUARDIAN_MIN_SCALE, GUARDIAN_MAX_SCALE), GUARDIAN_SCALE_STEP)
+	if _guardian != null:
+		_guardian.scale = Vector2.ONE * _guardian_scale
+		if _dragging_guardian:
+			_update_platform_highlight()
+
+	_sync_guardian_scale_controls()
+
+
+func _sync_guardian_scale_controls() -> void:
+	if _guardian_scale_slider != null:
+		_guardian_scale_slider.set_value_no_signal(_guardian_scale)
+
+	if _guardian_scale_value_label != null:
+		_guardian_scale_value_label.text = "%.2fx" % _guardian_scale
 
 
 func _start_next_wave() -> void:
@@ -565,15 +672,18 @@ func _try_spawn_virus_from_press(pointer_position: Vector2) -> bool:
 	return true
 
 
-func _spawn_virus() -> void:
+func _spawn_virus(start_progress: float = -1.0, update_count: bool = true) -> void:
 	if _virus_path == null or _virus_path.curve == null:
 		push_warning("Cannot spawn virus because VirusElements/Path2D is missing a curve.")
+		return
+	if _virus_template == null:
+		push_warning("Cannot spawn virus because BasicVirus was not found.")
 		return
 
 	var follow := PathFollow2D.new()
 	follow.name = "SpawnedVirusFollow"
 	follow.loop = false
-	follow.progress = _get_virus_spawn_progress()
+	follow.progress = _get_virus_spawn_progress() if start_progress < 0.0 else start_progress
 	_virus_path.add_child(follow)
 
 	var virus := _virus_template.duplicate() as Sprite2D
@@ -583,6 +693,26 @@ func _spawn_virus() -> void:
 	follow.add_child(virus)
 
 	_active_viruses.append(follow)
+	if update_count:
+		_update_virus_count_label()
+
+
+func _spawn_virus_batch(count: int) -> void:
+	if count <= 0:
+		return
+	if _virus_path == null or _virus_path.curve == null:
+		push_warning("Cannot spawn virus batch because VirusElements/Path2D is missing a curve.")
+		return
+
+	var spawn_progress := _get_virus_spawn_progress()
+	var path_length := _virus_path.curve.get_baked_length()
+	var available_path_distance := maxf(0.0, path_length - spawn_progress)
+	var rightmost_offset := minf(float(count - 1) * VIRUS_BATCH_SPACING, available_path_distance)
+	var rightmost_progress := spawn_progress + rightmost_offset
+	for index in range(count):
+		var progress := maxf(spawn_progress, rightmost_progress - float(index) * VIRUS_BATCH_SPACING)
+		_spawn_virus(progress, false)
+
 	_update_virus_count_label()
 
 
@@ -656,8 +786,26 @@ func _shoot_virus(target: PathFollow2D) -> void:
 	if direction.length_squared() > 0.0:
 		_guardian.rotation = direction.angle() - GUARDIAN_FORWARD_ROTATION
 
+	_play_guardian_animation(GUARDIAN_SHOOT_ANIMATION)
 	_spawn_laser(_guardian.global_position, target_position)
 	_despawn_virus(target)
+
+
+func _play_guardian_animation(animation_name: StringName) -> void:
+	if _guardian == null:
+		return
+
+	if _guardian.has_method("play_animation"):
+		_guardian.call("play_animation", animation_name)
+		return
+
+	if _guardian.sprite_frames == null or not _guardian.sprite_frames.has_animation(animation_name):
+		return
+
+	_guardian.animation = animation_name
+	_guardian.frame = 0
+	_guardian.frame_progress = 0.0
+	_guardian.play()
 
 
 func _spawn_laser(start_position: Vector2, end_position: Vector2) -> void:
@@ -717,6 +865,51 @@ func _get_virus_spawn_progress() -> float:
 
 	var spawn_position := _virus_path.to_local(_virus_spawn.global_position)
 	return _virus_path.curve.get_closest_offset(spawn_position)
+
+
+func _create_path_dots() -> void:
+	if _virus_path == null or _virus_path.curve == null:
+		return
+
+	_path_dot_container = _virus_path.get_node_or_null(^"RuntimePathDots") as Node2D
+	if _path_dot_container == null:
+		_path_dot_container = Node2D.new()
+		_path_dot_container.name = "RuntimePathDots"
+		_virus_path.add_child(_path_dot_container)
+
+	for child in _path_dot_container.get_children():
+		child.queue_free()
+
+	var path_length := _virus_path.curve.get_baked_length()
+	if path_length <= 0.0:
+		return
+
+	var circle_polygon := _build_circle_polygon(PATH_DOT_RADIUS, PATH_DOT_SEGMENTS)
+	var distance := 0.0
+	while distance <= path_length:
+		_add_path_dot(_virus_path.curve.sample_baked(distance), circle_polygon)
+		distance += PATH_DOT_SPACING
+
+	_add_path_dot(_virus_path.curve.sample_baked(path_length), circle_polygon)
+
+
+func _add_path_dot(local_position: Vector2, circle_polygon: PackedVector2Array) -> void:
+	var dot := Polygon2D.new()
+	dot.name = "PathDot"
+	dot.position = local_position
+	dot.polygon = circle_polygon
+	dot.color = PATH_DOT_COLOR
+	dot.z_index = 40
+	_path_dot_container.add_child(dot)
+
+
+func _build_circle_polygon(radius: float, segments: int) -> PackedVector2Array:
+	var points := PackedVector2Array()
+	for index in range(segments):
+		var angle := TAU * float(index) / float(segments)
+		points.append(Vector2(cos(angle), sin(angle)) * radius)
+
+	return points
 
 
 func _update_platform_highlight() -> void:

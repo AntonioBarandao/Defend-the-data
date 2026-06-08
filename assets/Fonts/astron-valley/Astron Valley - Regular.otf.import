@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d1s51afae0wh6"
-path="res://.godot/imported/Astron Valley - Regular.otf-b36247152e2edd7d57d08e3e7b2ca58d.fontdata"
+path="res://.godot/imported/Astron Valley - Regular.otf-dcf9c3ab4398dcbc824bc207dc82508d.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/astron-valley/Astron Valley - Regular.otf"
-dest_files=["res://.godot/imported/Astron Valley - Regular.otf-b36247152e2edd7d57d08e3e7b2ca58d.fontdata"]
+source_file="res://assets/Fonts/astron-valley/Astron Valley - Regular.otf"
+dest_files=["res://.godot/imported/Astron Valley - Regular.otf-dcf9c3ab4398dcbc824bc207dc82508d.fontdata"]
 
 [params]
 
