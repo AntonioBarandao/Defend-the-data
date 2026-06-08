@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cc0f3h2ru1hiv"
-path="res://.godot/imported/SPACE ARMOR.otf-2e94f637ab211bca49835472e447960c.fontdata"
+path="res://.godot/imported/SPACE ARMOR.otf-e5d57ae13d8c69657efe5cf5e022c10f.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/space-armor/SPACE ARMOR.otf"
-dest_files=["res://.godot/imported/SPACE ARMOR.otf-2e94f637ab211bca49835472e447960c.fontdata"]
+source_file="res://Assets/Fonts/space-armor/SPACE ARMOR.otf"
+dest_files=["res://.godot/imported/SPACE ARMOR.otf-e5d57ae13d8c69657efe5cf5e022c10f.fontdata"]
 
 [params]
 
