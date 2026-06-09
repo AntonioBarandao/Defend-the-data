@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assets/Towers/Laser-Turret/LaserTurretSpriteFrames.res" id="1_frames"]
+[ext_resource type="Script" path="res://Scripts/Towers/laser_turret.gd" id="2_script"]
+
+[node name="Laser Turret" type="AnimatedSprite2D" groups=["Defender"]]
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("1_frames")
+animation = &"level_1"
+autoplay = "level_1"
+script = ExtResource("2_script")

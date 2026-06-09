@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dbo5mv3nae0as"]
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_ao6wq"]
-[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="2_ao6wq"]
-[ext_resource type="Texture2D" uid="uid://cv5q51h4aevav" path="res://Assets/Enemies/BasicVirus.png" id="4_oeqvu"]
-[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://assets/Backgrounds/NewMap.png" id="2_ao6wq"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
 [ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
-[ext_resource type="SpriteFrames" uid="uid://cu2foxvhwm5nx" path="res://Assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.tres" id="7_cgfrm"]
+[ext_resource type="SpriteFrames" uid="uid://dus51dsprdrcj" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="7_cgfrm"]
+[ext_resource type="PackedScene" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
+[ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
+[ext_resource type="Script" uid="uid://c6lme1p6liucy" path="res://Scripts/Enemies/red_virus.gd" id="10_red"]
+[ext_resource type="PackedScene" uid="uid://eg7rvsm4gmsf" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
@@ -18,9 +24,17 @@ point_count = 42
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbew"]
 
-[node name="Game" type="Node2D" unique_id=574872578]
+[node name="Game2" type="Node2D" unique_id=574872578]
 script = ExtResource("1_ao6wq")
 virus_spawn_path = NodePath("VirusElements/SpawnVirus")
+
+[node name="CyberQuestionHud" parent="." unique_id=1420074799 instance=ExtResource("11_qhud")]
+
+[node name="PerformanceHud" parent="." unique_id=21946775 instance=ExtResource("12_perf")]
+
+[node name="GameControlsHud" parent="." unique_id=709865917 instance=ExtResource("13_controls")]
+
+[node name="TowerUpgradeHud" parent="." unique_id=1569560659 instance=ExtResource("14_upgrades")]
 
 [node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
 position = Vector2(1282.6113, 541)
@@ -86,16 +100,22 @@ position = Vector2(0, -124.00006)
 
 [node name="Cybersec Guardian" type="AnimatedSprite2D" parent="Sprites" unique_id=1828353461]
 position = Vector2(125, 1099)
-scale = Vector2(0.22, 0.22)
+scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("7_cgfrm")
 animation = &"idle"
 autoplay = "idle"
 script = ExtResource("6_cgspn")
 
-[node name="BasicVirus" type="Sprite2D" parent="Sprites" unique_id=1150048990]
+[node name="Laser Turret" parent="Sprites" unique_id=646211365 instance=ExtResource("8_laser")]
+position = Vector2(360, 1099)
+
+[node name="BasicVirus" type="AnimatedSprite2D" parent="Sprites" unique_id=1150048990]
 position = Vector2(1478, 984.00006)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_oeqvu")
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("9_vframes")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("10_red")
 
 [node name="Label" type="Label" parent="." unique_id=384477170]
 offset_left = 141.0
@@ -137,3 +157,6 @@ position = Vector2(78, 293)
 scale = Vector2(3.9718153, 3.9718153)
 shape = SubResource("RectangleShape2D_xpbew")
 debug_color = Color(0.5323416, 0.5497722, 0.4333505, 0.41960785)
+
+[editable path="CyberQuestionHud"]
+[editable path="PerformanceHud"]

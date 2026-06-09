@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dgfica0quiap3"
-path="res://.godot/imported/RaceHugoDemo-Regular.otf-798cf107692e15a064180370ac368b3e.fontdata"
+path="res://.godot/imported/RaceHugoDemo-Regular.otf-1604a465378332b4a1838bf2e537b219.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/race-hugo/RaceHugoDemo-Regular.otf"
-dest_files=["res://.godot/imported/RaceHugoDemo-Regular.otf-798cf107692e15a064180370ac368b3e.fontdata"]
+source_file="res://assets/Fonts/race-hugo/RaceHugoDemo-Regular.otf"
+dest_files=["res://.godot/imported/RaceHugoDemo-Regular.otf-1604a465378332b4a1838bf2e537b219.fontdata"]
 
 [params]
 

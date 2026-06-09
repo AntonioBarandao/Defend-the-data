@@ -4,7 +4,7 @@ signal resource_loaded(path: String, resource: Resource)
 signal cyber_guardian_idle_ready(sprite_frames: SpriteFrames)
 signal cyber_guardian_animations_ready(sprite_frames: SpriteFrames)
 
-const CYBER_GUARDIAN_SPRITE_FRAMES_PATH := "res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.tres"
+const CYBER_GUARDIAN_SPRITE_FRAMES_PATH := "res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res"
 const CYBER_GUARDIAN_IDLE_ANIMATION := &"idle"
 const CYBER_GUARDIAN_SUMMON_ANIMATION := &"SummonAnim"
 const CYBER_GUARDIAN_SHOOT_ANIMATION := &"ShootAnim"
