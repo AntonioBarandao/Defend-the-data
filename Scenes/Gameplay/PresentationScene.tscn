@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://b04ik1rpmev1u"]
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_on2he"]
-[ext_resource type="Texture2D" uid="uid://b52grujxy1rr2" path="res://assets/Maps/CPU_Arena.jpg" id="2_yolpk"]
-[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="6_agy0f"]
 [ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
-[ext_resource type="SpriteFrames" uid="uid://dus51dsprdrcj" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="7_cgfrm"]
+[ext_resource type="SpriteFrames" uid="uid://dus51dsprdrcj" path="res://Assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="7_cgfrm"]
 [ext_resource type="PackedScene" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
-[ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
+[ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://Assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
 [ext_resource type="Script" uid="uid://c6lme1p6liucy" path="res://Scripts/Enemies/red_virus.gd" id="10_red"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
+[ext_resource type="PackedScene" uid="uid://eg7rvsm4gmsf" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
 
 [sub_resource type="Curve2D" id="Curve2D_63v24"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 28, 4, 0, 0, 0, 0, 108, 12, 0, 0, 0, 0, 152, 34, 0, 0, 0, 0, 489, 35, 0, 0, 0, 0, 510, -18, 0, 0, 0, 0, 526, -64, 0, 0, 0, 0, 633, -79, 0, 0, 0, 0, 688, -131, 0, 0, 0, 0, 891, -131, 0, 0, 0, 0, 914, -100, 0, 0, 0, 0, 926, -6, 0, 0, 0, 0, 1085, 3, 0, 0, 0, 0, 1109, 145, 0, 0, 0, 0, 1155, 197, 0, 0, 0, 0, 1506, 204, 0, 0, 0, 0, 1545, 452, 0, 0, 0, 0, 1444, 483, 0, 0, 0, 0, 1444, 610, 0, 0, 0, 0, 1075, 613, 0, 0, 0, 0, 1043, 580, 0, 0, 0, 0, 1036, 414, 0, 0, 0, 0, 619, 414, 0, 0, 0, 0, 593, 295, 0, 0, 0, 0, 411, 291, 0, 0, 0, 0, 374, 458, 0, 0, 0, 0, 345, 481, 0, 0, 0, 0, 164, 481, 0, 0, 0, 0, 130, 521, 0, 0, 0, 0, 112, 670, 0, 0, 0, 0, 12, 663)
+"points": PackedVector2Array(0, 0, 0, 0, 38.509842, -24, 0, 0, 0, 0, 214.9374, -23, 0, 0, 0, 0, 240.5331, 14, 0, 0, 0, 0, 251.50267, 78, 0, 0, 0, 0, 341.08765, 83, 0, 0, 0, 0, 358.45618, -19, 0, 0, 0, 0, 403.24866, -38, 0, 0, 0, 0, 553.1664, -40, 0, 0, 0, 0, 579.6762, -101, 0, 0, 0, 0, 608.92847, -138, 0, 0, 0, 0, 790.84076, -136, 0, 0, 0, 0, 829.2343, -97, 0, 0, 0, 0, 831.97675, -30, 0, 0, 0, 0, 869.4562, -2, 0, 0, 0, 0, 1112.6154, -9, 0, 0, 0, 0, 1129.9839, -71, 0, 0, 0, 0, 1168.3774, -113, 0, 0, 0, 0, 1400.567, -111, 0, 0, 0, 0, 1449.9302, -73, 0, 0, 0, 0, 1463.6422, 157, 0, 0, 0, 0, 1269.8462, 163, 0, 0, 0, 0, 1239.6798, 207, 0, 0, 0, 0, 1248.821, 356, 0, 0, 0, 0, 1211.3417, 385, 0, 0, 0, 0, 901.4508, 385, 0, 0, 0, 0, 855.7442, 401, 0, 0, 0, 0, 843.8605, 467, 0, 0, 0, 0, 793.5832, 488, 0, 0, 0, 0, 521.17175, 483, 0, 0, 0, 0, 476.37927, 447, 0, 0, 0, 0, 479.12164, 381, 0, 0, 0, 0, 480.03577, 301, 0, 0, 0, 0, 456.2683, 262, 0, 0, 0, 0, 215.85152, 263, 0, 0, 0, 0, 189.34169, 307, 0, 0, 0, 0, 174.71556, 460, 0, 0, 0, 0, 124.43828, 483, 0, 0, 0, 0, 84.21646, 503, 0, 0, 0, 0, 65.01967, 546, 0, 0, 0, 0, 12, 555)
 }
-point_count = 30
+point_count = 40
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbew"]
 
@@ -32,22 +32,17 @@ virus_spawn_path = NodePath("VirusElements/SpawnVirus")
 
 [node name="PerformanceHud" parent="." unique_id=1039250105 instance=ExtResource("12_perf")]
 
-[node name="GameControlsHud" parent="." instance=ExtResource("13_controls")]
+[node name="GameControlsHud" parent="." unique_id=772842743 instance=ExtResource("13_controls")]
 
-[node name="TowerUpgradeHud" parent="." instance=ExtResource("14_upgrades")]
-
-[editable path="CyberQuestionHud"]
-
-[editable path="PerformanceHud"]
+[node name="TowerUpgradeHud" parent="." unique_id=1985424915 instance=ExtResource("14_upgrades")]
 
 [node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
-visible = false
-position = Vector2(1045, 540)
-scale = Vector2(0.58161604, 0.536)
-texture = ExtResource("2_yolpk")
+position = Vector2(1053.9265, 537.5)
+scale = Vector2(1.2560687, 1.1424017)
+texture = ExtResource("6_agy0f")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
-position = Vector2(548, 268)
+position = Vector2(429, 223)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
 shape = SubResource("RectangleShape2D_tower_placement")
@@ -59,9 +54,10 @@ offset_right = 46.299614
 offset_bottom = 46.299614
 mouse_filter = 2
 color = Color(0.1, 0.9, 0.25, 0.22)
+metadata/_edit_use_anchors_ = true
 
 [node name="TowerPlacementArea2" type="Area2D" parent="." unique_id=1425842512]
-position = Vector2(1461, 303)
+position = Vector2(1574, 403)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerPlacementArea2" unique_id=48627030]
 position = Vector2(0, -4)
@@ -74,6 +70,7 @@ offset_right = 46.299683
 offset_bottom = 38.999985
 mouse_filter = 2
 color = Color(0.1, 0.9, 0.25, 0.22)
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=394633943]
 visible = false
@@ -166,7 +163,7 @@ scale = Vector2(1.0939335, 1)
 curve = SubResource("Curve2D_63v24")
 
 [node name="SpawnVirus" type="Marker2D" parent="VirusElements" unique_id=1524594111]
-position = Vector2(121, 322)
+position = Vector2(70, 289)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=595350600]
 
@@ -175,3 +172,6 @@ visible = false
 scale = Vector2(3.9718153, 3.9718153)
 shape = SubResource("RectangleShape2D_xpbew")
 debug_color = Color(0.5323416, 0.5497722, 0.4333505, 0.41960785)
+
+[editable path="CyberQuestionHud"]
+[editable path="PerformanceHud"]

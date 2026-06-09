@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://dbo5mv3nae0as"]
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_ao6wq"]
-[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://assets/Backgrounds/NewMap.png" id="2_ao6wq"]
-[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="2_ao6wq"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_e48fi"]
 [ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
-[ext_resource type="SpriteFrames" uid="uid://dus51dsprdrcj" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="7_cgfrm"]
+[ext_resource type="SpriteFrames" uid="uid://dus51dsprdrcj" path="res://Assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="7_cgfrm"]
 [ext_resource type="PackedScene" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
-[ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
+[ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://Assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
 [ext_resource type="Script" uid="uid://c6lme1p6liucy" path="res://Scripts/Enemies/red_virus.gd" id="10_red"]
 [ext_resource type="PackedScene" uid="uid://eg7rvsm4gmsf" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
@@ -35,11 +35,6 @@ virus_spawn_path = NodePath("VirusElements/SpawnVirus")
 [node name="GameControlsHud" parent="." unique_id=709865917 instance=ExtResource("13_controls")]
 
 [node name="TowerUpgradeHud" parent="." unique_id=1569560659 instance=ExtResource("14_upgrades")]
-
-[node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
-position = Vector2(1282.6113, 541)
-scale = Vector2(1.5320117, 1.1498407)
-texture = ExtResource("2_ao6wq")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
 position = Vector2(502.29962, 275.29962)
@@ -157,6 +152,11 @@ position = Vector2(78, 293)
 scale = Vector2(3.9718153, 3.9718153)
 shape = SubResource("RectangleShape2D_xpbew")
 debug_color = Color(0.5323416, 0.5497722, 0.4333505, 0.41960785)
+
+[node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
+position = Vector2(1282.6113, 541)
+scale = Vector2(1.5320117, 1.1498407)
+texture = ExtResource("2_ao6wq")
 
 [editable path="CyberQuestionHud"]
 [editable path="PerformanceHud"]
