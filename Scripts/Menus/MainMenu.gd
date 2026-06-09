@@ -8,6 +8,7 @@ extends Control
 @onready var quit_button: Button = $MenuPanel/VBox/QuitButton
 @onready var status_label: Label = $StatusLabel
 @onready var sign_out_button: Button = $MenuPanel/VBox/SignOutButton
+@onready var presentation_button: Button = $PresentationButton
 
 var scan_speed := 120.0
 var background_zoom_amount := 0.015
@@ -19,6 +20,7 @@ func _ready() -> void:
 	options_button.pressed.connect(_on_options_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	sign_out_button.pressed.connect(_on_sign_out_pressed)
+	presentation_button.pressed.connect(_on_presentation_pressed)
 
 func _process(delta: float) -> void:
 	time_passed += delta
@@ -27,6 +29,10 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	status_label.text = "Starting game..."
 	get_tree().change_scene_to_file("res://Scenes/Gameplay/PresentationScene.tscn")
+
+func _on_presentation_pressed() -> void:
+	status_label.text = "Opening presentation..."
+	get_tree().change_scene_to_file("res://Scenes/Gameplay/DEMO_SCENE.tscn")
 
 func _on_login_pressed() -> void:
 	status_label.text = "Opening login..."

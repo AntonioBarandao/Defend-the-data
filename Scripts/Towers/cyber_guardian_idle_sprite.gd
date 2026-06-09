@@ -15,8 +15,8 @@ const SHOT_COOLDOWN := 0.5
 const SHOT_RETURN_DELAY := 3.0
 const LASER_WIDTH := 10.0
 
-@export var default_scale := 0.3
 @export var placement_area_prefix := "TowerPlacementArea"
+@export var placement_area_group := "tower_placement_area"
 @export var platform_highlight_path: NodePath = ^"../../PlatformHighlight"
 @export var forward_rotation_offset := PI * 0.5
 
@@ -36,7 +36,6 @@ var _shot_return_tween: Tween
 
 
 func _ready() -> void:
-	scale = Vector2.ONE * default_scale
 	_home_position = global_position
 	_drag_start_position = _home_position
 	_rest_rotation = rotation
@@ -133,13 +132,6 @@ func reset_tower() -> void:
 	if _platform_highlight != null:
 		_platform_highlight.hide()
 	play_animation(IDLE_ANIMATION)
-
-
-func set_tower_scale(value: float) -> void:
-	default_scale = value
-	scale = Vector2.ONE * default_scale
-	if _dragging:
-		_update_platform_highlight()
 
 
 func get_tower_scale() -> float:
@@ -255,6 +247,15 @@ func _find_placement_shape_at_position(global_position_to_test: Vector2) -> Coll
 	if game_root == null:
 		return null
 
+	for node in get_tree().get_nodes_in_group(placement_area_group):
+		var area := node as Area2D
+		if area == null or not game_root.is_ancestor_of(area):
+			continue
+
+		var grouped_shape := _find_placement_shape_in_area(area, global_position_to_test)
+		if grouped_shape != null:
+			return grouped_shape
+
 	for child in game_root.get_children():
 		var area := child as Area2D
 		if area == null or not String(area.name).begins_with(placement_area_prefix):
@@ -287,6 +288,10 @@ func _find_placement_shape_in_area(area: Area2D, global_position_to_test: Vector
 
 func _get_placement_area_center() -> Vector2:
 	if _current_placement_shape != null:
+		var placement_area := _current_placement_shape.get_parent() as Area2D
+		if placement_area != null:
+			return placement_area.global_position
+
 		return _current_placement_shape.global_position
 
 	return global_position

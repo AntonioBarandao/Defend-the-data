@@ -1,12 +1,9 @@
 class_name TowerUpgradeHud
 extends CanvasLayer
 
-signal guardian_scale_changed(value: float)
 signal laser_upgrade_pressed
 
 @onready var _guardian_panel: PanelContainer = $Root/GuardianPanel
-@onready var _guardian_scale_slider: HSlider = $Root/GuardianPanel/Margin/Content/ScaleRow/GuardianScaleSlider
-@onready var _guardian_scale_value_label: Label = $Root/GuardianPanel/Margin/Content/ScaleRow/GuardianScaleValue
 @onready var _laser_panel: PanelContainer = $Root/LaserPanel
 @onready var _laser_level_label: Label = $Root/LaserPanel/Margin/Content/LevelLabel
 @onready var _laser_power_label: Label = $Root/LaserPanel/Margin/Content/PowerLabel
@@ -17,20 +14,7 @@ signal laser_upgrade_pressed
 func _ready() -> void:
 	_guardian_panel.hide()
 	_laser_panel.hide()
-	_guardian_scale_slider.value_changed.connect(func(value: float) -> void: guardian_scale_changed.emit(value))
 	_laser_upgrade_button.pressed.connect(func() -> void: laser_upgrade_pressed.emit())
-
-
-func configure_guardian_scale(min_value: float, max_value: float, step: float, value: float) -> void:
-	_guardian_scale_slider.min_value = min_value
-	_guardian_scale_slider.max_value = max_value
-	_guardian_scale_slider.step = step
-	set_guardian_scale(value)
-
-
-func set_guardian_scale(value: float) -> void:
-	_guardian_scale_slider.set_value_no_signal(value)
-	_guardian_scale_value_label.text = "%.2fx" % value
 
 
 func set_laser_stats(level: int, max_level: int, power: int, attack_range: float, can_upgrade: bool) -> void:

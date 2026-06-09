@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cal5j4wm14k8s"
-path="res://.godot/imported/Red_Virus_Destroy_atlas_30fps_p03.png-090548753cbbfddcc188c2ad2827abee.ctex"
+path="res://.godot/imported/Red_Virus_Destroy_atlas_30fps_p03.png-747da94f00609f8546f3ababc9dd5598.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p03.png"
-dest_files=["res://.godot/imported/Red_Virus_Destroy_atlas_30fps_p03.png-090548753cbbfddcc188c2ad2827abee.ctex"]
+source_file="res://assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p03.png"
+dest_files=["res://.godot/imported/Red_Virus_Destroy_atlas_30fps_p03.png-747da94f00609f8546f3ababc9dd5598.ctex"]
 
 [params]
 

@@ -9,17 +9,9 @@ const GameControlsHudScript := preload("res://Scripts/UI/game_controls_hud.gd")
 const TowerUpgradeHudScript := preload("res://Scripts/UI/tower_upgrade_hud.gd")
 const TARGET_FPS := 60
 const FPS_UPDATE_INTERVAL := 0.25
-const GUARDIAN_MIN_SCALE := 0.12
-const GUARDIAN_MAX_SCALE := 0.36
-const GUARDIAN_SCALE_STEP := 0.01
 const VIRUS_BATCH_TEN_COUNT := 10
 const VIRUS_BATCH_HUNDRED_COUNT := 100
 const VIRUS_BATCH_SPACING := 10.0
-const PATH_GUIDE_SAMPLE_SPACING := 16.0
-const PATH_GUIDE_ARROW_SPACING := 90.0
-const PATH_GUIDE_ARROW_SIZE := 18.0
-const PATH_GUIDE_WIDTH := 5.0
-const PATH_GUIDE_COLOR := Color(0.62, 0.25, 1.0, 0.95)
 const WAVE_BASE_VIRUS_COUNT := 5
 const WAVE_VIRUS_COUNT_STEP := 2
 const WAVE_SPAWN_INTERVAL := 0.6
@@ -34,7 +26,14 @@ const LASER_DURATION := 0.24
 @export var performance_hud_path: NodePath = ^"PerformanceHud"
 @export var game_controls_hud_path: NodePath = ^"GameControlsHud"
 @export var tower_upgrade_hud_path: NodePath = ^"TowerUpgradeHud"
-@export_range(GUARDIAN_MIN_SCALE, GUARDIAN_MAX_SCALE, GUARDIAN_SCALE_STEP) var guardian_default_scale := 0.3
+@export_group("Path Guide")
+@export var show_path_guide := true
+@export_range(4.0, 64.0, 1.0) var path_guide_sample_spacing := 16.0
+@export_range(20.0, 240.0, 1.0) var path_guide_arrow_spacing := 90.0
+@export_range(4.0, 64.0, 1.0) var path_guide_arrow_size := 18.0
+@export_range(1.0, 24.0, 0.5) var path_guide_width := 5.0
+@export var path_guide_color := Color(0.62, 0.25, 1.0, 0.95)
+@export_group("")
 
 var _fps_update_elapsed := 0.0
 var _guardian: CyberGuardianTowerScript
@@ -47,7 +46,6 @@ var _performance_hud: PerformanceHudScript
 var _game_controls_hud: GameControlsHudScript
 var _tower_upgrade_hud: TowerUpgradeHudScript
 var _path_guide_container: Node2D
-var _guardian_scale := 0.3
 var _active_viruses: Array[PathFollow2D] = []
 var _current_wave := 0
 var _wave_in_progress := false
@@ -71,8 +69,6 @@ func _ready() -> void:
 
 	if _guardian == null:
 		push_warning("Cybersec Guardian drag target was not found.")
-	else:
-		_set_guardian_scale(guardian_default_scale)
 	if _laser_turret == null:
 		push_warning("Laser Turret drag target was not found.")
 	if _virus_template == null:
@@ -98,8 +94,6 @@ func _ready() -> void:
 	if _tower_upgrade_hud == null:
 		push_warning("TowerUpgradeHud was not found.")
 	else:
-		_tower_upgrade_hud.configure_guardian_scale(GUARDIAN_MIN_SCALE, GUARDIAN_MAX_SCALE, GUARDIAN_SCALE_STEP, _guardian_scale)
-		_tower_upgrade_hud.guardian_scale_changed.connect(Callable(self, "_on_guardian_scale_changed"))
 		_tower_upgrade_hud.laser_upgrade_pressed.connect(Callable(self, "_upgrade_laser_turret"))
 	_create_path_guide()
 
@@ -242,23 +236,6 @@ func _sync_laser_upgrade_panel() -> void:
 	_tower_upgrade_hud.set_laser_stats(level, max_level, power, range, _laser_turret.can_upgrade())
 
 
-func _on_guardian_scale_changed(value: float) -> void:
-	_set_guardian_scale(value)
-
-
-func _set_guardian_scale(value: float) -> void:
-	_guardian_scale = snappedf(clampf(value, GUARDIAN_MIN_SCALE, GUARDIAN_MAX_SCALE), GUARDIAN_SCALE_STEP)
-	if _guardian != null:
-		_guardian.set_tower_scale(_guardian_scale)
-
-	_sync_guardian_scale_controls()
-
-
-func _sync_guardian_scale_controls() -> void:
-	if _tower_upgrade_hud != null:
-		_tower_upgrade_hud.set_guardian_scale(_guardian_scale)
-
-
 func _start_next_wave() -> void:
 	if _wave_in_progress or _wave_question_pending:
 		return
@@ -352,11 +329,13 @@ func _spawn_virus(start_progress: float = -1.0, update_count: bool = true) -> vo
 	follow.progress = _get_virus_spawn_progress() if start_progress < 0.0 else start_progress
 	_virus_path.add_child(follow)
 
+	var spawn_scale := _virus_template.global_scale
 	var virus := _virus_template.duplicate() as RedVirusScript
 	virus.name = "SpawnedVirus"
 	virus.position = Vector2.ZERO
 	virus.reset_for_spawn()
 	follow.add_child(virus)
+	virus.global_scale = spawn_scale
 
 	_active_viruses.append(follow)
 	if update_count:
@@ -562,14 +541,17 @@ func _create_path_guide() -> void:
 	for child in _path_guide_container.get_children():
 		child.queue_free()
 
+	if not show_path_guide:
+		return
+
 	var path_length := _virus_path.curve.get_baked_length()
 	if path_length <= 0.0:
 		return
 
 	var path_line := Line2D.new()
 	path_line.name = "PathGuideLine"
-	path_line.width = PATH_GUIDE_WIDTH
-	path_line.default_color = PATH_GUIDE_COLOR
+	path_line.width = path_guide_width
+	path_line.default_color = path_guide_color
 	path_line.joint_mode = Line2D.LINE_JOINT_ROUND
 	path_line.begin_cap_mode = Line2D.LINE_CAP_ROUND
 	path_line.end_cap_mode = Line2D.LINE_CAP_ROUND
@@ -578,10 +560,10 @@ func _create_path_guide() -> void:
 	path_line.points = _build_path_guide_points(path_length)
 	_path_guide_container.add_child(path_line)
 
-	var arrow_distance := minf(PATH_GUIDE_ARROW_SPACING * 0.5, path_length * 0.5)
+	var arrow_distance := minf(path_guide_arrow_spacing * 0.5, path_length * 0.5)
 	while arrow_distance < path_length:
 		_add_path_guide_arrow(arrow_distance, path_length)
-		arrow_distance += PATH_GUIDE_ARROW_SPACING
+		arrow_distance += path_guide_arrow_spacing
 
 
 func _build_path_guide_points(path_length: float) -> PackedVector2Array:
@@ -589,7 +571,7 @@ func _build_path_guide_points(path_length: float) -> PackedVector2Array:
 	var distance := 0.0
 	while distance < path_length:
 		points.append(_virus_path.curve.sample_baked(distance))
-		distance += PATH_GUIDE_SAMPLE_SPACING
+		distance += path_guide_sample_spacing
 
 	points.append(_virus_path.curve.sample_baked(path_length))
 	return points
@@ -603,7 +585,7 @@ func _add_path_guide_arrow(distance: float, path_length: float) -> void:
 	if direction == Vector2.ZERO:
 		return
 
-	var half_size := PATH_GUIDE_ARROW_SIZE * 0.5
+	var half_size := path_guide_arrow_size * 0.5
 	var side := Vector2(-direction.y, direction.x)
 	var arrow := Polygon2D.new()
 	arrow.name = "PathGuideArrow"
@@ -613,7 +595,7 @@ func _add_path_guide_arrow(distance: float, path_length: float) -> void:
 		-direction * half_size + side * half_size * 0.75,
 		-direction * half_size - side * half_size * 0.75
 	])
-	arrow.color = PATH_GUIDE_COLOR
+	arrow.color = path_guide_color
 	arrow.z_index = 41
 	_path_guide_container.add_child(arrow)
 

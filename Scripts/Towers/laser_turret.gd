@@ -16,9 +16,9 @@ const LEVEL_LASER_WIDTHS := [7.0, 8.5, 10.0, 11.5, 13.0]
 const LASER_COLOR := Color(0.1, 1.0, 0.72, 1.0)
 const SHOT_RETURN_DELAY := 3.0
 
-@export var default_scale := 0.3
 @export_range(1, MAX_LEVEL, 1) var level := 1
 @export var placement_area_prefix := "TowerPlacementArea"
+@export var placement_area_group := "tower_placement_area"
 @export var platform_highlight_path: NodePath = ^"../../PlatformHighlight"
 @export var forward_rotation_offset := PI * 0.5
 
@@ -37,7 +37,6 @@ var _shot_return_tween: Tween
 
 
 func _ready() -> void:
-	scale = Vector2.ONE * default_scale
 	_home_position = global_position
 	_rest_rotation = rotation
 	_platform_highlight = get_node_or_null(platform_highlight_path) as ColorRect
@@ -243,24 +242,41 @@ func _find_placement_shape_at_position(global_position_to_test: Vector2) -> Coll
 	if game_root == null:
 		return null
 
+	for node in get_tree().get_nodes_in_group(placement_area_group):
+		var area := node as Area2D
+		if area == null or not game_root.is_ancestor_of(area):
+			continue
+
+		var grouped_shape := _find_placement_shape_in_area(area, global_position_to_test)
+		if grouped_shape != null:
+			return grouped_shape
+
 	for child in game_root.get_children():
 		var area := child as Area2D
 		if area == null or not String(area.name).begins_with(placement_area_prefix):
 			continue
 
-		for area_child in area.get_children():
-			var collision_shape := area_child as CollisionShape2D
-			if collision_shape == null or collision_shape.disabled:
-				continue
+		var prefixed_shape := _find_placement_shape_in_area(area, global_position_to_test)
+		if prefixed_shape != null:
+			return prefixed_shape
 
-			var rectangle_shape := collision_shape.shape as RectangleShape2D
-			if rectangle_shape == null:
-				continue
+	return null
 
-			var local_position := collision_shape.global_transform.affine_inverse() * global_position_to_test
-			var rectangle := Rect2(-rectangle_shape.size * 0.5, rectangle_shape.size)
-			if rectangle.has_point(local_position):
-				return collision_shape
+
+func _find_placement_shape_in_area(area: Area2D, global_position_to_test: Vector2) -> CollisionShape2D:
+	for area_child in area.get_children():
+		var collision_shape := area_child as CollisionShape2D
+		if collision_shape == null or collision_shape.disabled:
+			continue
+
+		var rectangle_shape := collision_shape.shape as RectangleShape2D
+		if rectangle_shape == null:
+			continue
+
+		var local_position := collision_shape.global_transform.affine_inverse() * global_position_to_test
+		var rectangle := Rect2(-rectangle_shape.size * 0.5, rectangle_shape.size)
+		if rectangle.has_point(local_position):
+			return collision_shape
 
 	return null
 

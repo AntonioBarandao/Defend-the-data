@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
 [ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="Script" uid="uid://d1ugiseg13u06" path="res://Scripts/Gameplay/tower_placement_area.gd" id="15_place"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
@@ -38,6 +39,9 @@ virus_spawn_path = NodePath("VirusElements/SpawnVirus")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
 position = Vector2(502.29962, 275.29962)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
+placement_offset = Vector2(23, -47)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
 position = Vector2(23, -47)
@@ -53,6 +57,10 @@ color = Color(0.1, 0.9, 0.25, 0.22)
 
 [node name="TowerPlacementArea2" type="Area2D" parent="." unique_id=1425842512]
 position = Vector2(1453, 216)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
+collision_shape_path = NodePath("CollisionShape2D2")
+visual_path = NodePath("PlacementAreaVisual2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerPlacementArea2" unique_id=48627030]
 shape = SubResource("RectangleShape2D_tower_placement")

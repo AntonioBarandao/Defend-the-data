@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
 [ext_resource type="PackedScene" uid="uid://61tajh7kof5b" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
 [ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="Script" uid="uid://d1ugiseg13u06" path="res://Scripts/Gameplay/tower_placement_area.gd" id="15_place"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
 size = Vector2(92.59923, 92.59923)
@@ -54,6 +55,8 @@ texture = ExtResource("6_agy0f")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
 position = Vector2(429, 223)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
 shape = SubResource("RectangleShape2D_tower_placement")
@@ -69,6 +72,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TowerPlacementArea2" type="Area2D" parent="." unique_id=1425842512]
 position = Vector2(1574, 403)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
+placement_offset = Vector2(0, -4)
+collision_shape_path = NodePath("CollisionShape2D2")
+visual_path = NodePath("PlacementAreaVisual2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerPlacementArea2" unique_id=48627030]
 position = Vector2(0, -4)
@@ -120,7 +128,6 @@ script = ExtResource("6_cgspn")
 
 [node name="Laser Turret" parent="Sprites" unique_id=1913387890 instance=ExtResource("8_laser")]
 position = Vector2(2378, 288.00006)
-animation = &"level_4"
 
 [node name="BasicVirus" type="AnimatedSprite2D" parent="Sprites" unique_id=1150048990]
 position = Vector2(2215, 889.00006)

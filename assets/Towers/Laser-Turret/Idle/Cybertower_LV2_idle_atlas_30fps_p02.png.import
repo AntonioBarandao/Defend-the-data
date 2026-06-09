@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ltdka06jkgo3"
-path.s3tc="res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-a12d781600499abea94f9a9ca11564bc.s3tc.ctex"
-path.etc2="res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-a12d781600499abea94f9a9ca11564bc.etc2.ctex"
+path.s3tc="res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-117fc642cc7c370a592745df462acd5e.s3tc.ctex"
+path.etc2="res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-117fc642cc7c370a592745df462acd5e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p02.png"
-dest_files=["res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-a12d781600499abea94f9a9ca11564bc.s3tc.ctex", "res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-a12d781600499abea94f9a9ca11564bc.etc2.ctex"]
+source_file="res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p02.png"
+dest_files=["res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-117fc642cc7c370a592745df462acd5e.s3tc.ctex", "res://.godot/imported/Cybertower_LV2_idle_atlas_30fps_p02.png-117fc642cc7c370a592745df462acd5e.etc2.ctex"]
 
 [params]
 
