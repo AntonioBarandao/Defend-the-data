@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b04ik1rpmev1u"]
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_on2he"]
+[ext_resource type="FontFile" uid="uid://2u6nbvofsl5k" path="res://Assets/Fonts/Cyber Crown/Cyber Crown.ttf" id="4_wx1q6"]
 [ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
 [ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="6_agy0f"]
 [ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="6_cgspn"]
@@ -9,8 +10,9 @@
 [ext_resource type="SpriteFrames" uid="uid://sxmc3yoxrap1" path="res://Assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="9_vframes"]
 [ext_resource type="Script" uid="uid://c6lme1p6liucy" path="res://Scripts/Enemies/red_virus.gd" id="10_red"]
 [ext_resource type="PackedScene" uid="uid://eg7rvsm4gmsf" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
+[ext_resource type="FontFile" uid="uid://b8x2rvexol5mx" path="res://Assets/Fonts/BlackListed/Blacklisted.ttf" id="12_8rn0k"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
+[ext_resource type="PackedScene" uid="uid://61tajh7kof5b" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
 [ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tower_placement"]
@@ -30,15 +32,24 @@ virus_spawn_path = NodePath("VirusElements/SpawnVirus")
 
 [node name="CyberQuestionHud" parent="." unique_id=923521268 instance=ExtResource("11_qhud")]
 
+[node name="CyberBuckCounter" parent="CyberQuestionHud/Root" parent_id_path=PackedInt32Array(923521268, 1715806035) index="0" unique_id=200258644]
+visible = false
+
 [node name="PerformanceHud" parent="." unique_id=1039250105 instance=ExtResource("12_perf")]
+
+[node name="FPSLabel" parent="PerformanceHud/Root/StatusPanel/Margin/Content" index="0"]
+theme_override_fonts/font = ExtResource("4_wx1q6")
+
+[node name="VirusCountLabel" parent="PerformanceHud/Root/StatusPanel/Margin/Content" index="1"]
+theme_override_fonts/font = ExtResource("4_wx1q6")
 
 [node name="GameControlsHud" parent="." unique_id=772842743 instance=ExtResource("13_controls")]
 
 [node name="TowerUpgradeHud" parent="." unique_id=1985424915 instance=ExtResource("14_upgrades")]
 
 [node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
-position = Vector2(1053.9265, 537.5)
-scale = Vector2(1.2560687, 1.1424017)
+position = Vector2(1051.4999, 540)
+scale = Vector2(1.2589713, 1.1477152)
 texture = ExtResource("6_agy0f")
 
 [node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
@@ -122,24 +133,28 @@ frame_progress = 1.0
 script = ExtResource("10_red")
 
 [node name="Blue Towers" type="Label" parent="." unique_id=384477170]
-offset_left = 2092.0
-offset_top = 16.0
-offset_right = 2551.0
-offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("5_1l26u")
+offset_left = 2088.0
+offset_top = 31.0
+offset_right = 2547.0
+offset_bottom = 75.0
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("12_8rn0k")
 theme_override_font_sizes/font_size = 32
 text = "Blue Towers"
+horizontal_alignment = 1
 
 [node name="Red Virus" type="Label" parent="." unique_id=538766559]
-offset_left = 2119.0
-offset_top = 617.0
-offset_right = 2530.0
-offset_bottom = 661.0
-theme_override_fonts/font = ExtResource("5_1l26u")
+offset_left = 2143.0
+offset_top = 665.0
+offset_right = 2505.0
+offset_bottom = 699.0
+theme_override_fonts/font = ExtResource("12_8rn0k")
 theme_override_font_sizes/font_size = 32
 text = "Red Viruses"
+horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="." unique_id=1834529841]
+visible = false
 offset_left = 14.0
 offset_top = 144.0
 offset_right = 436.0
