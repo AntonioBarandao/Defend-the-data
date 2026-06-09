@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d0i8sn0fhrdmp"
-path="res://.godot/imported/Astron Valley - Bold.otf-1822385b860a5005d53987f1b1374b1f.fontdata"
+uid="uid://2u6nbvofsl5k"
+path="res://.godot/imported/Cyber Crown.ttf-9926c78362a6dfa82915e747be91d11d.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/astron-valley/Astron Valley - Bold.otf"
-dest_files=["res://.godot/imported/Astron Valley - Bold.otf-1822385b860a5005d53987f1b1374b1f.fontdata"]
+source_file="res://assets/Fonts/Cyber Crown/Cyber Crown.ttf"
+dest_files=["res://.godot/imported/Cyber Crown.ttf-9926c78362a6dfa82915e747be91d11d.fontdata"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8mbr1sur5jts"
-path="res://.godot/imported/CyberBucks.png-af7cf8b62579712b2e60f9861c303057.ctex"
+uid="uid://cwsmr7xkhbfv3"
+path="res://.godot/imported/mini_pixel-7_screen.png-dacfbe43d9db0932091af04a1304df3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/CyberBucks.png"
-dest_files=["res://.godot/imported/CyberBucks.png-af7cf8b62579712b2e60f9861c303057.ctex"]
+source_file="res://assets/Fonts/mini-pixel-7/mini_pixel-7_screen.png"
+dest_files=["res://.godot/imported/mini_pixel-7_screen.png-dacfbe43d9db0932091af04a1304df3c.ctex"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d0i8sn0fhrdmp"
-path="res://.godot/imported/Astron Valley - Bold.otf-1822385b860a5005d53987f1b1374b1f.fontdata"
+uid="uid://dh8fanof88w0m"
+path="res://.godot/imported/code128.ttf-5c2d37fcc1a11ea833a26e3b9ea27c1f.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/astron-valley/Astron Valley - Bold.otf"
-dest_files=["res://.godot/imported/Astron Valley - Bold.otf-1822385b860a5005d53987f1b1374b1f.fontdata"]
+source_file="res://assets/Fonts/Barcode/code128.ttf"
+dest_files=["res://.godot/imported/code128.ttf-5c2d37fcc1a11ea833a26e3b9ea27c1f.fontdata"]
 
 [params]
 

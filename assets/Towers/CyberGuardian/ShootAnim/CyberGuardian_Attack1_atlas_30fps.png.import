@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xtcl57y8s8xg"
-path.s3tc="res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-b71933c6f91dc3f8a6cfd75dd408c55b.s3tc.ctex"
-path.etc2="res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-b71933c6f91dc3f8a6cfd75dd408c55b.etc2.ctex"
+path.s3tc="res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-422d27bc3e8cb09a80a0b84fb3365688.s3tc.ctex"
+path.etc2="res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-422d27bc3e8cb09a80a0b84fb3365688.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Towers/CyberGuardian/ShootAnim/CyberGuardian_Attack1_atlas_30fps.png"
-dest_files=["res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-b71933c6f91dc3f8a6cfd75dd408c55b.s3tc.ctex", "res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-b71933c6f91dc3f8a6cfd75dd408c55b.etc2.ctex"]
+source_file="res://assets/Towers/CyberGuardian/ShootAnim/CyberGuardian_Attack1_atlas_30fps.png"
+dest_files=["res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-422d27bc3e8cb09a80a0b84fb3365688.s3tc.ctex", "res://.godot/imported/CyberGuardian_Attack1_atlas_30fps.png-422d27bc3e8cb09a80a0b84fb3365688.etc2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buur5rc1qxqh3"
-path="res://.godot/imported/7.png-8700ce7f43805fb86ee87077026c6bc3.ctex"
+path="res://.godot/imported/7.png-b4e085074fe76b64afcb00f279b4e1e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fonts/race-hugo/7.png"
-dest_files=["res://.godot/imported/7.png-8700ce7f43805fb86ee87077026c6bc3.ctex"]
+source_file="res://assets/Fonts/race-hugo/7.png"
+dest_files=["res://.godot/imported/7.png-b4e085074fe76b64afcb00f279b4e1e9.ctex"]
 
 [params]
 
