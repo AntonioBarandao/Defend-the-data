@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Strlizia/Documents/Defend the data/build/cmake_install.cmake",
+		"C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

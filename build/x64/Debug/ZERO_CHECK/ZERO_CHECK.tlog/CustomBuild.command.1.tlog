@@ -1,0 +1,10 @@
+^C:\USERS\STRLIZIA\DOCUMENTS\DEFEND THE DATA\BUILD\CMAKEFILES\2B4EFFAC4EDFB70525AFE8A0E8A6B865\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Strlizia/Documents/Defend the data" "-BC:/Users/Strlizia/Documents/Defend the data/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Strlizia/Documents/Defend the data/build/auth_extension.slnx"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

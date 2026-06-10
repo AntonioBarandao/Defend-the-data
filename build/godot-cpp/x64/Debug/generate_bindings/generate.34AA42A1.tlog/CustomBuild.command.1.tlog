@@ -1,0 +1,32 @@
+^C:\USERS\STRLIZIA\DOCUMENTS\DEFEND THE DATA\GODOT-CPP\GDEXTENSION\EXTENSION_API.JSON
+setlocal
+cd "C:\Users\Strlizia\Documents\Defend the data\godot-cpp"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\Strlizia\AppData\Local\Programs\Python\Python314\python.exe -c "from binding_generator import generate_bindings";"generate_bindings( api_filepath='gdextension/extension_api.json', interface_filepath='gdextension/gdextension_interface.json', use_template_get_node='True', bits='64', precision='single', output_dir='C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp')"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\STRLIZIA\DOCUMENTS\DEFEND THE DATA\BUILD\CMAKEFILES\29B4173D5084D7A925A32B76DA5EF92C\GENERATE_BINDINGS.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\STRLIZIA\DOCUMENTS\DEFEND THE DATA\GODOT-CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Strlizia/Documents/Defend the data" "-BC:/Users/Strlizia/Documents/Defend the data/build" --check-stamp-file "C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

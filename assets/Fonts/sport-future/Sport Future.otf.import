@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bkt647vvlmh2u"
-path="res://.godot/imported/Sport Future.otf-22fed467a56afb6f2047b8618b3e48ee.fontdata"
+path="res://.godot/imported/Sport Future.otf-59c9239d301f33bf947d70741315e7da.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/sport-future/Sport Future.otf"
-dest_files=["res://.godot/imported/Sport Future.otf-22fed467a56afb6f2047b8618b3e48ee.fontdata"]
+source_file="res://assets/Fonts/sport-future/Sport Future.otf"
+dest_files=["res://.godot/imported/Sport Future.otf-59c9239d301f33bf947d70741315e7da.fontdata"]
 
 [params]
 

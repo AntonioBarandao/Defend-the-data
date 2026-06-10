@@ -1,0 +1,6 @@
+C:/Users/Strlizia/Documents/Defend the data/build/CMakeFiles/auth.dir
+C:/Users/Strlizia/Documents/Defend the data/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Strlizia/Documents/Defend the data/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp/CMakeFiles/generate_bindings.dir
+C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp/CMakeFiles/godot-cpp.dir
+C:/Users/Strlizia/Documents/Defend the data/build/godot-cpp/CMakeFiles/ALL_BUILD.dir

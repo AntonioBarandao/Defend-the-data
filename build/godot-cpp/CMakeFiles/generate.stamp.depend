@@ -1,0 +1,18 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPython/Support.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPython3.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/ProcessorCount.cmake
+C:/Users/Strlizia/Documents/Defend the data/build/CMakeFiles/cmake.verify_globs
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/CMakeLists.txt
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/GodotCPPModule.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/android.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/common_compiler_flags.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/emsdkHack.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/godotcpp.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/ios.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/linux.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/macos.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/web.cmake
+C:/Users/Strlizia/Documents/Defend the data/godot-cpp/cmake/windows.cmake

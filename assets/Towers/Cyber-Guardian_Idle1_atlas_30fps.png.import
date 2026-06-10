@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6ifvwt0mpo2g"
-path.s3tc="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-ece79e9f44bee7e615595718560082ff.s3tc.ctex"
+path.s3tc="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-1f7769c3886340caf2c325b8d2e8ca60.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Towers/Cyber-Guardian_Idle1_atlas_30fps.png"
-dest_files=["res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-ece79e9f44bee7e615595718560082ff.s3tc.ctex"]
+source_file="res://assets/Towers/Cyber-Guardian_Idle1_atlas_30fps.png"
+dest_files=["res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-1f7769c3886340caf2c325b8d2e8ca60.s3tc.ctex"]
 
 [params]
 
