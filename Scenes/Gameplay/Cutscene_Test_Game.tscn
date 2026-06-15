@@ -1,0 +1,352 @@
+[gd_scene format=3 uid="uid://nfjr7ke15kok"]
+
+[ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_on2he"]
+[ext_resource type="PackedScene" path="res://Scenes/Towers/IDS_Scanner.tscn" id="4_pc5c2"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://assets/Backgrounds/NewMap.png" id="6_agy0f"]
+[ext_resource type="PackedScene" uid="uid://cddp8ilcjadua" path="res://Scenes/Towers/CyberGuardian.tscn" id="6_cyber"]
+[ext_resource type="PackedScene" uid="uid://b658jrcj1ke3f" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
+[ext_resource type="PackedScene" uid="uid://calhrslp08s80" path="res://Scenes/Enemies/RedVirus.tscn" id="9_redvirus"]
+[ext_resource type="PackedScene" uid="uid://c7b5taf2pji8r" path="res://Scenes/Enemies/TrojanHorse.tscn" id="10_trojan"]
+[ext_resource type="PackedScene" uid="uid://eg7rvsm4gmsf" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
+[ext_resource type="PackedScene" uid="uid://61tajh7kof5b" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
+[ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="Script" uid="uid://d1ugiseg13u06" path="res://Scripts/Gameplay/tower_placement_area.gd" id="15_place"]
+[ext_resource type="FontFile" uid="uid://2u6nbvofsl5k" path="res://assets/Fonts/Cyber Crown/Cyber Crown.ttf" id="15_wq1r8"]
+[ext_resource type="PackedScene" uid="uid://fet10k45d4t6" path="res://Scenes/UI/DemoPresentationOverlay.tscn" id="16_demo_overlay"]
+[ext_resource type="AudioStream" uid="uid://bpts0mu1imbfp" path="res://assets/soundtrack/Virtual Business.wav" id="17_soundtrack"]
+[ext_resource type="PackedScene" uid="uid://bthmcxcu7ao8p" path="res://Scenes/UI/Text_Cutscene.tscn" id="18_cutscene"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_counter"]
+bg_color = Color(0.025, 0.032, 0.05, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27, 0.73, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_question"]
+bg_color = Color(0.025, 0.032, 0.05, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.28, 0.88, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status"]
+bg_color = Color(0.025, 0.032, 0.05, 0.9)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.82, 0.08, 0.96)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.48)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dialogue_panel"]
+bg_color = Color(0.025, 0.031, 0.052, 0.96)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.165, 0.78, 1, 0.96)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.65)
+shadow_size = 18
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.055, 0.1, 0.16, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.9, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.055, 0.1, 0.16, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.82, 0.08, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e85uq"]
+resource_local_to_scene = true
+size = Vector2(92.59923, 92.59923)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d24o8"]
+resource_local_to_scene = true
+size = Vector2(92.59923, 92.59923)
+
+[sub_resource type="Curve2D" id="Curve2D_63v24"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38.509842, -24, 0, 0, 0, 0, 214.9374, -23, 0, 0, 0, 0, 240.5331, 14, 0, 0, 0, 0, 251.50267, 78, 0, 0, 0, 0, 341.08765, 83, 0, 0, 0, 0, 358.45618, -19, 0, 0, 0, 0, 403.24866, -38, 0, 0, 0, 0, 553.1664, -40, 0, 0, 0, 0, 579.6762, -101, 0, 0, 0, 0, 608.92847, -138, 0, 0, 0, 0, 790.84076, -136, 0, 0, 0, 0, 829.2343, -97, 0, 0, 0, 0, 831.97675, -30, 0, 0, 0, 0, 869.4562, -2, 0, 0, 0, 0, 1112.6154, -9, 0, 0, 0, 0, 1129.9839, -71, 0, 0, 0, 0, 1168.3774, -113, 0, 0, 0, 0, 1400.567, -111, 0, 0, 0, 0, 1449.9302, -73, 0, 0, 0, 0, 1463.6422, 157, 0, 0, 0, 0, 1269.8462, 163, 0, 0, 0, 0, 1239.6798, 207, 0, 0, 0, 0, 1248.821, 356, 0, 0, 0, 0, 1211.3417, 385, 0, 0, 0, 0, 901.4508, 385, 0, 0, 0, 0, 855.7442, 401, 0, 0, 0, 0, 843.8605, 467, 0, 0, 0, 0, 793.5832, 488, 0, 0, 0, 0, 521.17175, 483, 0, 0, 0, 0, 476.37927, 447, 0, 0, 0, 0, 479.12164, 381, 0, 0, 0, 0, 480.03577, 301, 0, 0, 0, 0, 456.2683, 262, 0, 0, 0, 0, 215.85152, 263, 0, 0, 0, 0, 189.34169, 307, 0, 0, 0, 0, 174.71556, 460, 0, 0, 0, 0, 124.43828, 483, 0, 0, 0, 0, 84.21646, 503, 0, 0, 0, 0, 65.01967, 546, 0, 0, 0, 0, 12, 555)
+}
+point_count = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbew"]
+
+[node name="Game" type="Node2D" unique_id=574872578]
+script = ExtResource("1_on2he")
+virus_spawn_path = NodePath("VirusElements/SpawnVirus")
+demo_presentation_overlay_path = NodePath("DemoPresentationOverlay")
+
+[node name="AdminSandboxSoundtrack" type="AudioStreamPlayer" parent="." unique_id=662457559]
+stream = ExtResource("17_soundtrack")
+volume_db = -6.0
+
+[node name="CyberQuestionHud" parent="." unique_id=923521268 instance=ExtResource("11_qhud")]
+demo_question_animation_enabled = true
+
+[node name="CyberBuckCounter" parent="CyberQuestionHud/Root" parent_id_path=PackedInt32Array(923521268, 1715806035) index="0" unique_id=200258644]
+offset_left = -1045.0
+offset_top = 15.999999
+offset_right = -791.0
+offset_bottom = 80.0
+scale = Vector2(1.2404745, 1.2404745)
+theme_override_styles/panel = SubResource("StyleBoxFlat_counter")
+
+[node name="QuestionPanel" parent="CyberQuestionHud/Root" parent_id_path=PackedInt32Array(923521268, 1715806035) index="1" unique_id=1626758872]
+offset_top = -335.0
+offset_right = 823.0
+offset_bottom = -3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_question")
+
+[node name="PerformanceHud" parent="." unique_id=1039250105 instance=ExtResource("12_perf")]
+
+[node name="StatusPanel" parent="PerformanceHud/Root" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="GameControlsHud" parent="." unique_id=772842743 instance=ExtResource("13_controls")]
+
+[node name="TowerUpgradeHud" parent="." unique_id=1985424915 instance=ExtResource("14_upgrades")]
+
+[node name="DemoPresentationOverlay" parent="." unique_id=1382216125 instance=ExtResource("16_demo_overlay")]
+
+[node name="TextCutscene" parent="." unique_id=2039921757 instance=ExtResource("18_cutscene")]
+visible = false
+
+[node name="DialoguePanel" parent="TextCutscene/Root" parent_id_path=PackedInt32Array(2039921757, 1776170494) index="2" unique_id=1701430842]
+theme_override_styles/panel = SubResource("StyleBoxFlat_dialogue_panel")
+
+[node name="ContinueButton" parent="TextCutscene/Root/DialoguePanel/Margin/Content/Footer" parent_id_path=PackedInt32Array(2039921757, 912886766) index="0" unique_id=1690167965]
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+
+[node name="CutsceneCamera" type="Camera2D" parent="." unique_id=2005815930]
+position = Vector2(1280, 540)
+
+[node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
+position = Vector2(1053.9265, 537.5)
+scale = Vector2(1.2560687, 1.1424017)
+texture = ExtResource("6_agy0f")
+
+[node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
+position = Vector2(429, 223)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
+shape = SubResource("RectangleShape2D_e85uq")
+
+[node name="PlacementSlot2" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=48627030]
+position = Vector2(1145, 176)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot3" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=137045265]
+position = Vector2(904, 284)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot4" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1305535456]
+position = Vector2(220, 241)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot5" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=391813529]
+position = Vector2(442, -140)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot6" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1249310685]
+position = Vector2(761, -12)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot7" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1482182287]
+position = Vector2(1393, 5)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot8" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=982379324]
+position = Vector2(1487, 347)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot9" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1772379268]
+position = Vector2(1180, 483)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot10" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1444550936]
+position = Vector2(403, 477)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="PlacementSlot11" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1353559619]
+position = Vector2(-219, 339)
+shape = SubResource("RectangleShape2D_d24o8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=394633943]
+visible = false
+
+[node name="TestDrag" type="Control" parent="." unique_id=1456189078]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -124.00006
+offset_right = 40.0
+offset_bottom = -84.00006
+
+[node name="TowerTrayBackground" type="ColorRect" parent="TestDrag" unique_id=161859911]
+layout_mode = 0
+offset_left = 2103.0
+offset_top = 120.00006
+offset_right = 2562.0
+offset_bottom = 1204.0
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="PlatformHighlight" type="ColorRect" parent="." unique_id=477646041]
+offset_right = 126.0
+offset_bottom = 120.0
+mouse_filter = 2
+color = Color(1, 0.1, 0.08, 0.45)
+
+[node name="Otherground_Cutscene" type="ColorRect" parent="." unique_id=716042366]
+offset_left = -1611.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 1083.0
+color = Color(0.69358075, 0.8433318, 0.48097503, 1)
+
+[node name="CutsceneVirus1" parent="Otherground_Cutscene" unique_id=1302363223 instance=ExtResource("9_redvirus")]
+position = Vector2(1543, 261)
+scale = Vector2(0.13983138, 0.13983138)
+
+[node name="CutsceneVirus2" parent="Otherground_Cutscene" unique_id=1813834031 instance=ExtResource("9_redvirus")]
+position = Vector2(1556, 316)
+scale = Vector2(0.13983138, 0.13983138)
+
+[node name="CutsceneVirus3" parent="Otherground_Cutscene" unique_id=484007123 instance=ExtResource("9_redvirus")]
+position = Vector2(1468.9999, 239.99998)
+scale = Vector2(0.13983138, 0.13983138)
+
+[node name="CutsceneVirus4" parent="Otherground_Cutscene" unique_id=302736285 instance=ExtResource("9_redvirus")]
+position = Vector2(1467, 300.99997)
+scale = Vector2(0.13983138, 0.13983138)
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1360860051]
+position = Vector2(0, -124.00006)
+
+[node name="IDS_Scanner" parent="Sprites" unique_id=35152626 instance=ExtResource("4_pc5c2")]
+position = Vector2(2206.9998, 502.00003)
+scale = Vector2(0.13197838, 0.13197838)
+
+[node name="Cybersec Guardian" parent="Sprites" unique_id=1828353461 instance=ExtResource("6_cyber")]
+position = Vector2(2198, 301.00006)
+
+[node name="Laser Turret" parent="Sprites" unique_id=1913387890 instance=ExtResource("8_laser")]
+position = Vector2(2388, 296.00006)
+
+[node name="BasicVirus" parent="Sprites" unique_id=1150048990 instance=ExtResource("9_redvirus")]
+position = Vector2(2208, 988.00006)
+scale = Vector2(0.2, 0.2)
+
+[node name="TrojanHorse" parent="Sprites" unique_id=236675419 instance=ExtResource("10_trojan")]
+position = Vector2(2476, 769.00006)
+scale = Vector2(0.4, 0.4)
+
+[node name="Blue Towers" type="Label" parent="." unique_id=384477170]
+offset_left = 2147.0
+offset_top = 15.0
+offset_right = 2496.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 24
+text = "Blue Towers"
+
+[node name="Red Virus" type="Label" parent="." unique_id=538766559]
+offset_left = 2123.0
+offset_top = 509.0
+offset_right = 2534.0
+offset_bottom = 553.0
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 32
+text = "Red Viruses"
+
+[node name="WavesLabel" type="Label" parent="." unique_id=1834529841]
+offset_left = 1838.0
+offset_top = 26.0
+offset_right = 2094.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("15_wq1r8")
+theme_override_font_sizes/font_size = 44
+text = "Wave 0/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1222966337]
+offset_left = 976.0
+offset_top = 725.0
+offset_right = 977.0
+offset_bottom = 1080.0
+color = Color(0.42288277, 0.4228828, 0.4228828, 1)
+
+[node name="VirusElements" type="Node" parent="." unique_id=1926487214]
+
+[node name="Path2D" type="Path2D" parent="VirusElements" unique_id=1664708490]
+position = Vector2(119.8728, 319)
+scale = Vector2(1.0939335, 1)
+curve = SubResource("Curve2D_63v24")
+
+[node name="SpawnVirus" type="Marker2D" parent="VirusElements" unique_id=1524594111]
+position = Vector2(70, 289)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=595350600]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1514158457]
+visible = false
+scale = Vector2(3.9718153, 3.9718153)
+shape = SubResource("RectangleShape2D_xpbew")
+debug_color = Color(0.5323416, 0.5497722, 0.4333505, 0.41960785)
+
+[editable path="CyberQuestionHud"]
+[editable path="PerformanceHud"]
+[editable path="TextCutscene"]

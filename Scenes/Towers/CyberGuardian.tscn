@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cddp8ilcjadua"]
+
+[ext_resource type="SpriteFrames" uid="uid://r6uhqh3ktfcw" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="1_frames"]
+[ext_resource type="Script" uid="uid://bi54nma58lbdq" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://5t88uc81blnw" path="res://assets/sfx/cyberguardian_summon.wav" id="3_summon_sfx"]
+
+[node name="Cybersec Guardian" type="AnimatedSprite2D" unique_id=1315436382 groups=["Defender", "OFFENSE_TOWER"]]
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("1_frames")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_script")
+
+[node name="Audio" type="Node" parent="." unique_id=1923395083]
+
+[node name="SummonSfx" type="AudioStreamPlayer" parent="Audio" unique_id=991284857]
+stream = ExtResource("3_summon_sfx")
+volume_db = -15.0

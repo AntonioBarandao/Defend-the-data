@@ -86,7 +86,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "START GAME"
+text = "ADMIN MAP MENU"
 
 [node name="LoginButton" type="Button" parent="MenuPanel/VBox" unique_id=36390648]
 custom_minimum_size = Vector2(0, 55)

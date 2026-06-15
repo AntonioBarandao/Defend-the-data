@@ -27,8 +27,8 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	status_label.text = "Starting game..."
-	get_tree().change_scene_to_file("res://Scenes/Gameplay/PresentationScene.tscn")
+	status_label.text = "Opening admin map menu..."
+	get_tree().change_scene_to_file("res://Scenes/Gameplay/Admin_Sandbox.tscn")
 
 func _on_presentation_pressed() -> void:
 	status_label.text = "Opening presentation..."

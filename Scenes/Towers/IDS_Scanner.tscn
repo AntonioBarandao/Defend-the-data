@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assets/Towers/IDS_Scanner/IDSScannerSpriteFrames.tres" id="1_frames"]
+[ext_resource type="Script" path="res://Scripts/Towers/ids_scanner.gd" id="2_script"]
+
+[node name="IDS_Scanner" type="AnimatedSprite2D" groups=["Defender", "SUPPORT_TOWER"]]
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("1_frames")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_script")

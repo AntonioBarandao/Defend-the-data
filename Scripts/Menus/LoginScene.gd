@@ -7,7 +7,7 @@ func _ready():
 
 func _on_login_pressed():
 	get_tree().change_scene_to_file(
-		"res://Scenes/Gameplay/Demo_Game.tscn"
+		"res://Scenes/Gameplay/Admin_Sandbox.tscn"
 	)
 
 func _on_back_pressed():

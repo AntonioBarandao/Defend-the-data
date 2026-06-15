@@ -1,0 +1,12 @@
+{
+  "source": "C:\\Users\\jonhu\\Downloads\\Laser_Continuous_Stop.mp4",
+  "atlas": "res://assets/Towers/Laser-Turret/LaserFX/Laser_Continuous_Stop_atlas_30fps.png",
+  "animation": "Laser_Continuous_Stop",
+  "fps": 30,
+  "frame_count": 91,
+  "columns": 10,
+  "rows": 10,
+  "frame_width": 720,
+  "frame_height": 720,
+  "chroma_key": "0x00FF00:0.35:0.00"
+}

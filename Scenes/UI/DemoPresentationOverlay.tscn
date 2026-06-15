@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://fet10k45d4t6"]
+
+[ext_resource type="Script" uid="uid://bruskdxftnmuf" path="res://Scripts/UI/demo_presentation_overlay.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://bbxu3ua0wyy5m" path="res://assets/Fonts/naked_power/Naked Power Bd.otf" id="2_font"]
+[ext_resource type="Texture2D" uid="uid://c8mbr1sur5jts" path="res://assets/UI/CyberBucks.png" id="3_bucks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upgrade_normal"]
+bg_color = Color(0.038, 0.069, 0.15, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42, 0.78, 1, 0.94)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.11, 0.35, 0.9, 0.42)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upgrade_hover"]
+bg_color = Color(0.08, 0.15, 0.31, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62, 0.9, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.19, 0.55, 1, 0.52)
+shadow_size = 10
+
+[node name="DemoPresentationOverlay" type="CanvasLayer" unique_id=421095102]
+layer = 145
+script = ExtResource("1_script")
+naked_power_font = ExtResource("2_font")
+cyber_bucks_texture = ExtResource("3_bucks")
+
+[node name="Root" type="Control" parent="." unique_id=1817354895]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WorldPopups" type="Control" parent="Root" unique_id=775255316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GuardianUpgradeButton" type="Button" parent="Root" unique_id=1220857949]
+visible = false
+custom_minimum_size = Vector2(156, 74)
+layout_mode = 1
+offset_left = 900.0
+offset_top = 480.0
+offset_right = 1056.0
+offset_bottom = 554.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.66, 0.72, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.82, 0.94, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.48, 0.48, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_upgrade_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_upgrade_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_upgrade_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_upgrade_normal")
+
+[node name="Content" type="VBoxContainer" parent="Root/GuardianUpgradeButton" unique_id=785008548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="Root/GuardianUpgradeButton/Content" unique_id=1982021492]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66, 0.72, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 21
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="CostRow" type="HBoxContainer" parent="Root/GuardianUpgradeButton/Content" unique_id=1894534403]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Root/GuardianUpgradeButton/Content/CostRow" unique_id=2124486541]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_bucks")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" type="Label" parent="Root/GuardianUpgradeButton/Content/CostRow" unique_id=939294330]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.98, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "500"
+vertical_alignment = 1
+
+[node name="LaserUpgradeButton" type="Button" parent="Root" unique_id=1563166108]
+visible = false
+custom_minimum_size = Vector2(156, 74)
+layout_mode = 1
+offset_left = 1160.0
+offset_top = 480.0
+offset_right = 1316.0
+offset_bottom = 554.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.66, 0.72, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.82, 0.94, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.48, 0.48, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_upgrade_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_upgrade_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_upgrade_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_upgrade_normal")
+
+[node name="Content" type="VBoxContainer" parent="Root/LaserUpgradeButton" unique_id=1981466608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="Root/LaserUpgradeButton/Content" unique_id=2063728142]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66, 0.72, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 21
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="CostRow" type="HBoxContainer" parent="Root/LaserUpgradeButton/Content" unique_id=208771245]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Root/LaserUpgradeButton/Content/CostRow" unique_id=2101284786]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_bucks")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" type="Label" parent="Root/LaserUpgradeButton/Content/CostRow" unique_id=146762474]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.98, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.04, 0.16, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "500"
+vertical_alignment = 1

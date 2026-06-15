@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://calhrslp08s80"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfro7ahwf5sfk" path="res://assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="1_frames"]
+[ext_resource type="Script" uid="uid://c6lme1p6liucy" path="res://Scripts/Enemies/red_virus.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://8rhfrkf6hokf" path="res://assets/sfx/virus_destroy.wav" id="3_destroy_sfx"]
+
+[node name="RedVirus" type="AnimatedSprite2D" unique_id=1302363223]
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("1_frames")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_script")
+
+[node name="Audio" type="Node" parent="." unique_id=827888040]
+
+[node name="DestroySfx" type="AudioStreamPlayer" parent="Audio" unique_id=1871626297]
+stream = ExtResource("3_destroy_sfx")
+volume_db = -20.045

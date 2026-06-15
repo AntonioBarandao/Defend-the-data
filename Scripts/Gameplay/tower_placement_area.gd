@@ -25,7 +25,7 @@ extends Area2D
 		visual_color = value
 		_sync_nodes()
 
-@export var show_visual_in_editor := true:
+@export var show_visual_in_editor := false:
 	set(value):
 		show_visual_in_editor = value
 		_sync_nodes()

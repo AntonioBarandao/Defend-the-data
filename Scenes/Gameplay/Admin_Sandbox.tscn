@@ -1,0 +1,607 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/game.gd" id="1_on2he"]
+[ext_resource type="Script" path="res://Scripts/UI/cyber_question_hud.gd" id="4_8y7lx"]
+[ext_resource type="FontFile" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
+[ext_resource type="Texture2D" path="res://assets/UI/CyberBucks.png" id="5_rh1nv"]
+[ext_resource type="FontFile" path="res://assets/Fonts/naked_power/Naked Power Bd.otf" id="6_0l0j1"]
+[ext_resource type="Texture2D" path="res://assets/Backgrounds/NewMap.png" id="6_agy0f"]
+[ext_resource type="PackedScene" path="res://Scenes/Towers/CyberGuardian.tscn" id="6_cyber"]
+[ext_resource type="Script" path="res://Scripts/UI/performance_hud.gd" id="8_5owvs"]
+[ext_resource type="PackedScene" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/RedVirus.tscn" id="9_redvirus"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/TrojanHorse.tscn" id="10_trojan"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/CyberQuestionHud.tscn" id="11_qhud"]
+[ext_resource type="Script" path="res://Scripts/UI/game_controls_hud.gd" id="11_sg0a6"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/PerformanceHud.tscn" id="12_perf"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
+[ext_resource type="Script" path="res://Scripts/UI/tower_upgrade_hud.gd" id="13_vtw72"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/tower_placement_area.gd" id="15_place"]
+[ext_resource type="Script" path="res://Scripts/UI/demo_presentation_overlay.gd" id="15_sxi6l"]
+[ext_resource type="FontFile" path="res://assets/Fonts/Cyber Crown/Cyber Crown.ttf" id="15_wq1r8"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/DemoPresentationOverlay.tscn" id="16_demo_overlay"]
+[ext_resource type="AudioStream" path="res://assets/soundtrack/Virtual Business.wav" id="17_soundtrack"]
+[ext_resource type="SpriteFrames" path="res://assets/Towers/CyberGuardian/CyberGuardianSpriteFrames.res" id="19_ste1q"]
+[ext_resource type="Script" path="res://Scripts/Towers/cyber_guardian_idle_sprite.gd" id="20_aaqmq"]
+[ext_resource type="SpriteFrames" path="res://assets/Towers/Laser-Turret/LaserTurretSpriteFrames.res" id="22_wj21a"]
+[ext_resource type="Script" path="res://Scripts/Towers/laser_turret.gd" id="23_ot6p8"]
+[ext_resource type="SpriteFrames" path="res://assets/Enemies/RedVirus/RedVirusSpriteFrames.res" id="25_gf1on"]
+[ext_resource type="Script" path="res://Scripts/Enemies/red_virus.gd" id="26_n6ay3"]
+[ext_resource type="SpriteFrames" path="res://assets/Enemies/TrojanHorse/TrojanHorseSpriteFrames.res" id="28_hct2c"]
+[ext_resource type="Script" path="res://Scripts/Enemies/trojan_horse.gd" id="29_ydjkm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_counter"]
+bg_color = Color(0.025, 0.032, 0.05, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27, 0.73, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_question"]
+bg_color = Color(0.025, 0.032, 0.05, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.28, 0.88, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status"]
+bg_color = Color(0.025, 0.032, 0.05, 0.9)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.82, 0.08, 0.96)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.48)
+shadow_size = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y7lx"]
+resource_local_to_scene = true
+size = Vector2(92.59923, 92.59923)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh1nv"]
+resource_local_to_scene = true
+size = Vector2(92.59923, 92.59923)
+
+[sub_resource type="Curve2D" id="Curve2D_63v24"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38.509842, -24, 0, 0, 0, 0, 214.9374, -23, 0, 0, 0, 0, 240.5331, 14, 0, 0, 0, 0, 251.50267, 78, 0, 0, 0, 0, 341.08765, 83, 0, 0, 0, 0, 358.45618, -19, 0, 0, 0, 0, 403.24866, -38, 0, 0, 0, 0, 553.1664, -40, 0, 0, 0, 0, 579.6762, -101, 0, 0, 0, 0, 608.92847, -138, 0, 0, 0, 0, 790.84076, -136, 0, 0, 0, 0, 829.2343, -97, 0, 0, 0, 0, 831.97675, -30, 0, 0, 0, 0, 869.4562, -2, 0, 0, 0, 0, 1112.6154, -9, 0, 0, 0, 0, 1129.9839, -71, 0, 0, 0, 0, 1168.3774, -113, 0, 0, 0, 0, 1400.567, -111, 0, 0, 0, 0, 1449.9302, -73, 0, 0, 0, 0, 1463.6422, 157, 0, 0, 0, 0, 1269.8462, 163, 0, 0, 0, 0, 1239.6798, 207, 0, 0, 0, 0, 1248.821, 356, 0, 0, 0, 0, 1211.3417, 385, 0, 0, 0, 0, 901.4508, 385, 0, 0, 0, 0, 855.7442, 401, 0, 0, 0, 0, 843.8605, 467, 0, 0, 0, 0, 793.5832, 488, 0, 0, 0, 0, 521.17175, 483, 0, 0, 0, 0, 476.37927, 447, 0, 0, 0, 0, 479.12164, 381, 0, 0, 0, 0, 480.03577, 301, 0, 0, 0, 0, 456.2683, 262, 0, 0, 0, 0, 215.85152, 263, 0, 0, 0, 0, 189.34169, 307, 0, 0, 0, 0, 174.71556, 460, 0, 0, 0, 0, 124.43828, 483, 0, 0, 0, 0, 84.21646, 503, 0, 0, 0, 0, 65.01967, 546, 0, 0, 0, 0, 12, 555)
+}
+point_count = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbew"]
+
+[node name="Game" type="Node2D" unique_id=574872578]
+script = ExtResource("1_on2he")
+virus_spawn_path = NodePath("VirusElements/SpawnVirus")
+demo_presentation_overlay_path = NodePath("DemoPresentationOverlay")
+
+[node name="AdminSandboxSoundtrack" type="AudioStreamPlayer" parent="." unique_id=662457559]
+stream = ExtResource("17_soundtrack")
+volume_db = -6.0
+
+[node name="CyberQuestionHud" parent="." unique_id=923521268 instance=ExtResource("11_qhud")]
+layer = 150
+script = ExtResource("4_8y7lx")
+demo_question_animation_enabled = true
+
+[node name="Root" parent="CyberQuestionHud" index="0" unique_id=1715806035]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CyberBuckCounter" parent="CyberQuestionHud/Root" index="0" unique_id=200258644]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -817.0
+offset_top = 24.0
+offset_right = -563.0
+offset_bottom = 88.0
+grow_horizontal = 0
+scale = Vector2(1.2404745, 1.2404745)
+theme_override_styles/panel = SubResource("StyleBoxFlat_counter")
+
+[node name="CounterBox" parent="CyberQuestionHud/Root/CyberBuckCounter" index="0" unique_id=2125087600]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" parent="CyberQuestionHud/Root/CyberBuckCounter/CounterBox" index="0" unique_id=590712695]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+texture = ExtResource("5_rh1nv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" parent="CyberQuestionHud/Root/CyberBuckCounter/CounterBox" index="1" unique_id=1587315214]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.3, 0.5, 1)
+theme_override_constants/outline_size = 2
+text = "0"
+vertical_alignment = 1
+
+[node name="QuestionPanel" parent="CyberQuestionHud/Root" index="1" unique_id=1626758872]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = -335.0
+offset_right = 823.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_question")
+
+[node name="Margin" parent="CyberQuestionHud/Root/QuestionPanel" index="0" unique_id=1595519009]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" parent="CyberQuestionHud/Root/QuestionPanel/Margin" index="0" unique_id=1562954456]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SelectionView" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content" index="0" unique_id=1237603739]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView" index="0" unique_id=300695286]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_0l0j1")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_fonts/bold_font = ExtResource("6_0l0j1")
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center]Select [b][color=#39A8FF]Cybersecurity[/color][/b] / [b][color=#F4C542]Networking[/color][/b] Questions[/center]"
+scroll_active = false
+
+[node name="CategoryButtons" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView" index="1" unique_id=47373905]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CybersecurityButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/CategoryButtons" index="0" unique_id=1369515974]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 32
+text = "Cybersecurity"
+
+[node name="NetworkingButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/CategoryButtons" index="1" unique_id=2026885184]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 32
+text = "Networking"
+
+[node name="DifficultyRow" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView" index="2" unique_id=855078073]
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="EasyCard" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow" index="0" unique_id=149717131]
+custom_minimum_size = Vector2(190, 102)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EasyButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/EasyCard" index="0" unique_id=345548716]
+custom_minimum_size = Vector2(190, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 20
+text = "Easy"
+
+[node name="EasyReward" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/EasyCard" index="1" unique_id=338532293]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/EasyCard/EasyReward" index="0" unique_id=1724314031]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_rh1nv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/EasyCard/EasyReward" index="1" unique_id=1516753934]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.83, 0.95, 1, 1)
+text = "+10"
+vertical_alignment = 1
+
+[node name="MediumCard" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow" index="1" unique_id=2026208883]
+custom_minimum_size = Vector2(190, 102)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MediumButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/MediumCard" index="0" unique_id=1957662001]
+custom_minimum_size = Vector2(190, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 20
+text = "Medium"
+
+[node name="MediumReward" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/MediumCard" index="1" unique_id=2133697897]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/MediumCard/MediumReward" index="0" unique_id=1974782807]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_rh1nv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/MediumCard/MediumReward" index="1" unique_id=1021731050]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.83, 0.95, 1, 1)
+text = "+25"
+vertical_alignment = 1
+
+[node name="HardCard" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow" index="2" unique_id=675348781]
+custom_minimum_size = Vector2(190, 102)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HardButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/HardCard" index="0" unique_id=579942209]
+custom_minimum_size = Vector2(190, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 20
+text = "Hard"
+
+[node name="HardReward" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/HardCard" index="1" unique_id=1607072098]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/HardCard/HardReward" index="0" unique_id=1521141842]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_rh1nv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/SelectionView/DifficultyRow/HardCard/HardReward" index="1" unique_id=1395378092]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.83, 0.95, 1, 1)
+text = "+50"
+vertical_alignment = 1
+
+[node name="QuestionView" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content" index="1" unique_id=1315647021]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="QuestionText" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView" index="0" unique_id=1898545955]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CurrentReward" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView" index="1" unique_id=1472160947]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/CurrentReward" index="0" unique_id=1108353987]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_rh1nv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amount" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/CurrentReward" index="1" unique_id=1305518314]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.88, 0.28, 1)
+text = "+10 CyberBucks"
+vertical_alignment = 1
+
+[node name="AnswerButtons" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView" index="2" unique_id=414636611]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AnswerButton1" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/AnswerButtons" index="0" unique_id=1890130963]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+text = "Answer 1"
+
+[node name="AnswerButton2" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/AnswerButtons" index="1" unique_id=223889312]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+text = "Answer 2"
+
+[node name="AnswerButton3" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/AnswerButtons" index="2" unique_id=465799031]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+text = "Answer 3"
+
+[node name="AnswerButton4" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView/AnswerButtons" index="3" unique_id=328189567]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+text = "Answer 4"
+
+[node name="FeedbackLabel" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView" index="3" unique_id=177089832]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(1, 0.45, 0.38, 1)
+horizontal_alignment = 1
+
+[node name="BackButton" parent="CyberQuestionHud/Root/QuestionPanel/Margin/Content/QuestionView" index="4" unique_id=2096119587]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_0l0j1")
+text = "Change Difficulty"
+
+[node name="PerformanceHud" parent="." unique_id=1039250105 instance=ExtResource("12_perf")]
+layer = 130
+script = ExtResource("8_5owvs")
+
+[node name="Root" parent="PerformanceHud" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StatusPanel" parent="PerformanceHud/Root" index="0"]
+custom_minimum_size = Vector2(380, 112)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = 24.0
+offset_right = 190.0
+offset_bottom = 136.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="Margin" parent="PerformanceHud/Root/StatusPanel" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" parent="PerformanceHud/Root/StatusPanel/Margin" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="FPSLabel" parent="PerformanceHud/Root/StatusPanel/Margin/Content" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 34
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_colors/font_outline_color = Color(1, 0.74, 0.08, 0.95)
+theme_override_constants/outline_size = 2
+text = "FPS: 0 / 60"
+horizontal_alignment = 1
+
+[node name="VirusCountLabel" parent="PerformanceHud/Root/StatusPanel/Margin/Content" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 0.9, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+text = "Viruses: 0"
+horizontal_alignment = 1
+
+[node name="GameControlsHud" type="CanvasLayer" parent="." unique_id=772842743 instance=ExtResource("13_controls")]
+layer = 120
+script = ExtResource("11_sg0a6")
+
+[node name="TowerUpgradeHud" type="CanvasLayer" parent="." unique_id=1985424915 instance=ExtResource("14_upgrades")]
+layer = 80
+script = ExtResource("13_vtw72")
+
+[node name="DemoPresentationOverlay" type="CanvasLayer" parent="." unique_id=1382216125 instance=ExtResource("16_demo_overlay")]
+layer = 145
+script = ExtResource("15_sxi6l")
+naked_power_font = ExtResource("6_0l0j1")
+cyber_bucks_texture = ExtResource("5_rh1nv")
+
+[node name="CpuArena" type="Sprite2D" parent="." unique_id=1951202282]
+position = Vector2(1053.9265, 537.5)
+scale = Vector2(1.2560687, 1.1424017)
+texture = ExtResource("6_agy0f")
+
+[node name="TowerPlacementArea" type="Area2D" parent="." unique_id=817734020]
+position = Vector2(429, 223)
+script = ExtResource("15_place")
+placement_size = Vector2(92.59923, 92.59923)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=1417027579]
+shape = SubResource("RectangleShape2D_8y7lx")
+
+[node name="PlacementSlot2" type="CollisionShape2D" parent="TowerPlacementArea" unique_id=48627030]
+position = Vector2(1145, 176)
+shape = SubResource("RectangleShape2D_rh1nv")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=394633943]
+visible = false
+
+[node name="TestDrag" type="Control" parent="." unique_id=1456189078]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -124.00006
+offset_right = 40.0
+offset_bottom = -84.00006
+
+[node name="TowerTrayBackground" type="ColorRect" parent="TestDrag" unique_id=161859911]
+layout_mode = 0
+offset_left = 2103.0
+offset_top = 120.00006
+offset_right = 2562.0
+offset_bottom = 1204.0
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="PlatformHighlight" type="ColorRect" parent="." unique_id=477646041]
+offset_right = 126.0
+offset_bottom = 120.0
+mouse_filter = 2
+color = Color(1, 0.1, 0.08, 0.45)
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1360860051]
+position = Vector2(0, -124.00006)
+
+[node name="Cybersec Guardian" type="AnimatedSprite2D" parent="Sprites" unique_id=1828353461 groups=["Defender", "OFFENSE_TOWER"] instance=ExtResource("6_cyber")]
+position = Vector2(2198, 301.00006)
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("19_ste1q")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("20_aaqmq")
+
+[node name="Laser Turret" type="AnimatedSprite2D" parent="Sprites" unique_id=1913387890 groups=["Defender", "OFFENSE_TOWER"] instance=ExtResource("8_laser")]
+position = Vector2(2388, 296.00006)
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("22_wj21a")
+animation = &"level_1"
+autoplay = "level_1"
+script = ExtResource("23_ot6p8")
+
+[node name="BasicVirus" type="AnimatedSprite2D" parent="Sprites" unique_id=1150048990 instance=ExtResource("9_redvirus")]
+position = Vector2(2215, 889.00006)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("25_gf1on")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("26_n6ay3")
+
+[node name="TrojanHorse" type="AnimatedSprite2D" parent="Sprites" unique_id=236675419 instance=ExtResource("10_trojan")]
+position = Vector2(2390, 889.00006)
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("28_hct2c")
+animation = &"Cloaked_Horse_Move"
+autoplay = "Horse_Move"
+script = ExtResource("29_ydjkm")
+path_speed = 25.0
+max_health = 50
+
+[node name="Blue Towers" type="Label" parent="." unique_id=384477170]
+offset_left = 2147.0
+offset_top = 15.0
+offset_right = 2496.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 24
+text = "Blue Towers"
+
+[node name="Red Virus" type="Label" parent="." unique_id=538766559]
+offset_left = 2123.0
+offset_top = 509.0
+offset_right = 2534.0
+offset_bottom = 553.0
+theme_override_fonts/font = ExtResource("5_1l26u")
+theme_override_font_sizes/font_size = 32
+text = "Red Viruses"
+
+[node name="WavesLabel" type="Label" parent="." unique_id=1834529841]
+offset_left = 23.0
+offset_top = 10.0
+offset_right = 720.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("15_wq1r8")
+theme_override_font_sizes/font_size = 88
+text = "Wave 0/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1222966337]
+offset_left = 976.0
+offset_top = 725.0
+offset_right = 977.0
+offset_bottom = 1080.0
+color = Color(0.42288277, 0.4228828, 0.4228828, 1)
+
+[node name="VirusElements" type="Node" parent="." unique_id=1926487214]
+
+[node name="Path2D" type="Path2D" parent="VirusElements" unique_id=1664708490]
+position = Vector2(119.8728, 319)
+scale = Vector2(1.0939335, 1)
+curve = SubResource("Curve2D_63v24")
+
+[node name="SpawnVirus" type="Marker2D" parent="VirusElements" unique_id=1524594111]
+position = Vector2(70, 289)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=595350600]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1514158457]
+visible = false
+scale = Vector2(3.9718153, 3.9718153)
+shape = SubResource("RectangleShape2D_xpbew")
+debug_color = Color(0.5323416, 0.5497722, 0.4333505, 0.41960785)
+
+[editable path="CyberQuestionHud"]
+[editable path="PerformanceHud"]
