@@ -1,11 +1,99 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://b658jrcj1ke3f"]
 
-[ext_resource type="SpriteFrames" path="res://assets/Towers/Laser-Turret/LaserTurretSpriteFrames.res" id="1_frames"]
-[ext_resource type="Script" path="res://Scripts/Towers/laser_turret.gd" id="2_script"]
+[ext_resource type="SpriteFrames" uid="uid://dt4dy4uuteuod" path="res://assets/Towers/Laser-Turret/LaserTurretSpriteFrames.res" id="1_frames"]
+[ext_resource type="Script" uid="uid://crvaomqv28kb8" path="res://Scripts/Towers/laser_turret.gd" id="2_script"]
+[ext_resource type="SpriteFrames" uid="uid://b5wn6y88c7msa" path="res://assets/Towers/Laser-Turret/LaserFX/LaserTurretBeamFxSpriteFrames.tres" id="3_laser_fx"]
+[ext_resource type="Texture2D" uid="uid://boaiqtkopvk4n" path="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV1_Plate.png" id="4_plate_lv1"]
+[ext_resource type="Texture2D" uid="uid://c7bx4qd6b03lh" path="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV2_Plate.png" id="5_plate_lv2"]
+[ext_resource type="Texture2D" uid="uid://d2ua0a2schmme" path="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV3_Plate.png" id="6_plate_lv3"]
+[ext_resource type="Texture2D" uid="uid://dhygcqcjc2ms3" path="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV4_Plate.png" id="7_plate_lv4"]
+[ext_resource type="Texture2D" uid="uid://bdhna3gs5wdrm" path="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV5_Plate.png" id="8_plate_lv5"]
+[ext_resource type="AudioStream" uid="uid://dsb4xo8x4wsm3" path="res://assets/sfx/laser_turret_deploy.wav" id="9_deploy_sfx"]
+[ext_resource type="AudioStream" uid="uid://dpyu6uxidrsyl" path="res://assets/sfx/laser_turret_upgrade.wav" id="10_upgrade_sfx"]
+[ext_resource type="AudioStream" uid="uid://cybhv36hv8u4i" path="res://assets/sfx/laser_turret_upgrade_lv5.wav" id="11_upgrade_lv5_sfx"]
+[ext_resource type="AudioStream" uid="uid://dptbxj6gd7jus" path="res://assets/sfx/laser_turret_lv1_shoot.wav" id="12_shoot_lv1_sfx"]
+[ext_resource type="AudioStream" uid="uid://y5wfv2d5tv52" path="res://assets/sfx/laser_turret_lv2_shoot.wav" id="13_shoot_lv2_sfx"]
+[ext_resource type="AudioStream" uid="uid://dwnw32gjs7h1t" path="res://assets/sfx/laser_turret_lv3_shoot.wav" id="14_shoot_lv3_sfx"]
+[ext_resource type="AudioStream" uid="uid://7swqslpqu6ry" path="res://assets/sfx/laser_turret_lv4_shoot.wav" id="15_shoot_lv4_sfx"]
+[ext_resource type="AudioStream" uid="uid://ccfo6bus8uwg" path="res://assets/sfx/laser_turret_lv5_shoot.wav" id="16_shoot_lv5_sfx"]
 
-[node name="Laser Turret" type="AnimatedSprite2D" groups=["Defender"]]
+[node name="Laser Turret" type="AnimatedSprite2D" unique_id=1322897199 groups=["Defender", "OFFENSE_TOWER"]]
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("1_frames")
 animation = &"level_1"
 autoplay = "level_1"
 script = ExtResource("2_script")
+
+[node name="Level1Plate" type="Sprite2D" parent="." unique_id=94239434]
+show_behind_parent = true
+position = Vector2(0, -40)
+texture = ExtResource("4_plate_lv1")
+
+[node name="Level2Plate" type="Sprite2D" parent="." unique_id=384579371]
+visible = false
+show_behind_parent = true
+position = Vector2(6.6666665, -26.666666)
+texture = ExtResource("5_plate_lv2")
+
+[node name="Level3Plate" type="Sprite2D" parent="." unique_id=1308174632]
+visible = false
+show_behind_parent = true
+position = Vector2(0, 20)
+texture = ExtResource("6_plate_lv3")
+
+[node name="Level4Plate" type="Sprite2D" parent="." unique_id=1611864099]
+visible = false
+show_behind_parent = true
+position = Vector2(0, 53.333332)
+texture = ExtResource("7_plate_lv4")
+
+[node name="Level5Plate" type="Sprite2D" parent="." unique_id=720873414]
+visible = false
+show_behind_parent = true
+position = Vector2(6.6666665, 73.33333)
+texture = ExtResource("8_plate_lv5")
+
+[node name="LaserBeamFx" type="AnimatedSprite2D" parent="." unique_id=995594978]
+visible = false
+z_index = 101
+position = Vector2(-3.3333435, 176.66669)
+rotation = 0.7853982
+sprite_frames = ExtResource("3_laser_fx")
+animation = &"Laser_Startup_Shoot"
+offset = Vector2(248, 257)
+
+[node name="Audio" type="Node" parent="." unique_id=1389736071]
+
+[node name="DeploySfx" type="AudioStreamPlayer" parent="Audio" unique_id=285331562]
+stream = ExtResource("9_deploy_sfx")
+volume_db = -10.0
+
+[node name="UpgradeSfx" type="AudioStreamPlayer" parent="Audio" unique_id=2082408905]
+stream = ExtResource("10_upgrade_sfx")
+volume_db = -10.0
+
+[node name="UpgradeLv5Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=549685041]
+stream = ExtResource("11_upgrade_lv5_sfx")
+volume_db = -5.0
+
+[node name="ShootLv1Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=1918830061]
+stream = ExtResource("12_shoot_lv1_sfx")
+volume_db = -10.0
+
+[node name="ShootLv2Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=679982120]
+stream = ExtResource("13_shoot_lv2_sfx")
+volume_db = -10.0
+
+[node name="ShootLv3Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=965628409]
+stream = ExtResource("14_shoot_lv3_sfx")
+volume_db = -15.0
+pitch_scale = 0.8
+
+[node name="ShootLv4Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=1870189007]
+stream = ExtResource("15_shoot_lv4_sfx")
+volume_db = -15.0
+pitch_scale = 0.8
+
+[node name="ShootLv5Sfx" type="AudioStreamPlayer" parent="Audio" unique_id=361901475]
+stream = ExtResource("16_shoot_lv5_sfx")
+volume_db = -10.0

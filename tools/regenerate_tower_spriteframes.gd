@@ -39,7 +39,7 @@ func _init() -> void:
 		[
 			{
 				"name": &"level_1",
-				"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV1_idle_atlas_30fps.png",
+				"atlas": "res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV1_Baseless_Idle_atlas_30fps.png",
 				"frame_count": 91,
 				"columns": 10,
 				"frame_size": Vector2i(720, 720),
@@ -48,32 +48,16 @@ func _init() -> void:
 			},
 			{
 				"name": &"level_2",
+				"atlas": "res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png",
+				"frame_count": 91,
+				"columns": 10,
+				"frame_size": Vector2i(720, 720),
 				"fps": 30.0,
-				"loop": true,
-				"pages": [
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p01.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p02.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p03.png",
-						"frame_count": 53,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					}
-				]
+				"loop": true
 			},
 			{
 				"name": &"level_3",
-				"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV3_idle_atlas_30fps.png",
+				"atlas": "res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV3_Baseless_Idle_atlas_30fps.png",
 				"frame_count": 91,
 				"columns": 10,
 				"frame_size": Vector2i(720, 720),
@@ -82,53 +66,21 @@ func _init() -> void:
 			},
 			{
 				"name": &"level_4",
+				"atlas": "res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV4_Baseless_Idle_atlas_30fps.png",
+				"frame_count": 91,
+				"columns": 10,
+				"frame_size": Vector2i(720, 720),
 				"fps": 30.0,
-				"loop": true,
-				"pages": [
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV4_idle_atlas_30fps_p01.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV4_idle_atlas_30fps_p02.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV4_idle_atlas_30fps_p03.png",
-						"frame_count": 53,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					}
-				]
+				"loop": true
 			},
 			{
 				"name": &"level_5",
+				"atlas": "res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV5_Baseless_Idle_atlas_30fps.png",
+				"frame_count": 91,
+				"columns": 10,
+				"frame_size": Vector2i(720, 720),
 				"fps": 30.0,
-				"loop": true,
-				"pages": [
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV5_idle_atlas_30fps_p01.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV5_idle_atlas_30fps_p02.png",
-						"frame_count": 64,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					},
-					{
-						"atlas": "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV5_idle_atlas_30fps_p03.png",
-						"frame_count": 53,
-						"columns": 8,
-						"frame_size": Vector2i(720, 720)
-					}
-				]
+				"loop": true
 			}
 		]
 	)

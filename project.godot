@@ -10,8 +10,13 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="Untitled_Learning_Game"
 run/main_scene="uid://dgv71rsjbysiq"
+=======
+config/name="Defend The Data"
+run/main_scene="res://Scenes/Gameplay/Cutscene_Test_Game.tscn"
+>>>>>>> 4f184935da47f214ef9486204354f4d648908567
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -35,6 +40,8 @@ version_control/autoload_on_startup=true
 [global_group]
 
 Defender=""
+OFFENSE_TOWER=""
+SUPPORT_TOWER=""
 Virus=""
 
 [physics]

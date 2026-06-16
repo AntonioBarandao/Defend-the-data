@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c7b5taf2pji8r"]
+
+[ext_resource type="SpriteFrames" uid="uid://bg8dbtfkujtwk" path="res://assets/Enemies/TrojanHorse/TrojanHorseSpriteFrames.res" id="1_frames"]
+[ext_resource type="Script" uid="uid://bsu87durcxo18" path="res://Scripts/Enemies/trojan_horse.gd" id="2_script"]
+[ext_resource type="Script" path="res://Scripts/UI/trojan_horse_progress_bar.gd" id="3_progress_bar_script"]
+[ext_resource type="Texture2D" uid="uid://d1m6smrk3mokq" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_under.png" id="4_health_under"]
+[ext_resource type="Texture2D" uid="uid://cmndpa34uosxj" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_progress.png" id="5_health_progress"]
+[ext_resource type="Texture2D" uid="uid://b4o5co2e3jx86" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_over.png" id="6_health_over"]
+[ext_resource type="AudioStream" uid="uid://bfshg7mdbonis" path="res://assets/sfx/trojan_horse_enter.wav" id="7_enter_sfx"]
+[ext_resource type="AudioStream" uid="uid://bqlqgvivmaqt1" path="res://assets/sfx/trojan_horse_transform.wav" id="8_transform_sfx"]
+
+[node name="TrojanHorse" type="AnimatedSprite2D" unique_id=1878623079]
+sprite_frames = ExtResource("1_frames")
+animation = &"Cloaked_Horse_Move"
+autoplay = "Horse_Move"
+script = ExtResource("2_script")
+path_speed = 25.0
+max_health = 50
+
+[node name="MinibossHealthBar" type="Node2D" parent="." unique_id=458405390]
+z_index = 700
+position = Vector2(0, -390)
+scale = Vector2(1.566647, 1.566647)
+script = ExtResource("3_progress_bar_script")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MinibossHealthBar" unique_id=629821]
+offset_left = -130.0
+offset_top = -21.0
+offset_right = 130.0
+offset_bottom = 21.0
+mouse_filter = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 24
+stretch_margin_top = 12
+stretch_margin_right = 24
+stretch_margin_bottom = 12
+texture_under = ExtResource("4_health_under")
+texture_over = ExtResource("6_health_over")
+texture_progress = ExtResource("5_health_progress")
+
+[node name="Audio" type="Node" parent="." unique_id=1231151374]
+
+[node name="EnterSfx" type="AudioStreamPlayer" parent="Audio" unique_id=2069775479]
+stream = ExtResource("7_enter_sfx")
+volume_db = -15.0
+
+[node name="TransformSfx" type="AudioStreamPlayer" parent="Audio" unique_id=2062236086]
+stream = ExtResource("8_transform_sfx")
+volume_db = -15.0
