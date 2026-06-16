@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/Enemies/BotnetLV/BotnetLV3.png" id="1_texture"]
+[ext_resource type="Script" path="res://Scripts/Enemies/botnet_lv.gd" id="2_script"]
+[ext_resource type="Script" path="res://Scripts/UI/trojan_horse_progress_bar.gd" id="3_progress_bar_script"]
+[ext_resource type="Texture2D" uid="uid://d1m6smrk3mokq" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_under.png" id="4_health_under"]
+[ext_resource type="Texture2D" uid="uid://cmndpa34uosxj" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_progress.png" id="5_health_progress"]
+[ext_resource type="Texture2D" uid="uid://b4o5co2e3jx86" path="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_over.png" id="6_health_over"]
+
+[node name="BotnetLV3" type="Node2D"]
+visible = false
+z_index = 70
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_texture")
+
+[node name="MinibossHealthBar" type="Node2D" parent="."]
+z_index = 700
+position = Vector2(0, -165)
+scale = Vector2(1.25, 1.25)
+script = ExtResource("3_progress_bar_script")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MinibossHealthBar"]
+offset_left = -130.0
+offset_top = -21.0
+offset_right = 130.0
+offset_bottom = 21.0
+mouse_filter = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 24
+stretch_margin_top = 12
+stretch_margin_right = 24
+stretch_margin_bottom = 12
+texture_under = ExtResource("4_health_under")
+texture_over = ExtResource("6_health_over")
+texture_progress = ExtResource("5_health_progress")

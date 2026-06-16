@@ -55,6 +55,7 @@ var _shot_return_tween: Tween
 var _range_preview_fill: Polygon2D
 var _range_preview_outline: Line2D
 var _range_preview_radius := -1.0
+var _menu_range_preview_active := false
 var _summon_sfx: AudioStreamPlayer
 var _base_modulate := Color.WHITE
 
@@ -188,6 +189,11 @@ func get_laser_width() -> float:
 
 func get_attack_range() -> float:
 	return LEVEL_ATTACK_RANGES[level - 1]
+
+
+func set_menu_range_preview_active(active: bool) -> void:
+	_menu_range_preview_active = active
+	_update_attack_range_preview()
 
 
 func get_shot_cooldown() -> float:
@@ -360,7 +366,7 @@ func _update_attack_range_preview() -> void:
 	if not show_attack_range_preview:
 		return
 
-	var should_show := _dragging
+	var should_show := _dragging or _menu_range_preview_active
 	if not should_show:
 		_set_range_preview_visible(false)
 		return

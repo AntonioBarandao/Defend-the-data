@@ -76,6 +76,7 @@ var _range_preview_fill: Polygon2D
 var _range_preview_outline: Line2D
 var _range_preview_radius := -1.0
 var _range_preview_forced_time_remaining := 0.0
+var _menu_range_preview_active := false
 var _beam_fx_reference: AnimatedSprite2D
 var _level_plates: Array[Sprite2D] = []
 var _level_plate_local_offsets: Array[Vector2] = []
@@ -212,6 +213,11 @@ func get_shot_power() -> int:
 
 func get_attack_range() -> float:
 	return LEVEL_RANGES[level - 1]
+
+
+func set_menu_range_preview_active(active: bool) -> void:
+	_menu_range_preview_active = active
+	_update_attack_range_preview()
 
 
 func get_shot_cooldown() -> float:
@@ -490,7 +496,8 @@ func _update_attack_range_preview() -> void:
 		return
 
 	var should_show := _range_preview_forced_time_remaining > 0.0 \
-		or _dragging
+		or _dragging \
+		or _menu_range_preview_active
 	if not should_show:
 		_set_range_preview_visible(false)
 		return

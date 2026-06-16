@@ -1,0 +1,230 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/cutscene_demo_menu.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.025, 0.032, 0.05, 0.93)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.28, 0.88, 1, 0.94)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.055, 0.1, 0.16, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.9, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exit"]
+bg_color = Color(0.38, 0.04, 0.055, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.22, 0.22, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CutsceneDemoMenu" type="CanvasLayer"]
+layer = 980
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HamburgerButton" type="Button" parent="Root"]
+custom_minimum_size = Vector2(76, 48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 22.0
+offset_right = 38.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.9, 0.97, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+text = "|||"
+
+[node name="MenuPanel" type="PanelContainer" parent="Root"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 84.0
+offset_right = 180.0
+offset_bottom = 454.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Root/MenuPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="Root/MenuPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ResumeButton" type="Button" parent="Root/MenuPanel/Margin/Content"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.97, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="Root/MenuPanel/Margin/Content"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.97, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+text = "Settings"
+
+[node name="SettingsPanel" type="PanelContainer" parent="Root/MenuPanel/Margin/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Root/MenuPanel/Margin/Content/SettingsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="Sliders" type="VBoxContainer" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MasterRow" type="VBoxContainer" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/MasterRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.92, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/MasterRow"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicRow" type="VBoxContainer" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/MusicRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.92, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/MusicRow"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SoundRow" type="VBoxContainer" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders"]
+layout_mode = 2
+
+[node name="SoundLabel" type="Label" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/SoundRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.92, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Sound Volume"
+
+[node name="SoundSlider" type="HSlider" parent="Root/MenuPanel/Margin/Content/SettingsPanel/Margin/Sliders/SoundRow"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ExitButton" type="Button" parent="Root/MenuPanel/Margin/Content"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_exit")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exit")
+text = "Exit Game"
+
+[node name="WaveSetPanel" type="PanelContainer" parent="Root"]
+custom_minimum_size = Vector2(300, 76)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -340.0
+offset_top = 22.0
+offset_right = -28.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Root/WaveSetPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="Content" type="HBoxContainer" parent="Root/WaveSetPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WaveInput" type="LineEdit" parent="Root/WaveSetPanel/Margin/Content"]
+custom_minimum_size = Vector2(108, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Wave"
+
+[node name="SetWaveButton" type="Button" parent="Root/WaveSetPanel/Margin/Content"]
+custom_minimum_size = Vector2(132, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.97, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+text = "Set Wave"

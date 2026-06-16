@@ -66,6 +66,7 @@ var _phase_one_hover_tweens: Array[Tween] = []
 var _phase_one_hover_start_positions := {}
 var _phase_one_destroy_sfx_players: Array[AudioStreamPlayer] = []
 var _last_handled_cutscene_input_event_id := 0
+var _skip_requested := false
 
 
 func _ready() -> void:
@@ -86,6 +87,7 @@ func start_cutscene() -> void:
 		return
 
 	_running = true
+	_skip_requested = false
 	visible = true
 	current_act = ACT_ONE
 	act_started.emit(current_act)
@@ -97,6 +99,8 @@ func start_cutscene() -> void:
 	_prepare_all_overlays_hidden()
 
 	await _run_act_one_phase_one()
+	if _skip_requested or not _running:
+		return
 	await _run_act_one_phase_two()
 
 
@@ -111,11 +115,19 @@ func _run_act_one_phase_one() -> void:
 	_alert_overlay.color = Color(red_alert_color.r, red_alert_color.g, red_alert_color.b, 0.0)
 
 	await _play_red_alert()
+	if _skip_requested or not _running:
+		return
 	await _pan_camera_to_phase_one_target()
+	if _skip_requested or not _running:
+		return
 	_start_phase_one_virus_hover()
 	await get_tree().create_timer(enemy_hold_duration).timeout
+	if _skip_requested or not _running:
+		return
 	_stop_phase_one_virus_hover()
 	await _return_camera_to_start()
+	if _skip_requested or not _running:
+		return
 
 	_alert_overlay.hide()
 	_finish_phase(PHASE_ONE)
@@ -144,6 +156,8 @@ func _run_act_one_phase_two() -> void:
 	intro_tween.tween_property(_mascot, "global_position", _mascot_final_global_position, entry_duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	intro_tween.tween_property(_mascot, "modulate", Color.WHITE, entry_duration * 0.75)
 	await intro_tween.finished
+	if _skip_requested or not _running:
+		return
 
 	if dialogue_lines.is_empty():
 		_finish_cutscene()
@@ -235,6 +249,8 @@ func _play_current_line() -> void:
 
 		_dialogue_label.text = line.substr(0, index + 1)
 		await get_tree().create_timer(delay).timeout
+		if _skip_requested or not _running:
+			return
 
 	_dialogue_label.text = line
 	_typing = false
@@ -247,6 +263,26 @@ func _play_current_line() -> void:
 
 func is_cutscene_running() -> bool:
 	return _running
+
+
+func skip_cutscene() -> void:
+	if not _running:
+		return
+
+	_skip_requested = true
+	_stop_mascot_bob()
+	_stop_phase_one_virus_hover()
+	if _cutscene_camera != null:
+		_cutscene_camera.global_position = _camera_start_global_position
+		_cutscene_camera.zoom = _camera_start_zoom
+	_dialogue_panel.global_position = _panel_final_global_position
+	_mascot.global_position = _mascot_final_global_position
+	_prepare_all_overlays_hidden()
+	_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_root.hide()
+	_running = false
+	current_phase = PHASE_END
+	cutscene_finished.emit()
 
 
 func _ensure_continue_button_styles() -> void:
@@ -264,6 +300,9 @@ func _ensure_continue_button_styles() -> void:
 
 
 func _finish_cutscene() -> void:
+	if not _running:
+		return
+
 	_finish_phase(PHASE_TWO)
 	_start_phase(PHASE_END)
 	_stop_mascot_bob()

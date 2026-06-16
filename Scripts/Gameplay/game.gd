@@ -1,5 +1,8 @@
 extends Node2D
 
+signal wave_started(wave_number: int)
+signal current_wave_changed(wave_number: int)
+
 const CyberGuardianTowerScript := preload("res://Scripts/Towers/cyber_guardian_idle_sprite.gd")
 const LaserTurretScript := preload("res://Scripts/Towers/laser_turret.gd")
 const RedVirusScript := preload("res://Scripts/Enemies/red_virus.gd")
@@ -33,6 +36,7 @@ const LASER_TURRET_CYBERBUCK_REWARD := 5
 @export var demo_presentation_overlay_path: NodePath
 @export var wave_label_path: NodePath = ^"WavesLabel"
 @export var text_cutscene_path: NodePath = ^"TextCutscene"
+@export var cutscene_skip_hud_path: NodePath = ^"CutsceneSkipHud"
 @export var demo_spawn_buttons_ignore_question_lock := false
 @export_group("Path Guide")
 @export var show_path_guide := true
@@ -57,6 +61,7 @@ var _tower_upgrade_hud: TowerUpgradeHudScript
 var _demo_presentation_overlay: DemoPresentationOverlayScript
 var _wave_label: Label
 var _text_cutscene: Node
+var _cutscene_skip_hud: Node
 var _path_guide_container: Node2D
 var _active_viruses: Array[PathFollow2D] = []
 var _current_wave := 0
@@ -80,6 +85,7 @@ func _ready() -> void:
 	_demo_presentation_overlay = get_node_or_null(demo_presentation_overlay_path) as DemoPresentationOverlayScript
 	_wave_label = get_node_or_null(wave_label_path) as Label
 	_text_cutscene = get_node_or_null(text_cutscene_path)
+	_cutscene_skip_hud = get_node_or_null(cutscene_skip_hud_path)
 	if _virus_spawn == null:
 		_virus_spawn = get_node_or_null(^"VirusElements/Spawn2D") as Node2D
 
@@ -145,6 +151,11 @@ func _add_virus_template(template: RedVirusScript) -> void:
 
 func _input(event: InputEvent) -> void:
 	if _is_act_input_locked():
+		if _cutscene_skip_hud != null \
+				and _cutscene_skip_hud.has_method("handle_cutscene_skip_input") \
+				and bool(_cutscene_skip_hud.call("handle_cutscene_skip_input", event)):
+			get_viewport().set_input_as_handled()
+			return
 		if _text_cutscene != null and _text_cutscene.has_method("handle_cutscene_advance_input"):
 			_text_cutscene.call("handle_cutscene_advance_input", event)
 		get_viewport().set_input_as_handled()
@@ -290,6 +301,7 @@ func _reset_tower() -> void:
 			node.call("reset_tower")
 	if _tower_upgrade_hud != null:
 		_tower_upgrade_hud.hide_all()
+	_set_tower_menu_radius_previews(false, false)
 	_update_demo_upgrade_buttons()
 
 
@@ -403,6 +415,23 @@ func _start_next_wave() -> void:
 	_wave_spawn_cooldown_remaining = 0.0
 	_update_wave_button()
 	_update_wave_label()
+	current_wave_changed.emit(_current_wave)
+	wave_started.emit(_current_wave)
+
+
+func get_current_wave() -> int:
+	return _current_wave
+
+
+func set_current_wave_for_demo(wave_number: int) -> void:
+	_current_wave = clampi(wave_number, 0, WAVE_MAX_COUNT)
+	_wave_in_progress = false
+	_wave_question_pending = false
+	_wave_spawns_remaining = 0
+	_wave_spawn_cooldown_remaining = 0.0
+	_update_wave_button()
+	_update_wave_label()
+	current_wave_changed.emit(_current_wave)
 
 
 func _update_wave_spawner(delta: float) -> void:
@@ -945,6 +974,7 @@ func _show_upgrade_panel() -> void:
 	if _tower_upgrade_hud == null:
 		return
 
+	_set_tower_menu_radius_previews(true, false)
 	_tower_upgrade_hud.show_guardian_panel()
 
 
@@ -953,6 +983,8 @@ func _hide_upgrade_panel() -> void:
 		return
 
 	_tower_upgrade_hud.hide_guardian_panel()
+	if not _tower_upgrade_hud.is_guardian_panel_visible():
+		_set_tower_menu_radius_previews(false, _tower_upgrade_hud.is_laser_panel_visible())
 
 
 func _show_laser_upgrade_panel() -> void:
@@ -960,6 +992,7 @@ func _show_laser_upgrade_panel() -> void:
 		return
 
 	_sync_laser_upgrade_panel()
+	_set_tower_menu_radius_previews(false, true)
 	_tower_upgrade_hud.show_laser_panel()
 
 
@@ -968,3 +1001,12 @@ func _hide_laser_upgrade_panel() -> void:
 		return
 
 	_tower_upgrade_hud.hide_laser_panel()
+	if not _tower_upgrade_hud.is_laser_panel_visible():
+		_set_tower_menu_radius_previews(_tower_upgrade_hud.is_guardian_panel_visible(), false)
+
+
+func _set_tower_menu_radius_previews(guardian_active: bool, laser_active: bool) -> void:
+	if _guardian != null and _guardian.has_method("set_menu_range_preview_active"):
+		_guardian.call("set_menu_range_preview_active", guardian_active)
+	if _laser_turret != null and _laser_turret.has_method("set_menu_range_preview_active"):
+		_laser_turret.call("set_menu_range_preview_active", laser_active)

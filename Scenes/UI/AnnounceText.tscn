@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/announce_text.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_message"]
+bg_color = Color(0.025, 0.032, 0.05, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.82, 0.08, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.55)
+shadow_size = 16
+shadow_offset = Vector2(0, 8)
+
+[node name="AnnounceText" type="CanvasLayer"]
+layer = 1000
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MessagePanel" type="PanelContainer" parent="Root"]
+custom_minimum_size = Vector2(560, 78)
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_message")
+
+[node name="Margin" type="MarginContainer" parent="Root/MessagePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="Root/MessagePanel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.97, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 30
+text = "Cutscene Skipped"
+horizontal_alignment = 1
+vertical_alignment = 1
