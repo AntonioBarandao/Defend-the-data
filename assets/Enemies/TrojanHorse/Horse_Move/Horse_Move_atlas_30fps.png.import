@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1mc5x8h7h85k"
-path="res://.godot/imported/Horse_Move_atlas_30fps.png-a5f4d2e90f8ff9b11e936a078784e24e.ctex"
+path="res://.godot/imported/Horse_Move_atlas_30fps.png-5704979199b7af6dd9c9de95f8cafa32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/TrojanHorse/Horse_Move/Horse_Move_atlas_30fps.png"
-dest_files=["res://.godot/imported/Horse_Move_atlas_30fps.png-a5f4d2e90f8ff9b11e936a078784e24e.ctex"]
+source_file="res://Assets/Enemies/TrojanHorse/Horse_Move/Horse_Move_atlas_30fps.png"
+dest_files=["res://.godot/imported/Horse_Move_atlas_30fps.png-5704979199b7af6dd9c9de95f8cafa32.ctex"]
 
 [params]
 

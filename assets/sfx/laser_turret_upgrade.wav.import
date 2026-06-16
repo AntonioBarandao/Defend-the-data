@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dpyu6uxidrsyl"
-path="res://.godot/imported/laser_turret_upgrade.wav-898e3d5ecdd1a3ff5a0d5717a761a268.sample"
+path="res://.godot/imported/laser_turret_upgrade.wav-1cfe010aeb04ce48e27e2d8d166f1914.sample"
 
 [deps]
 
-source_file="res://assets/sfx/laser_turret_upgrade.wav"
-dest_files=["res://.godot/imported/laser_turret_upgrade.wav-898e3d5ecdd1a3ff5a0d5717a761a268.sample"]
+source_file="res://Assets/sfx/laser_turret_upgrade.wav"
+dest_files=["res://.godot/imported/laser_turret_upgrade.wav-1cfe010aeb04ce48e27e2d8d166f1914.sample"]
 
 [params]
 

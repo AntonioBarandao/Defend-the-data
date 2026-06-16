@@ -4,10 +4,14 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwbw8ugosdcfb"
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/CybersecurityMascot.png-d788f99f6498eb9ce4811039c5f72e4c.ctex"
 =======
 path="res://.godot/imported/CybersecurityMascot.png-78e51d7905309078002ac9dad56fc33d.ctex"
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+path="res://.godot/imported/CybersecurityMascot.png-d5f91675c660dac2a582e0b5cfde776f.ctex"
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 metadata={
 "vram_texture": false
 }
@@ -15,12 +19,17 @@ metadata={
 [deps]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 source_file="res://assets/Towers/CybersecurityMascot.png"
 dest_files=["res://.godot/imported/CybersecurityMascot.png-d788f99f6498eb9ce4811039c5f72e4c.ctex"]
 =======
 source_file="res://assets/Towers/CyberGuardian/CybersecurityMascot.png"
 dest_files=["res://.godot/imported/CybersecurityMascot.png-78e51d7905309078002ac9dad56fc33d.ctex"]
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+source_file="res://Assets/Towers/CyberGuardian/CybersecurityMascot.png"
+dest_files=["res://.godot/imported/CybersecurityMascot.png-d5f91675c660dac2a582e0b5cfde776f.ctex"]
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 
 [params]
 

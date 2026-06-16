@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://b5wn6y88c7msa"]
 
-[ext_resource type="Texture2D" uid="uid://dxkn4ba00uir7" path="res://assets/Towers/Laser-Turret/LaserFX/Laser_Continuous_Stop_atlas_30fps.png" id="1_6sva7"]
-[ext_resource type="Texture2D" uid="uid://vto47ty8mm7q" path="res://assets/Towers/Laser-Turret/LaserFX/Laser_Startup_Shoot_atlas_30fps.png" id="2_3wd8l"]
+[ext_resource type="Texture2D" uid="uid://dxkn4ba00uir7" path="res://Assets/Towers/Laser-Turret/LaserFX/Laser_Continuous_Stop_atlas_30fps.png" id="1_6sva7"]
+[ext_resource type="Texture2D" uid="uid://vto47ty8mm7q" path="res://Assets/Towers/Laser-Turret/LaserFX/Laser_Startup_Shoot_atlas_30fps.png" id="2_3wd8l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_penhu"]
 atlas = ExtResource("1_6sva7")

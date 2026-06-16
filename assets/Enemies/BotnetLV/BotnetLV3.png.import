@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byelimcwserlu"
-path="res://.godot/imported/BotnetLV3.png-65e6766e1d6ffd13156f16a7a6722f6e.ctex"
+path="res://.godot/imported/BotnetLV3.png-34743037e995a15fb7e8cb73be84fe2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/BotnetLV/BotnetLV3.png"
-dest_files=["res://.godot/imported/BotnetLV3.png-65e6766e1d6ffd13156f16a7a6722f6e.ctex"]
+source_file="res://Assets/Enemies/BotnetLV/BotnetLV3.png"
+dest_files=["res://.godot/imported/BotnetLV3.png-34743037e995a15fb7e8cb73be84fe2c.ctex"]
 
 [params]
 

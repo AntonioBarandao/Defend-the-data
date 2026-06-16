@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cg642h3m1khds" path="res://Scripts/Gameplay/game.gd" id="1_on2he"]
 [ext_resource type="PackedScene" path="res://Scenes/Towers/IDS_Scanner.tscn" id="4_pc5c2"]
-[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
-[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://assets/Backgrounds/NewMap.png" id="6_agy0f"]
+[ext_resource type="FontFile" uid="uid://cc0f3h2ru1hiv" path="res://Assets/Fonts/space-armor/SPACE ARMOR.otf" id="5_1l26u"]
+[ext_resource type="Texture2D" uid="uid://tnwsqd5ntads" path="res://Assets/Backgrounds/NewMap.png" id="6_agy0f"]
 [ext_resource type="PackedScene" uid="uid://cddp8ilcjadua" path="res://Scenes/Towers/CyberGuardian.tscn" id="6_cyber"]
 [ext_resource type="PackedScene" uid="uid://b658jrcj1ke3f" path="res://Scenes/Towers/LaserTurret.tscn" id="8_laser"]
 [ext_resource type="PackedScene" uid="uid://calhrslp08s80" path="res://Scenes/Enemies/RedVirus.tscn" id="9_redvirus"]
@@ -13,12 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://61tajh7kof5b" path="res://Scenes/UI/GameControlsHud.tscn" id="13_controls"]
 [ext_resource type="PackedScene" uid="uid://dfmkdge7ll4f2" path="res://Scenes/UI/TowerUpgradeHud.tscn" id="14_upgrades"]
 [ext_resource type="Script" uid="uid://d1ugiseg13u06" path="res://Scripts/Gameplay/tower_placement_area.gd" id="15_place"]
-[ext_resource type="FontFile" uid="uid://2u6nbvofsl5k" path="res://assets/Fonts/Cyber Crown/Cyber Crown.ttf" id="15_wq1r8"]
+[ext_resource type="FontFile" uid="uid://2u6nbvofsl5k" path="res://Assets/Fonts/Cyber Crown/Cyber Crown.ttf" id="15_wq1r8"]
 [ext_resource type="PackedScene" uid="uid://fet10k45d4t6" path="res://Scenes/UI/DemoPresentationOverlay.tscn" id="16_demo_overlay"]
-[ext_resource type="AudioStream" uid="uid://bpts0mu1imbfp" path="res://assets/soundtrack/Virtual Business.wav" id="17_soundtrack"]
+[ext_resource type="Texture2D" uid="uid://bys5vnsudc4iq" path="res://tools/Cutscene.png" id="16_m0vd8"]
+[ext_resource type="AudioStream" uid="uid://bpts0mu1imbfp" path="res://Assets/soundtrack/Virtual Business.wav" id="17_soundtrack"]
 [ext_resource type="PackedScene" uid="uid://bthmcxcu7ao8p" path="res://Scenes/UI/Text_Cutscene.tscn" id="18_cutscene"]
 [ext_resource type="PackedScene" path="res://Scenes/Enemies/BotnetLV.tscn" id="19_botnet"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/cutscene_demo_director.gd" id="20_director"]
+[ext_resource type="Script" uid="uid://bl4stwlf88ctn" path="res://Scripts/Gameplay/cutscene_demo_director.gd" id="20_director"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/CutsceneDemoMenu.tscn" id="21_demo_menu"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/AnnounceText.tscn" id="22_announce"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/CutsceneSkipHud.tscn" id="23_skip"]
@@ -132,6 +133,7 @@ demo_presentation_overlay_path = NodePath("DemoPresentationOverlay")
 [node name="AdminSandboxSoundtrack" type="AudioStreamPlayer" parent="." unique_id=662457559]
 stream = ExtResource("17_soundtrack")
 volume_db = -6.0
+autoplay = true
 
 [node name="CyberQuestionHud" parent="." unique_id=923521268 instance=ExtResource("11_qhud")]
 demo_question_animation_enabled = true
@@ -272,21 +274,31 @@ offset_right = -1.0
 offset_bottom = 1083.0
 color = Color(0.69358075, 0.8433318, 0.48097503, 1)
 
-[node name="CutsceneVirus1" parent="Otherground_Cutscene" unique_id=1302363223 instance=ExtResource("9_redvirus")]
-position = Vector2(1543, 261)
-scale = Vector2(0.13983138, 0.13983138)
+[node name="CutsceneBack" type="Sprite2D" parent="Otherground_Cutscene" unique_id=2884933]
+position = Vector2(801.96924, 564)
+scale = Vector2(1.3333842, 1.1424017)
+texture = ExtResource("16_m0vd8")
 
-[node name="CutsceneVirus2" parent="Otherground_Cutscene" unique_id=1813834031 instance=ExtResource("9_redvirus")]
-position = Vector2(1556, 316)
-scale = Vector2(0.13983138, 0.13983138)
+[node name="CutsceneVirus1" parent="Otherground_Cutscene/CutsceneBack" unique_id=1302363223 instance=ExtResource("9_redvirus")]
+position = Vector2(-120, -220)
+scale = Vector2(0.095, 0.11)
 
-[node name="CutsceneVirus3" parent="Otherground_Cutscene" unique_id=484007123 instance=ExtResource("9_redvirus")]
-position = Vector2(1468.9999, 239.99998)
-scale = Vector2(0.13983138, 0.13983138)
+[node name="CutsceneVirus2" parent="Otherground_Cutscene/CutsceneBack" unique_id=1813834031 instance=ExtResource("9_redvirus")]
+position = Vector2(72, -185)
+scale = Vector2(0.112, 0.126)
 
-[node name="CutsceneVirus4" parent="Otherground_Cutscene" unique_id=302736285 instance=ExtResource("9_redvirus")]
-position = Vector2(1467, 300.99997)
-scale = Vector2(0.13983138, 0.13983138)
+[node name="CutsceneVirus3" parent="Otherground_Cutscene/CutsceneBack" unique_id=484007123 instance=ExtResource("9_redvirus")]
+position = Vector2(235, -92)
+scale = Vector2(0.086, 0.1)
+
+[node name="CutsceneVirus4" parent="Otherground_Cutscene/CutsceneBack" unique_id=302736285 instance=ExtResource("9_redvirus")]
+position = Vector2(-15, 10)
+scale = Vector2(0.102, 0.116)
+
+[node name="CutsceneVirus5" parent="Otherground_Cutscene/CutsceneBack" unique_id=1708868175 instance=ExtResource("9_redvirus")]
+modulate = Color(1, 1, 1, 0.78)
+position = Vector2(-250, -55)
+scale = Vector2(0.08, 0.094)
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1360860051]
 position = Vector2(0, -124.00006)

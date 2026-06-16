@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://5t88uc81blnw"
-path="res://.godot/imported/cyberguardian_summon.wav-0bfb701986fc1c5c2fa8b6cd193ad998.sample"
+path="res://.godot/imported/cyberguardian_summon.wav-bd1a5c23382f56b96de8d102bfd4ea93.sample"
 
 [deps]
 
-source_file="res://assets/sfx/cyberguardian_summon.wav"
-dest_files=["res://.godot/imported/cyberguardian_summon.wav-0bfb701986fc1c5c2fa8b6cd193ad998.sample"]
+source_file="res://Assets/sfx/cyberguardian_summon.wav"
+dest_files=["res://.godot/imported/cyberguardian_summon.wav-bd1a5c23382f56b96de8d102bfd4ea93.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bbxu3ua0wyy5m"
-path="res://.godot/imported/Naked Power Bd.otf-5bafb60c9d18c1d2b728ef3b32023fcb.fontdata"
+path="res://.godot/imported/Naked Power Bd.otf-e3b3aa73001b694406698d248f2cdbe3.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/naked_power/Naked Power Bd.otf"
-dest_files=["res://.godot/imported/Naked Power Bd.otf-5bafb60c9d18c1d2b728ef3b32023fcb.fontdata"]
+source_file="res://Assets/Fonts/naked_power/Naked Power Bd.otf"
+dest_files=["res://.godot/imported/Naked Power Bd.otf-e3b3aa73001b694406698d248f2cdbe3.fontdata"]
 
 [params]
 

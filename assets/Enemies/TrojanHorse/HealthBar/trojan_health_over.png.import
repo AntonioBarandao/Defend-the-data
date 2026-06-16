@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4o5co2e3jx86"
-path="res://.godot/imported/trojan_health_over.png-3d799c2801fa900c4a72c0831a742f88.ctex"
+path="res://.godot/imported/trojan_health_over.png-84b1f19983dec0d44b12f9ee1f76b7aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/TrojanHorse/HealthBar/trojan_health_over.png"
-dest_files=["res://.godot/imported/trojan_health_over.png-3d799c2801fa900c4a72c0831a742f88.ctex"]
+source_file="res://Assets/Enemies/TrojanHorse/HealthBar/trojan_health_over.png"
+dest_files=["res://.godot/imported/trojan_health_over.png-84b1f19983dec0d44b12f9ee1f76b7aa.ctex"]
 
 [params]
 

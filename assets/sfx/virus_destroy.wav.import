@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8rhfrkf6hokf"
-path="res://.godot/imported/virus_destroy.wav-350e406fa01d17098ab3cefac79633db.sample"
+path="res://.godot/imported/virus_destroy.wav-e64960139f8d5b7eb8f0564448c653a8.sample"
 
 [deps]
 
-source_file="res://assets/sfx/virus_destroy.wav"
-dest_files=["res://.godot/imported/virus_destroy.wav-350e406fa01d17098ab3cefac79633db.sample"]
+source_file="res://Assets/sfx/virus_destroy.wav"
+dest_files=["res://.godot/imported/virus_destroy.wav-e64960139f8d5b7eb8f0564448c653a8.sample"]
 
 [params]
 

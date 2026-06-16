@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dh8fanof88w0m"
-path="res://.godot/imported/code128.ttf-5c2d37fcc1a11ea833a26e3b9ea27c1f.fontdata"
+path="res://.godot/imported/code128.ttf-254f7ed8d7a969592ca0768de1194cb5.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Barcode/code128.ttf"
-dest_files=["res://.godot/imported/code128.ttf-5c2d37fcc1a11ea833a26e3b9ea27c1f.fontdata"]
+source_file="res://Assets/Fonts/Barcode/code128.ttf"
+dest_files=["res://.godot/imported/code128.ttf-254f7ed8d7a969592ca0768de1194cb5.fontdata"]
 
 [params]
 

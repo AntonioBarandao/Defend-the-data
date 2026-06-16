@@ -3,11 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8tdj31rbtouk"
+<<<<<<< HEAD
 path.s3tc="res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-40374e516bcfd0321d27f002e24aa9da.s3tc.ctex"
 <<<<<<< HEAD
 =======
 path.etc2="res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-40374e516bcfd0321d27f002e24aa9da.etc2.ctex"
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+path.s3tc="res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-f7810b7be89b57aae0fb20b68d7daf09.s3tc.ctex"
+path.etc2="res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-f7810b7be89b57aae0fb20b68d7daf09.etc2.ctex"
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -15,12 +20,17 @@ metadata={
 
 [deps]
 
+<<<<<<< HEAD
 source_file="res://assets/Towers/CyberGuardian/SummonAnim/CyberGuardian_Summon1_atlas_30fps.png"
 <<<<<<< HEAD
 dest_files=["res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-40374e516bcfd0321d27f002e24aa9da.s3tc.ctex"]
 =======
 dest_files=["res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-40374e516bcfd0321d27f002e24aa9da.s3tc.ctex", "res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-40374e516bcfd0321d27f002e24aa9da.etc2.ctex"]
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+source_file="res://Assets/Towers/CyberGuardian/SummonAnim/CyberGuardian_Summon1_atlas_30fps.png"
+dest_files=["res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-f7810b7be89b57aae0fb20b68d7daf09.s3tc.ctex", "res://.godot/imported/CyberGuardian_Summon1_atlas_30fps.png-f7810b7be89b57aae0fb20b68d7daf09.etc2.ctex"]
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 
 [params]
 

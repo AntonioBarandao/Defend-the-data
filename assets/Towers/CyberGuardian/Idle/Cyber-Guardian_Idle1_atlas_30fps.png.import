@@ -4,11 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6ifvwt0mpo2g"
 <<<<<<< HEAD
+<<<<<<< HEAD
 path.s3tc="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-1f7769c3886340caf2c325b8d2e8ca60.s3tc.ctex"
 =======
 path.s3tc="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c5c5d0d57e255aa1ef80465a5e70cbd6.s3tc.ctex"
 path.etc2="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c5c5d0d57e255aa1ef80465a5e70cbd6.etc2.ctex"
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+path.s3tc="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c55903d50bd8be9a342b36f627bee0c7.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c55903d50bd8be9a342b36f627bee0c7.etc2.ctex"
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -17,12 +22,17 @@ metadata={
 [deps]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 source_file="res://assets/Towers/Cyber-Guardian_Idle1_atlas_30fps.png"
 dest_files=["res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-1f7769c3886340caf2c325b8d2e8ca60.s3tc.ctex"]
 =======
 source_file="res://assets/Towers/CyberGuardian/Idle/Cyber-Guardian_Idle1_atlas_30fps.png"
 dest_files=["res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c5c5d0d57e255aa1ef80465a5e70cbd6.s3tc.ctex", "res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c5c5d0d57e255aa1ef80465a5e70cbd6.etc2.ctex"]
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
+=======
+source_file="res://Assets/Towers/CyberGuardian/Idle/Cyber-Guardian_Idle1_atlas_30fps.png"
+dest_files=["res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c55903d50bd8be9a342b36f627bee0c7.s3tc.ctex", "res://.godot/imported/Cyber-Guardian_Idle1_atlas_30fps.png-c55903d50bd8be9a342b36f627bee0c7.etc2.ctex"]
+>>>>>>> cf396897fb61611eeedd830283d0505e2aa71a66
 
 [params]
 
