@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boaiqtkopvk4n"
-path="res://.godot/imported/Laser_Turret_LV1_Plate.png-fda02167d42da63cc2bc331eec6dca7e.ctex"
+path="res://.godot/imported/Laser_Turret_LV1_Plate.png-4ec2c7629ca715a90d088fa26ab61c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Towers/Laser-Turret/Plates/Laser_Turret_LV1_Plate.png"
-dest_files=["res://.godot/imported/Laser_Turret_LV1_Plate.png-fda02167d42da63cc2bc331eec6dca7e.ctex"]
+source_file="res://Assets/Towers/Laser-Turret/Plates/Laser_Turret_LV1_Plate.png"
+dest_files=["res://.godot/imported/Laser_Turret_LV1_Plate.png-4ec2c7629ca715a90d088fa26ab61c83.ctex"]
 
 [params]
 

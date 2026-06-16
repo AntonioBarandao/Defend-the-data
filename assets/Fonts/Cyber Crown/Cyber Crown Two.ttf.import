@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c5cy1jf3j3wbi"
-path="res://.godot/imported/Cyber Crown Two.ttf-fda3cf71d180eadf949efee54cba1562.fontdata"
+path="res://.godot/imported/Cyber Crown Two.ttf-d787b75f2697f12c1415c944ebfab372.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Cyber Crown/Cyber Crown Two.ttf"
-dest_files=["res://.godot/imported/Cyber Crown Two.ttf-fda3cf71d180eadf949efee54cba1562.fontdata"]
+source_file="res://Assets/Fonts/Cyber Crown/Cyber Crown Two.ttf"
+dest_files=["res://.godot/imported/Cyber Crown Two.ttf-d787b75f2697f12c1415c944ebfab372.fontdata"]
 
 [params]
 

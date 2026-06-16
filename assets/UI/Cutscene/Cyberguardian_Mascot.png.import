@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://80e8xosb7uq1"
-path="res://.godot/imported/Cyberguardian_Mascot.png-7701c0d6a093bee5b373e0c4af032816.ctex"
+path="res://.godot/imported/Cyberguardian_Mascot.png-1bde17122b29c15f9eb8450415ef94d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Cutscene/Cyberguardian_Mascot.png"
-dest_files=["res://.godot/imported/Cyberguardian_Mascot.png-7701c0d6a093bee5b373e0c4af032816.ctex"]
+source_file="res://Assets/UI/Cutscene/Cyberguardian_Mascot.png"
+dest_files=["res://.godot/imported/Cyberguardian_Mascot.png-1bde17122b29c15f9eb8450415ef94d0.ctex"]
 
 [params]
 

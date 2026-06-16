@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8of0u74k2p15"
-path="res://.godot/imported/IDS_Scanner_test_transparent.png-ecbe989e30f07b57c68e1e2b6b7b7771.ctex"
+path="res://.godot/imported/IDS_Scanner_test_transparent.png-7e1627a0c03b4114f91e1b0ce36c2734.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Towers/IDS_Scanner/IDS_Scanner_test_transparent.png"
-dest_files=["res://.godot/imported/IDS_Scanner_test_transparent.png-ecbe989e30f07b57c68e1e2b6b7b7771.ctex"]
+source_file="res://Assets/Towers/IDS_Scanner/IDS_Scanner_test_transparent.png"
+dest_files=["res://.godot/imported/IDS_Scanner_test_transparent.png-7e1627a0c03b4114f91e1b0ce36c2734.ctex"]
 
 [params]
 

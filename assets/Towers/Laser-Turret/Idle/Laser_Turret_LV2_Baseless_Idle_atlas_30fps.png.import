@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://croewf8t8kttc"
-path="res://.godot/imported/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png-158c5b2d6088506bb49e9cc3abd1bc17.ctex"
+path="res://.godot/imported/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png-fbf269c7d5e648b82849ec0959114325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Towers/Laser-Turret/Idle/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png"
-dest_files=["res://.godot/imported/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png-158c5b2d6088506bb49e9cc3abd1bc17.ctex"]
+source_file="res://Assets/Towers/Laser-Turret/Idle/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png"
+dest_files=["res://.godot/imported/Laser_Turret_LV2_Baseless_Idle_atlas_30fps.png-fbf269c7d5e648b82849ec0959114325.ctex"]
 
 [params]
 

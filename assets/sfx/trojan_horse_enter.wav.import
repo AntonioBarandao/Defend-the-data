@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bfshg7mdbonis"
-path="res://.godot/imported/trojan_horse_enter.wav-c20ecf7854724c08040c22dfda5a9d9d.sample"
+path="res://.godot/imported/trojan_horse_enter.wav-f42e0252e629f3d7e923bdccf3517751.sample"
 
 [deps]
 
-source_file="res://assets/sfx/trojan_horse_enter.wav"
-dest_files=["res://.godot/imported/trojan_horse_enter.wav-c20ecf7854724c08040c22dfda5a9d9d.sample"]
+source_file="res://Assets/sfx/trojan_horse_enter.wav"
+dest_files=["res://.godot/imported/trojan_horse_enter.wav-f42e0252e629f3d7e923bdccf3517751.sample"]
 
 [params]
 

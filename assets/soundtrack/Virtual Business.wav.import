@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bpts0mu1imbfp"
-path="res://.godot/imported/Virtual Business.wav-4d4c37f5461aa371c603c8d5e32ac0e0.sample"
+path="res://.godot/imported/Virtual Business.wav-77855e0a31f47ad8d77e986e2930b061.sample"
 
 [deps]
 
-source_file="res://assets/soundtrack/Virtual Business.wav"
-dest_files=["res://.godot/imported/Virtual Business.wav-4d4c37f5461aa371c603c8d5e32ac0e0.sample"]
+source_file="res://Assets/soundtrack/Virtual Business.wav"
+dest_files=["res://.godot/imported/Virtual Business.wav-77855e0a31f47ad8d77e986e2930b061.sample"]
 
 [params]
 

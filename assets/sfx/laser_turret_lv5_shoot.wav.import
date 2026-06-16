@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccfo6bus8uwg"
-path="res://.godot/imported/laser_turret_lv5_shoot.wav-a508f6610cfdbe4291d0a7e960fcb117.sample"
+path="res://.godot/imported/laser_turret_lv5_shoot.wav-ca10ae61aaef5aaa0073748ed1d892ea.sample"
 
 [deps]
 
-source_file="res://assets/sfx/laser_turret_lv5_shoot.wav"
-dest_files=["res://.godot/imported/laser_turret_lv5_shoot.wav-a508f6610cfdbe4291d0a7e960fcb117.sample"]
+source_file="res://Assets/sfx/laser_turret_lv5_shoot.wav"
+dest_files=["res://.godot/imported/laser_turret_lv5_shoot.wav-ca10ae61aaef5aaa0073748ed1d892ea.sample"]
 
 [params]
 

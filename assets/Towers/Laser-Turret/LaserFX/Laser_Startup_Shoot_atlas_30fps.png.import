@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vto47ty8mm7q"
-path="res://.godot/imported/Laser_Startup_Shoot_atlas_30fps.png-4fa20062a22c7b0ec3e12120bd8ad04e.ctex"
+path="res://.godot/imported/Laser_Startup_Shoot_atlas_30fps.png-5a632883a05cb65695a5d0626a14227b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Towers/Laser-Turret/LaserFX/Laser_Startup_Shoot_atlas_30fps.png"
-dest_files=["res://.godot/imported/Laser_Startup_Shoot_atlas_30fps.png-4fa20062a22c7b0ec3e12120bd8ad04e.ctex"]
+source_file="res://Assets/Towers/Laser-Turret/LaserFX/Laser_Startup_Shoot_atlas_30fps.png"
+dest_files=["res://.godot/imported/Laser_Startup_Shoot_atlas_30fps.png-5a632883a05cb65695a5d0626a14227b.ctex"]
 
 [params]
 
