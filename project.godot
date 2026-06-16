@@ -18,12 +18,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AssetCache="*res://scripts/asset_cache.gd"
+AssetCache="*res://Scripts/Menus/asset_cache.gd"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=2560
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor]
 
@@ -43,3 +45,4 @@ Virus=""
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

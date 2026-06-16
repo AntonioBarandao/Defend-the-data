@@ -1,0 +1,859 @@
+{
+    "image":  "CyberGuardian_Summon1_atlas_30fps.png",
+    "animation":  "SummonAnim",
+    "fps":  30,
+    "frameCount":  91,
+    "columns":  10,
+    "rows":  10,
+    "frameWidth":  720,
+    "frameHeight":  720,
+    "atlasWidth":  7200,
+    "atlasHeight":  7200,
+    "pivot":  {
+                  "x":  360,
+                  "y":  360,
+                  "mode":  "centered AnimatedSprite2D pivot"
+              },
+    "layout":  "row-major, left-to-right, top-to-bottom",
+    "margin":  0,
+    "padding":  0,
+    "unusedCells":  9,
+    "source":  {
+                   "file":  "C:\\Users\\jonhu\\Downloads\\CyberGuardian_Summon1.mp4",
+                   "width":  1440,
+                   "height":  1440,
+                   "fps":  24
+               },
+    "transform":  {
+                      "sourceCanvas":  "full 1440x1440",
+                      "scale":  "720x720",
+                      "crop":  "none"
+                  },
+    "chromaKey":  {
+                      "color":  "#2AC840",
+                      "similarity":  0.18,
+                      "blend":  0.06,
+                      "despill":  "green"
+                  },
+    "frames":  [
+                   {
+                       "name":  "SummonAnim_000",
+                       "index":  0,
+                       "x":  0,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_001",
+                       "index":  1,
+                       "x":  720,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_002",
+                       "index":  2,
+                       "x":  1440,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_003",
+                       "index":  3,
+                       "x":  2160,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_004",
+                       "index":  4,
+                       "x":  2880,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_005",
+                       "index":  5,
+                       "x":  3600,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_006",
+                       "index":  6,
+                       "x":  4320,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_007",
+                       "index":  7,
+                       "x":  5040,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_008",
+                       "index":  8,
+                       "x":  5760,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_009",
+                       "index":  9,
+                       "x":  6480,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_010",
+                       "index":  10,
+                       "x":  0,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_011",
+                       "index":  11,
+                       "x":  720,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_012",
+                       "index":  12,
+                       "x":  1440,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_013",
+                       "index":  13,
+                       "x":  2160,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_014",
+                       "index":  14,
+                       "x":  2880,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_015",
+                       "index":  15,
+                       "x":  3600,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_016",
+                       "index":  16,
+                       "x":  4320,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_017",
+                       "index":  17,
+                       "x":  5040,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_018",
+                       "index":  18,
+                       "x":  5760,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_019",
+                       "index":  19,
+                       "x":  6480,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_020",
+                       "index":  20,
+                       "x":  0,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_021",
+                       "index":  21,
+                       "x":  720,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_022",
+                       "index":  22,
+                       "x":  1440,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_023",
+                       "index":  23,
+                       "x":  2160,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_024",
+                       "index":  24,
+                       "x":  2880,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_025",
+                       "index":  25,
+                       "x":  3600,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_026",
+                       "index":  26,
+                       "x":  4320,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_027",
+                       "index":  27,
+                       "x":  5040,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_028",
+                       "index":  28,
+                       "x":  5760,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_029",
+                       "index":  29,
+                       "x":  6480,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_030",
+                       "index":  30,
+                       "x":  0,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_031",
+                       "index":  31,
+                       "x":  720,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_032",
+                       "index":  32,
+                       "x":  1440,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_033",
+                       "index":  33,
+                       "x":  2160,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_034",
+                       "index":  34,
+                       "x":  2880,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_035",
+                       "index":  35,
+                       "x":  3600,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_036",
+                       "index":  36,
+                       "x":  4320,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_037",
+                       "index":  37,
+                       "x":  5040,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_038",
+                       "index":  38,
+                       "x":  5760,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_039",
+                       "index":  39,
+                       "x":  6480,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_040",
+                       "index":  40,
+                       "x":  0,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_041",
+                       "index":  41,
+                       "x":  720,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_042",
+                       "index":  42,
+                       "x":  1440,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_043",
+                       "index":  43,
+                       "x":  2160,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_044",
+                       "index":  44,
+                       "x":  2880,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_045",
+                       "index":  45,
+                       "x":  3600,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_046",
+                       "index":  46,
+                       "x":  4320,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_047",
+                       "index":  47,
+                       "x":  5040,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_048",
+                       "index":  48,
+                       "x":  5760,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_049",
+                       "index":  49,
+                       "x":  6480,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_050",
+                       "index":  50,
+                       "x":  0,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_051",
+                       "index":  51,
+                       "x":  720,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_052",
+                       "index":  52,
+                       "x":  1440,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_053",
+                       "index":  53,
+                       "x":  2160,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_054",
+                       "index":  54,
+                       "x":  2880,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_055",
+                       "index":  55,
+                       "x":  3600,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_056",
+                       "index":  56,
+                       "x":  4320,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_057",
+                       "index":  57,
+                       "x":  5040,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_058",
+                       "index":  58,
+                       "x":  5760,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_059",
+                       "index":  59,
+                       "x":  6480,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_060",
+                       "index":  60,
+                       "x":  0,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_061",
+                       "index":  61,
+                       "x":  720,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_062",
+                       "index":  62,
+                       "x":  1440,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_063",
+                       "index":  63,
+                       "x":  2160,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_064",
+                       "index":  64,
+                       "x":  2880,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_065",
+                       "index":  65,
+                       "x":  3600,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_066",
+                       "index":  66,
+                       "x":  4320,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_067",
+                       "index":  67,
+                       "x":  5040,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_068",
+                       "index":  68,
+                       "x":  5760,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_069",
+                       "index":  69,
+                       "x":  6480,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_070",
+                       "index":  70,
+                       "x":  0,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_071",
+                       "index":  71,
+                       "x":  720,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_072",
+                       "index":  72,
+                       "x":  1440,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_073",
+                       "index":  73,
+                       "x":  2160,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_074",
+                       "index":  74,
+                       "x":  2880,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_075",
+                       "index":  75,
+                       "x":  3600,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_076",
+                       "index":  76,
+                       "x":  4320,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_077",
+                       "index":  77,
+                       "x":  5040,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_078",
+                       "index":  78,
+                       "x":  5760,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_079",
+                       "index":  79,
+                       "x":  6480,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_080",
+                       "index":  80,
+                       "x":  0,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_081",
+                       "index":  81,
+                       "x":  720,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_082",
+                       "index":  82,
+                       "x":  1440,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_083",
+                       "index":  83,
+                       "x":  2160,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_084",
+                       "index":  84,
+                       "x":  2880,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_085",
+                       "index":  85,
+                       "x":  3600,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_086",
+                       "index":  86,
+                       "x":  4320,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_087",
+                       "index":  87,
+                       "x":  5040,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_088",
+                       "index":  88,
+                       "x":  5760,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_089",
+                       "index":  89,
+                       "x":  6480,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "SummonAnim_090",
+                       "index":  90,
+                       "x":  0,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   }
+               ]
+}

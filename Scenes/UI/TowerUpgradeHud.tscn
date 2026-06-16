@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dfmkdge7ll4f2"]
+
+[ext_resource type="Script" uid="uid://cx10pf1srbnq7" path="res://Scripts/UI/tower_upgrade_hud.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bwbw8ugosdcfb" path="res://assets/Towers/CyberGuardian/CybersecurityMascot.png" id="2_mascot"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guardian"]
+bg_color = Color(0.035, 0.047, 0.07, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.82, 0.42, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_laser"]
+bg_color = Color(0.035, 0.047, 0.07, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1, 1, 0.72, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TowerUpgradeHud" type="CanvasLayer" unique_id=1108907542]
+layer = 80
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="." unique_id=887390544]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GuardianPanel" type="PanelContainer" parent="Root" unique_id=270677731]
+visible = false
+custom_minimum_size = Vector2(390, 520)
+layout_mode = 1
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 414.0
+offset_bottom = 632.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_guardian")
+
+[node name="Margin" type="MarginContainer" parent="Root/GuardianPanel" unique_id=1625132570]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 18
+
+[node name="Content" type="VBoxContainer" parent="Root/GuardianPanel/Margin" unique_id=1990516415]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/GuardianPanel/Margin/Content" unique_id=1163988959]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Cyber Guardian"
+
+[node name="PortraitRow" type="CenterContainer" parent="Root/GuardianPanel/Margin/Content" unique_id=1293956152]
+layout_mode = 2
+
+[node name="MascotPortrait" type="TextureRect" parent="Root/GuardianPanel/Margin/Content/PortraitRow" unique_id=137176428]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 2
+texture = ExtResource("2_mascot")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UpgradeSectionLabel" type="Label" parent="Root/GuardianPanel/Margin/Content" unique_id=50852522]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.84, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+text = "Available Upgrades"
+
+[node name="FirewallBurstButton" type="Button" parent="Root/GuardianPanel/Margin/Content" unique_id=1683431771]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+text = "Firewall Burst"
+
+[node name="SignalRangeButton" type="Button" parent="Root/GuardianPanel/Margin/Content" unique_id=2082994082]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+text = "Signal Range"
+
+[node name="SignalBoostButton" type="Button" parent="Root/GuardianPanel/Margin/Content" unique_id=1118276636]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+text = "Signal Boost"
+
+[node name="LaserPanel" type="PanelContainer" parent="Root" unique_id=1190542060]
+visible = false
+custom_minimum_size = Vector2(390, 320)
+layout_mode = 1
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 414.0
+offset_bottom = 432.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_laser")
+
+[node name="Margin" type="MarginContainer" parent="Root/LaserPanel" unique_id=826613719]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 18
+
+[node name="Content" type="VBoxContainer" parent="Root/LaserPanel/Margin" unique_id=1289060368]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root/LaserPanel/Margin/Content" unique_id=1801350020]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Laser Turret"
+
+[node name="LevelLabel" type="Label" parent="Root/LaserPanel/Margin/Content" unique_id=623762321]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Level 1 / 5"
+
+[node name="PowerLabel" type="Label" parent="Root/LaserPanel/Margin/Content" unique_id=619720151]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Power: 1"
+
+[node name="RangeLabel" type="Label" parent="Root/LaserPanel/Margin/Content" unique_id=1128683800]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Range: 300 px"
+
+[node name="UpgradeButton" type="Button" parent="Root/LaserPanel/Margin/Content" unique_id=156571827]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+focus_mode = 0
+text = "Upgrade"

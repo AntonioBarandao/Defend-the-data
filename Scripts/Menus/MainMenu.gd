@@ -7,7 +7,8 @@ extends Control
 @onready var options_button: Button = $MenuPanel/VBox/OptionsButton
 @onready var quit_button: Button = $MenuPanel/VBox/QuitButton
 @onready var status_label: Label = $StatusLabel
-@onready var sign_out_button = $MenuPanel/VBox/SignOutButton
+@onready var sign_out_button: Button = $MenuPanel/VBox/SignOutButton
+@onready var presentation_button: Button = $PresentationButton
 
 var scan_speed := 120.0
 var background_zoom_amount := 0.015
@@ -19,25 +20,23 @@ func _ready() -> void:
 	options_button.pressed.connect(_on_options_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	sign_out_button.pressed.connect(_on_sign_out_pressed)
+	presentation_button.pressed.connect(_on_presentation_pressed)
 
 func _process(delta: float) -> void:
 	time_passed += delta
 
-	# Subtle breathing/zoom effect
-	var zoom = 1.0 + sin(time_passed * 0.7) * background_zoom_amount
-	background.scale = Vector2(zoom, zoom)
-
-	# Moving scanline
-	scanline.position.y += scan_speed * delta
-	if scanline.position.y > get_viewport_rect().size.y + 40:
-		scanline.position.y = -40
 
 func _on_start_pressed() -> void:
 	status_label.text = "Starting game..."
-	# Later: get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Gameplay/PresentationScene.tscn")
+
+func _on_presentation_pressed() -> void:
+	status_label.text = "Opening presentation..."
+	get_tree().change_scene_to_file("res://Scenes/Gameplay/DEMO_SCENE.tscn")
 
 func _on_login_pressed() -> void:
-	status_label.text = "Login screen not connected yet."
+	status_label.text = "Opening login..."
+	get_tree().change_scene_to_file("res://Scenes/Menus/LoginScene.tscn")
 
 func _on_options_pressed() -> void:
 	status_label.text = "Options menu not connected yet."

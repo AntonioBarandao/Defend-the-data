@@ -1,0 +1,1399 @@
+{
+    "image":  "CyberGuardian_Attack1_atlas_30fps.png",
+    "animation":  "ShootAnim",
+    "fps":  30,
+    "frameCount":  151,
+    "columns":  13,
+    "rows":  12,
+    "frameWidth":  720,
+    "frameHeight":  720,
+    "atlasWidth":  9360,
+    "atlasHeight":  8640,
+    "pivot":  {
+                  "x":  360,
+                  "y":  360,
+                  "mode":  "centered AnimatedSprite2D pivot"
+              },
+    "layout":  "row-major, left-to-right, top-to-bottom",
+    "margin":  0,
+    "padding":  0,
+    "unusedCells":  5,
+    "source":  {
+                   "file":  "C:\\Users\\jonhu\\Downloads\\CyberGuardian_Attack1.mp4",
+                   "width":  1440,
+                   "height":  1440,
+                   "fps":  24
+               },
+    "transform":  {
+                      "sourceCanvas":  "full 1440x1440",
+                      "scale":  "720x720",
+                      "crop":  "none"
+                  },
+    "chromaKey":  {
+                      "color":  "#2AC840",
+                      "similarity":  0.18,
+                      "blend":  0.06,
+                      "despill":  "green"
+                  },
+    "frames":  [
+                   {
+                       "name":  "ShootAnim_000",
+                       "index":  0,
+                       "x":  0,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_001",
+                       "index":  1,
+                       "x":  720,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_002",
+                       "index":  2,
+                       "x":  1440,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_003",
+                       "index":  3,
+                       "x":  2160,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_004",
+                       "index":  4,
+                       "x":  2880,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_005",
+                       "index":  5,
+                       "x":  3600,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_006",
+                       "index":  6,
+                       "x":  4320,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_007",
+                       "index":  7,
+                       "x":  5040,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_008",
+                       "index":  8,
+                       "x":  5760,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_009",
+                       "index":  9,
+                       "x":  6480,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_010",
+                       "index":  10,
+                       "x":  7200,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_011",
+                       "index":  11,
+                       "x":  7920,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_012",
+                       "index":  12,
+                       "x":  8640,
+                       "y":  0,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_013",
+                       "index":  13,
+                       "x":  0,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_014",
+                       "index":  14,
+                       "x":  720,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_015",
+                       "index":  15,
+                       "x":  1440,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_016",
+                       "index":  16,
+                       "x":  2160,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_017",
+                       "index":  17,
+                       "x":  2880,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_018",
+                       "index":  18,
+                       "x":  3600,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_019",
+                       "index":  19,
+                       "x":  4320,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_020",
+                       "index":  20,
+                       "x":  5040,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_021",
+                       "index":  21,
+                       "x":  5760,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_022",
+                       "index":  22,
+                       "x":  6480,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_023",
+                       "index":  23,
+                       "x":  7200,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_024",
+                       "index":  24,
+                       "x":  7920,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_025",
+                       "index":  25,
+                       "x":  8640,
+                       "y":  720,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_026",
+                       "index":  26,
+                       "x":  0,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_027",
+                       "index":  27,
+                       "x":  720,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_028",
+                       "index":  28,
+                       "x":  1440,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_029",
+                       "index":  29,
+                       "x":  2160,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_030",
+                       "index":  30,
+                       "x":  2880,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_031",
+                       "index":  31,
+                       "x":  3600,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_032",
+                       "index":  32,
+                       "x":  4320,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_033",
+                       "index":  33,
+                       "x":  5040,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_034",
+                       "index":  34,
+                       "x":  5760,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_035",
+                       "index":  35,
+                       "x":  6480,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_036",
+                       "index":  36,
+                       "x":  7200,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_037",
+                       "index":  37,
+                       "x":  7920,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_038",
+                       "index":  38,
+                       "x":  8640,
+                       "y":  1440,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_039",
+                       "index":  39,
+                       "x":  0,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_040",
+                       "index":  40,
+                       "x":  720,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_041",
+                       "index":  41,
+                       "x":  1440,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_042",
+                       "index":  42,
+                       "x":  2160,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_043",
+                       "index":  43,
+                       "x":  2880,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_044",
+                       "index":  44,
+                       "x":  3600,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_045",
+                       "index":  45,
+                       "x":  4320,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_046",
+                       "index":  46,
+                       "x":  5040,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_047",
+                       "index":  47,
+                       "x":  5760,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_048",
+                       "index":  48,
+                       "x":  6480,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_049",
+                       "index":  49,
+                       "x":  7200,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_050",
+                       "index":  50,
+                       "x":  7920,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_051",
+                       "index":  51,
+                       "x":  8640,
+                       "y":  2160,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_052",
+                       "index":  52,
+                       "x":  0,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_053",
+                       "index":  53,
+                       "x":  720,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_054",
+                       "index":  54,
+                       "x":  1440,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_055",
+                       "index":  55,
+                       "x":  2160,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_056",
+                       "index":  56,
+                       "x":  2880,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_057",
+                       "index":  57,
+                       "x":  3600,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_058",
+                       "index":  58,
+                       "x":  4320,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_059",
+                       "index":  59,
+                       "x":  5040,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_060",
+                       "index":  60,
+                       "x":  5760,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_061",
+                       "index":  61,
+                       "x":  6480,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_062",
+                       "index":  62,
+                       "x":  7200,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_063",
+                       "index":  63,
+                       "x":  7920,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_064",
+                       "index":  64,
+                       "x":  8640,
+                       "y":  2880,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_065",
+                       "index":  65,
+                       "x":  0,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_066",
+                       "index":  66,
+                       "x":  720,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_067",
+                       "index":  67,
+                       "x":  1440,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_068",
+                       "index":  68,
+                       "x":  2160,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_069",
+                       "index":  69,
+                       "x":  2880,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_070",
+                       "index":  70,
+                       "x":  3600,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_071",
+                       "index":  71,
+                       "x":  4320,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_072",
+                       "index":  72,
+                       "x":  5040,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_073",
+                       "index":  73,
+                       "x":  5760,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_074",
+                       "index":  74,
+                       "x":  6480,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_075",
+                       "index":  75,
+                       "x":  7200,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_076",
+                       "index":  76,
+                       "x":  7920,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_077",
+                       "index":  77,
+                       "x":  8640,
+                       "y":  3600,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_078",
+                       "index":  78,
+                       "x":  0,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_079",
+                       "index":  79,
+                       "x":  720,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_080",
+                       "index":  80,
+                       "x":  1440,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_081",
+                       "index":  81,
+                       "x":  2160,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_082",
+                       "index":  82,
+                       "x":  2880,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_083",
+                       "index":  83,
+                       "x":  3600,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_084",
+                       "index":  84,
+                       "x":  4320,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_085",
+                       "index":  85,
+                       "x":  5040,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_086",
+                       "index":  86,
+                       "x":  5760,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_087",
+                       "index":  87,
+                       "x":  6480,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_088",
+                       "index":  88,
+                       "x":  7200,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_089",
+                       "index":  89,
+                       "x":  7920,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_090",
+                       "index":  90,
+                       "x":  8640,
+                       "y":  4320,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_091",
+                       "index":  91,
+                       "x":  0,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_092",
+                       "index":  92,
+                       "x":  720,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_093",
+                       "index":  93,
+                       "x":  1440,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_094",
+                       "index":  94,
+                       "x":  2160,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_095",
+                       "index":  95,
+                       "x":  2880,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_096",
+                       "index":  96,
+                       "x":  3600,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_097",
+                       "index":  97,
+                       "x":  4320,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_098",
+                       "index":  98,
+                       "x":  5040,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_099",
+                       "index":  99,
+                       "x":  5760,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_100",
+                       "index":  100,
+                       "x":  6480,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_101",
+                       "index":  101,
+                       "x":  7200,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_102",
+                       "index":  102,
+                       "x":  7920,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_103",
+                       "index":  103,
+                       "x":  8640,
+                       "y":  5040,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_104",
+                       "index":  104,
+                       "x":  0,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_105",
+                       "index":  105,
+                       "x":  720,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_106",
+                       "index":  106,
+                       "x":  1440,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_107",
+                       "index":  107,
+                       "x":  2160,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_108",
+                       "index":  108,
+                       "x":  2880,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_109",
+                       "index":  109,
+                       "x":  3600,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_110",
+                       "index":  110,
+                       "x":  4320,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_111",
+                       "index":  111,
+                       "x":  5040,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_112",
+                       "index":  112,
+                       "x":  5760,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_113",
+                       "index":  113,
+                       "x":  6480,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_114",
+                       "index":  114,
+                       "x":  7200,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_115",
+                       "index":  115,
+                       "x":  7920,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_116",
+                       "index":  116,
+                       "x":  8640,
+                       "y":  5760,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_117",
+                       "index":  117,
+                       "x":  0,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_118",
+                       "index":  118,
+                       "x":  720,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_119",
+                       "index":  119,
+                       "x":  1440,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_120",
+                       "index":  120,
+                       "x":  2160,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_121",
+                       "index":  121,
+                       "x":  2880,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_122",
+                       "index":  122,
+                       "x":  3600,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_123",
+                       "index":  123,
+                       "x":  4320,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_124",
+                       "index":  124,
+                       "x":  5040,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_125",
+                       "index":  125,
+                       "x":  5760,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_126",
+                       "index":  126,
+                       "x":  6480,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_127",
+                       "index":  127,
+                       "x":  7200,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_128",
+                       "index":  128,
+                       "x":  7920,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_129",
+                       "index":  129,
+                       "x":  8640,
+                       "y":  6480,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_130",
+                       "index":  130,
+                       "x":  0,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_131",
+                       "index":  131,
+                       "x":  720,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_132",
+                       "index":  132,
+                       "x":  1440,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_133",
+                       "index":  133,
+                       "x":  2160,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_134",
+                       "index":  134,
+                       "x":  2880,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_135",
+                       "index":  135,
+                       "x":  3600,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_136",
+                       "index":  136,
+                       "x":  4320,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_137",
+                       "index":  137,
+                       "x":  5040,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_138",
+                       "index":  138,
+                       "x":  5760,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_139",
+                       "index":  139,
+                       "x":  6480,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_140",
+                       "index":  140,
+                       "x":  7200,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_141",
+                       "index":  141,
+                       "x":  7920,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_142",
+                       "index":  142,
+                       "x":  8640,
+                       "y":  7200,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_143",
+                       "index":  143,
+                       "x":  0,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_144",
+                       "index":  144,
+                       "x":  720,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_145",
+                       "index":  145,
+                       "x":  1440,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_146",
+                       "index":  146,
+                       "x":  2160,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_147",
+                       "index":  147,
+                       "x":  2880,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_148",
+                       "index":  148,
+                       "x":  3600,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_149",
+                       "index":  149,
+                       "x":  4320,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   },
+                   {
+                       "name":  "ShootAnim_150",
+                       "index":  150,
+                       "x":  5040,
+                       "y":  7920,
+                       "w":  720,
+                       "h":  720,
+                       "durationMs":  33.333333
+                   }
+               ]
+}

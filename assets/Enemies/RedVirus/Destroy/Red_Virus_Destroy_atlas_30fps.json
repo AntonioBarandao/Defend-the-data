@@ -1,0 +1,34 @@
+﻿{
+    "source":  "C:\\Users\\jonhu\\Downloads\\Red_Virus_Destroy.mp4",
+    "fps":  30,
+    "frame_count":  91,
+    "frame_width":  720,
+    "frame_height":  720,
+    "chroma_key":  "0x5AA559:0.18:0.05",
+    "pages":  [
+                  {
+                      "atlas":  "res://assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p01.png",
+                      "frame_count":  25,
+                      "columns":  5,
+                      "rows":  5
+                  },
+                  {
+                      "atlas":  "res://assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p02.png",
+                      "frame_count":  25,
+                      "columns":  5,
+                      "rows":  5
+                  },
+                  {
+                      "atlas":  "res://assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p03.png",
+                      "frame_count":  25,
+                      "columns":  5,
+                      "rows":  5
+                  },
+                  {
+                      "atlas":  "res://assets/Enemies/RedVirus/Destroy/Red_Virus_Destroy_atlas_30fps_p04.png",
+                      "frame_count":  16,
+                      "columns":  4,
+                      "rows":  4
+                  }
+              ]
+}

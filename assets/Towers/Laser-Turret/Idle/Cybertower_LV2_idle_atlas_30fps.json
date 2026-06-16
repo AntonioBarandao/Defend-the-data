@@ -1,0 +1,28 @@
+﻿{
+    "source":  "C:\\Users\\jonhu\\Downloads\\Cybertower_LV2.mp4",
+    "fps":  30,
+    "frame_count":  181,
+    "frame_width":  720,
+    "frame_height":  720,
+    "chroma_key":  "0x2AC840:0.18:0.06",
+    "pages":  [
+                  {
+                      "atlas":  "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p01.png",
+                      "frame_count":  64,
+                      "columns":  8,
+                      "rows":  8
+                  },
+                  {
+                      "atlas":  "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p02.png",
+                      "frame_count":  64,
+                      "columns":  8,
+                      "rows":  8
+                  },
+                  {
+                      "atlas":  "res://assets/Towers/Laser-Turret/Idle/Cybertower_LV2_idle_atlas_30fps_p03.png",
+                      "frame_count":  53,
+                      "columns":  8,
+                      "rows":  7
+                  }
+              ]
+}
