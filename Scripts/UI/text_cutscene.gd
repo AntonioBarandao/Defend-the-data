@@ -26,6 +26,7 @@ const PHASE_ONE_DESTROY_SFX := preload("res://assets/sfx/virus_destroy.wav")
 @export_range(0.2, 5.0, 0.05) var camera_pan_duration := 1.35
 @export_range(0.5, 8.0, 0.05) var enemy_hold_duration := 3.0
 @export_range(0.3, 6.0, 0.05) var enemy_attack_duration := 2.4
+@export_range(0.1, 2.0, 0.05) var enemy_disappear_duration := 0.35
 @export_range(0.2, 5.0, 0.05) var camera_return_duration := 1.2
 @export_range(0.25, 4.0, 0.05) var phase_one_camera_zoom := 2.0
 @export_range(2.0, 80.0, 1.0) var phase_one_virus_hover_distance := 18.0
@@ -67,8 +68,10 @@ var _cutscene_camera: Camera2D
 var _camera_start_global_position := Vector2.ZERO
 var _camera_start_zoom := Vector2.ONE
 var _phase_one_hover_tweens: Array[Tween] = []
+var _phase_one_sequence_tweens: Array[Tween] = []
 var _phase_one_hover_start_positions := {}
 var _phase_one_initial_positions := {}
+var _phase_one_initial_modulates := {}
 var _phase_one_destroy_sfx_players: Array[AudioStreamPlayer] = []
 var _last_handled_cutscene_input_event_id := 0
 var _skip_requested := false
@@ -281,6 +284,7 @@ func skip_cutscene() -> void:
 
 	_skip_requested = true
 	_stop_mascot_bob()
+	_stop_phase_one_sequence_tweens()
 	_stop_phase_one_virus_hover()
 	if _cutscene_camera != null:
 		_cutscene_camera.global_position = _camera_start_global_position
@@ -339,11 +343,13 @@ func _finish_cutscene() -> void:
 
 func _play_red_alert() -> void:
 	var alert_tween := create_tween()
+	_phase_one_sequence_tweens.append(alert_tween)
 	var half_pulse_duration := red_alert_duration / 4.0
 	for _index in range(2):
 		alert_tween.tween_property(_alert_overlay, "color", red_alert_color, half_pulse_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		alert_tween.tween_property(_alert_overlay, "color", Color(red_alert_color.r, red_alert_color.g, red_alert_color.b, 0.0), half_pulse_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await alert_tween.finished
+	_phase_one_sequence_tweens.erase(alert_tween)
 
 
 func _prepare_phase_one_camera() -> void:
@@ -362,10 +368,12 @@ func _pan_camera_to_phase_one_target() -> void:
 
 	var target_position := _get_phase_one_target_center()
 	var camera_tween := create_tween()
+	_phase_one_sequence_tweens.append(camera_tween)
 	camera_tween.set_parallel(true)
 	camera_tween.tween_property(_cutscene_camera, "global_position", target_position + enemy_camera_padding, camera_pan_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	camera_tween.tween_property(_cutscene_camera, "zoom", Vector2.ONE * phase_one_camera_zoom, camera_pan_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	await camera_tween.finished
+	_phase_one_sequence_tweens.erase(camera_tween)
 
 
 func _return_camera_to_start() -> void:
@@ -374,10 +382,12 @@ func _return_camera_to_start() -> void:
 		return
 
 	var camera_tween := create_tween()
+	_phase_one_sequence_tweens.append(camera_tween)
 	camera_tween.set_parallel(true)
 	camera_tween.tween_property(_cutscene_camera, "global_position", _camera_start_global_position, camera_return_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	camera_tween.tween_property(_cutscene_camera, "zoom", _camera_start_zoom, camera_return_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	await camera_tween.finished
+	_phase_one_sequence_tweens.erase(camera_tween)
 
 
 func _get_phase_one_target_center() -> Vector2:
@@ -439,6 +449,7 @@ func _capture_phase_one_initial_positions() -> void:
 
 	for canvas_item in _get_phase_one_visual_children():
 		_phase_one_initial_positions[canvas_item] = canvas_item.global_position
+		_phase_one_initial_modulates[canvas_item] = canvas_item.modulate
 
 
 func _restore_phase_one_initial_positions() -> void:
@@ -446,6 +457,7 @@ func _restore_phase_one_initial_positions() -> void:
 		var canvas_item := key as CanvasItem
 		if is_instance_valid(canvas_item):
 			canvas_item.global_position = _phase_one_initial_positions[key]
+			canvas_item.modulate = _phase_one_initial_modulates.get(canvas_item, Color.WHITE)
 
 
 func _start_phase_one_virus_hover() -> void:
@@ -490,6 +502,7 @@ func _move_phase_one_viruses_to_entrance() -> void:
 
 	var attack_target := _get_phase_one_attack_target_position()
 	var attack_tween := create_tween()
+	_phase_one_sequence_tweens.append(attack_tween)
 	attack_tween.set_parallel(true)
 
 	for index in range(visuals.size()):
@@ -511,6 +524,21 @@ func _move_phase_one_viruses_to_entrance() -> void:
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
 	await attack_tween.finished
+	_phase_one_sequence_tweens.erase(attack_tween)
+
+	var disappear_tween := create_tween()
+	_phase_one_sequence_tweens.append(disappear_tween)
+	disappear_tween.set_parallel(true)
+	for canvas_item in visuals:
+		disappear_tween.tween_property(
+			canvas_item,
+			"modulate:a",
+			0.0,
+			enemy_disappear_duration
+		).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+	await disappear_tween.finished
+	_phase_one_sequence_tweens.erase(disappear_tween)
 
 
 func _get_phase_one_attack_target_position() -> Vector2:
@@ -546,6 +574,13 @@ func _stop_phase_one_virus_hover(restore_positions := true) -> void:
 			if is_instance_valid(canvas_item):
 				canvas_item.global_position = _phase_one_hover_start_positions[key]
 	_phase_one_hover_start_positions.clear()
+
+
+func _stop_phase_one_sequence_tweens() -> void:
+	for sequence_tween in _phase_one_sequence_tweens:
+		if sequence_tween != null and sequence_tween.is_valid():
+			sequence_tween.kill()
+	_phase_one_sequence_tweens.clear()
 
 
 func _play_phase_one_virus_destroy_sfx(delay: float) -> void:

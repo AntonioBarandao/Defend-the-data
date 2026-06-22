@@ -13,6 +13,20 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.075, 0.13, 0.19, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.82, 0.08, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
 bg_color = Color(0.035, 0.047, 0.07, 0.95)
@@ -46,69 +60,86 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -388.0
+offset_left = -350.0
 offset_top = -76.0
 offset_right = -24.0
 offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/separation = 16
+theme_override_constants/separation = 10
 alignment = 2
 
 [node name="StartWaveButton" type="Button" parent="Root/BottomRightControls" unique_id=1314432306]
-custom_minimum_size = Vector2(212, 52)
+custom_minimum_size = Vector2(198, 52)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Start Wave 1"
 
 [node name="ResetTowerButton" type="Button" parent="Root/BottomRightControls" unique_id=1306871520]
-custom_minimum_size = Vector2(132, 52)
+custom_minimum_size = Vector2(118, 52)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Reset"
 
 [node name="VirusBatchControls" type="HBoxContainer" parent="Root" unique_id=125593124]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -436.0
-offset_top = 918.0
-offset_right = -234.0
-offset_bottom = 954.0
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -126.0
+offset_right = -24.0
+offset_bottom = -86.0
 grow_horizontal = 0
-scale = Vector2(1.7253503, 1.7253503)
-theme_override_constants/separation = 10
+grow_vertical = 0
+theme_override_constants/separation = 8
 alignment = 2
 
 [node name="AddTenVirusesButton" type="Button" parent="Root/VirusBatchControls" unique_id=2112472185]
-custom_minimum_size = Vector2(96, 36)
+custom_minimum_size = Vector2(102, 40)
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Add 10"
 
 [node name="AddHundredVirusesButton" type="Button" parent="Root/VirusBatchControls" unique_id=1995673187]
-custom_minimum_size = Vector2(96, 36)
+custom_minimum_size = Vector2(104, 40)
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Add 100"
 
 [node name="MainMenuButton" type="Button" parent="Root" unique_id=1814937485]
 custom_minimum_size = Vector2(56, 48)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 1208.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
 offset_top = 24.0
-offset_right = 1264.0
+offset_right = -24.0
 offset_bottom = 72.0
-grow_horizontal = 2
+grow_horizontal = 0
 focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 
 [node name="IconCenter" type="CenterContainer" parent="Root/MainMenuButton" unique_id=765876014]
 layout_mode = 1
@@ -147,14 +178,14 @@ color = Color(0.9, 0.96, 1, 1)
 visible = false
 custom_minimum_size = Vector2(220, 190)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -110.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
 offset_top = 82.0
-offset_right = 110.0
+offset_right = -24.0
 offset_bottom = 272.0
-grow_horizontal = 2
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
 
 [node name="Margin" type="MarginContainer" parent="Root/MainMenuPanel" unique_id=277669626]
