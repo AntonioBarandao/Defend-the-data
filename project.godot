@@ -16,8 +16,12 @@ run/main_scene="uid://dgv71rsjbysiq"
 =======
 config/name="Defend The Data"
 run/main_scene="res://Scenes/Gameplay/Cutscene_Test_Game.tscn"
+<<<<<<< HEAD
 >>>>>>> 4f184935da47f214ef9486204354f4d648908567
 config/features=PackedStringArray("4.6", "Forward Plus")
+=======
+config/features=PackedStringArray("4.7", "Forward Plus")
+>>>>>>> c493867d873d91182e440c1f04f30539dce8f9a1
 run/max_fps=60
 config/icon="res://icon.svg"
 

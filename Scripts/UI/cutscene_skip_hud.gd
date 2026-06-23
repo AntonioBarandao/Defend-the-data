@@ -14,15 +14,15 @@ func _ready() -> void:
 	_text_cutscene = get_node_or_null(text_cutscene_path)
 	_announce_text = get_node_or_null(announce_text_path) as AnnounceText
 	_skip_button.pressed.connect(_on_skip_pressed)
+	_skip_button.disabled = true
 	hide()
 	set_process(true)
 
 
 func _process(_delta: float) -> void:
-	var running := _text_cutscene != null \
-		and _text_cutscene.has_method("is_cutscene_running") \
-		and bool(_text_cutscene.call("is_cutscene_running"))
+	var running := _is_cutscene_running()
 	visible = running
+	_skip_button.disabled = not running
 
 
 func handle_cutscene_skip_input(event: InputEvent) -> bool:
@@ -38,11 +38,20 @@ func handle_cutscene_skip_input(event: InputEvent) -> bool:
 
 
 func _on_skip_pressed() -> void:
-	if _text_cutscene != null and _text_cutscene.has_method("skip_cutscene"):
-		_text_cutscene.call("skip_cutscene")
+	if not _is_cutscene_running():
+		return
+
+	_skip_button.disabled = true
+	_text_cutscene.call("skip_cutscene")
 
 	if _announce_text != null:
 		_announce_text.show_message("Cutscene Skipped", 3.0)
+
+
+func _is_cutscene_running() -> bool:
+	return _text_cutscene != null \
+		and _text_cutscene.has_method("is_cutscene_running") \
+		and bool(_text_cutscene.call("is_cutscene_running"))
 
 
 func _is_primary_press(event: InputEvent) -> bool:
