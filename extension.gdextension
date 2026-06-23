@@ -1,6 +1,6 @@
 [configuration]
 entry_symbol = "auth_library_init"
-compatibility_minimum = "4.6"
+compatibility_minimum = "4.7"
 
 [libraries]
 windows.debug.x86_64 = "res://bin/auth.dll"
